@@ -38,6 +38,15 @@
             return $fila;
         }
 
+        public function obtenerCategoriasExcepto($id) {
+            $this->db->query('SELECT * FROM categoria WHERE pkIdCategoria != :id');
+            $this->db->bind(':id', $id);
+
+            $resultados = $this->db->registros();
+
+            return $resultados;
+        }
+
         public function actualizarCategoria($datos) {
             $this->db->query('UPDATE categoria SET nombre = :nombre WHERE pkIdCategoria = :id');
 

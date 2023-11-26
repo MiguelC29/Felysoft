@@ -1,5 +1,6 @@
 <?php require RUTA_APP . '/vistas/inc/header.php';?>
 <a href="categorias/agregar" class="btn btn-primary">Insertar</a>
+<a href="<?php echo RUTA_URL?>" class="btn btn-primary">Volver</a>
 <table class="table">
     <thead>
         <tr>

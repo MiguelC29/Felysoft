@@ -41,6 +41,15 @@
             return $fila;
         }
 
+        public function obtenerProveedoresExcepto($id) {
+            $this->db->query('SELECT * FROM proveedores WHERE pkIdProveedores != :id');
+            $this->db->bind(':id', $id);
+
+            $resultados = $this->db->registros();
+
+            return $resultados;
+        }
+
         public function actualizarProveedor($datos) {
             $this->db->query('UPDATE proveedores SET nit = :nit, nombre = :nombre, telefono = :telefono, email = :email WHERE pkIdProveedores = :id');
 
