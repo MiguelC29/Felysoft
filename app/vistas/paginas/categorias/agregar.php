@@ -7,7 +7,7 @@
             <input type="text" name="nombre" class="form-control form-control-lg">
         </div>
         <input type="submit" class="btn btn-success" value="Agregar Categoria">
-        <a href="<?php echo RUTA_URL;?>categorias">Volver</a>
+        <a href="<?php echo RUTA_URL;?>categorias" class="btn btn-primary">Volver</a>
     </form>
 </div>
 <?php require RUTA_APP . '/vistas/inc/footer.php';?>
