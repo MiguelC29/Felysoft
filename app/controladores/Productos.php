@@ -3,21 +3,28 @@
 
         public function __construct() {
             $this->productosModelo = $this->modelo('Producto');
+            $this->categoriasModelo = $this->modelo('Categoria');
+            $this->proveedoresModelo = $this->modelo('Proveedor');
         }
 
         public function index() {
 
-            //Obtener las categorias
+            //Obtener los productos
             $productos = $this->productosModelo->obtenerProductos();
 
             $datos = [
-                'productos' => $productos
+                'productos' => $productos,
             ];
 
             $this->vista('paginas/productos/inicio', $datos);
         }
 
         public function agregar() {
+            //Obtener las categorias
+            $categorias = $this->categoriasModelo->obtenerCategorias();
+            //Obtener los proveedores
+            $proveedores = $this->proveedoresModelo->obtenerProveedores();
+
             // $_FILES LA VARIABLE SUPERGLOBAL, DONDE SE ALMACENAN LAS IMAGENES
             //validar si se envio una foto, si tiene un name es porque si se mando
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -28,7 +35,7 @@
                     $tamanoArchivo = $_FILES['imagenP']['size']; //obtener tamaño del archivo
                     $permitido = array("image/png","image/jpg","image/jpeg"); //tipos de datos permitidos
                     if (in_array($tipoArchivo, $permitido) == false) {
-                        die("<script>alert('Archivo no permitido.'); location.href='../VISTA/principal/productos.php';</script>");
+                        die("<script>alert('Archivo no permitido.'); location.href='';</script>");
                     }
 
                     //fopen abrimos un archivo o leemos un archivo
@@ -49,7 +56,9 @@
                         'fkIdCategoria' => trim($_POST['idCategoria']),
                         'fkIdProveedor' => trim($_POST['idProveedor']),
                         'imagen' => $binariosImagen,
-                        'tipoImg' => $tipoArchivo
+                        'tipoImg' => $tipoArchivo,
+                        'categorias' => $categorias,
+                        'proveedores' => $proveedores
                     ];
 
                     if ($this->productosModelo->agregarProducto($datos)) {
@@ -67,7 +76,9 @@
                     'fkIdCategoria' => '',
                     'fkIdProveedor' => '',
                     'imagen' => '',
-                    'tipoImg' => ''
+                    'tipoImg' => '',
+                    'categorias' => $categorias,
+                    'proveedores' => $proveedores
                 ];
 
                 $this->vista('paginas/productos/agregar', $datos);
@@ -84,8 +95,8 @@
                     'fechaVencimiento' => trim($_POST['fechaVencimiento']),
                     'fkIdCategoria' => trim($_POST['idCategoria']),
                     'fkIdProveedor' => trim($_POST['idProveedor']),
-                    'imagen' => trim($_POST['imagen'])
-                    // 'tipoImg' => trim($_POST['tipoImg'])
+                    'imagen' => trim($_POST['imagen']),
+                    'tipoImg' => trim($_POST['tipoImg'])
                 ];
 
                 if ($this->productosModelo->actualizarProducto($datos)) {
@@ -107,8 +118,8 @@
                     'fechaVencimiento' => $productos->fechaVencimiento,
                     'fkIdCategoria' => $productos->fkIdCategoria,
                     'fkIdProveedor' => $productos->fkIdProveedor,
-                    'imagen' => $productos->imagen
-                    // 'tipoImg' => $productos->tipoImg
+                    'imagen' => $productos->imagen,
+                    'tipoImg' => $productos->tipoImg
                 ];
 
                 $this->vista('paginas/productos/editar', $datos);
@@ -128,8 +139,8 @@
                 'fechaVencimiento' => $productos->fechaVencimiento,
                 'fkIdCategoria' => $productos->fkIdCategoria,
                 'fkIdProveedor' => $productos->fkIdProveedor,
-                'imagen' => $productos->imagen
-                // 'tipoImg' => $productos->tipoImg
+                'imagen' => $productos->imagen,
+                'tipoImg' => $productos->tipoImg
             ];
 
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {

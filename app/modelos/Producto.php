@@ -17,12 +17,13 @@
         }
 
         public function agregarProducto($datos) {
-            $this->db->query('INSERT INTO productos (nombre, marca, precioVenta, fkIdCategoria, fkIdProveedor, imagen, tipoImg) VALUES (:nombre, :marca, :precioVenta, :fkIdCategoria, :fkIdProveedor, :imagen, :tipoImg)');
+            $this->db->query('INSERT INTO productos (nombre, marca, precioVenta, fechaVencimiento, fkIdCategoria, fkIdProveedor, imagen, tipoImg) VALUES (:nombre, :marca, :precioVenta, :fechaVencimiento, :fkIdCategoria, :fkIdProveedor, :imagen, :tipoImg)');
 
             //Vincular valores
             $this->db->bind(':nombre', $datos['nombre']);
             $this->db->bind(':marca', $datos['marca']);
             $this->db->bind(':precioVenta', $datos['precioVenta']);
+            $this->db->bind(':fechaVencimiento', $datos['fechaVencimiento']);
             $this->db->bind(':fkIdCategoria', $datos['fkIdCategoria']);
             $this->db->bind(':fkIdProveedor', $datos['fkIdProveedor']);
             $this->db->bind(':imagen', $datos['imagen']);
@@ -46,17 +47,18 @@
         }
 
         public function actualizarProducto($datos) {
-            $this->db->query('UPDATE productos SET nombre = :nombre, :marca = marca, :precioVenta = precioVenta, :fkIdCategoria = fkIdCategoria, :fkIdProveedor = fkIdProveedor, :imagen = imagen WHERE pkIdProducto = :id');
+            $this->db->query('UPDATE productos SET nombre = :nombre, marca = :marca, precioVenta = :precioVenta, fechaVencimiento = :fechaVencimiento, fkIdCategoria = :fkIdCategoria, fkIdProveedor = :fkIdProveedor, imagen = :imagen, tipoImg = :tipoImg WHERE pkIdProducto = :id');
 
             //Vincular los valores
             $this->db->bind(':id', $datos['pkIdProducto']);
             $this->db->bind(':nombre', $datos['nombre']);
             $this->db->bind(':marca', $datos['marca']);
             $this->db->bind(':precioVenta', $datos['precioVenta']);
+            $this->db->bind(':fechaVencimiento', $datos['fechaVencimiento']);
             $this->db->bind(':fkIdCategoria', $datos['fkIdCategoria']);
             $this->db->bind(':fkIdProveedor', $datos['fkIdProveedor']);
             $this->db->bind(':imagen', $datos['imagen']);
-            // $this->db->bind(':tipoImg', $datos['tipoImg']);
+            $this->db->bind(':tipoImg', $datos['tipoImg']);
 
             //Ejecutar
             if ($this->db->execute()) {

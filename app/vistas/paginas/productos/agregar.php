@@ -22,14 +22,18 @@
             <label for="idCategoria">Categoria: <sup>*</sup></label>
             <select class="form-select" aria-label="Default select example" name="idCategoria">
             <option selected disabled>Seleccione la Categoria</option>
-                <option value="2">Galletas</option>
+            <?php foreach($datos['categorias'] as $categoria) : ?>
+                <option value="<?php echo $categoria->pkIdCategoria; ?>"><?php echo $categoria->nombre; ?></option>
+            <?php endforeach; ?>
             </select>
         </div>
         <div class="form-group">
             <label for="idProveedor">Proveedor: <sup>*</sup></label>
             <select class="form-select" aria-label="Default select example" name="idProveedor">
             <option selected disabled>Seleccione el Proveedor</option>
-                <option value="108">Festival Galletas S.A.</option>
+            <?php foreach($datos['proveedores'] as $proveedor) : ?>
+                <option value="<?php echo $proveedor->pkIdProveedores; ?>"><?php echo $proveedor->nombre; ?></option>
+            <?php endforeach; ?>
             </select>
         </div>
         <div class="form-group">
