@@ -11,4 +11,8 @@
     define('RUTA_URL', 'http://localhost/Felysoft/');
 
     define('NOMBRESITIO', 'FELYSOFT');
+
+    //define('RUTA_TIPOSERVICIOS', 'tiposervicios/');
+    //define('RUTA_AGRTIPOSERVICIOS', 'agregar/');
+
 ?>
