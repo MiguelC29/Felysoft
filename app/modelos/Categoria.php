@@ -8,7 +8,7 @@
         }
 
         public function obtenerCategorias() {
-            $this->db->query('SELECT * FROM categoria');
+            $this->db->query('SELECT * FROM categoria ORDER BY nombre');
 
             $resultados = $this->db->registros();
 
@@ -36,6 +36,15 @@
             $fila = $this->db->registro();
 
             return $fila;
+        }
+
+        public function obtenerCategoriasExcepto($id) {
+            $this->db->query('SELECT * FROM categoria WHERE pkIdCategoria != :id ORDER BY nombre');
+            $this->db->bind(':id', $id);
+
+            $resultados = $this->db->registros();
+
+            return $resultados;
         }
 
         public function actualizarCategoria($datos) {
