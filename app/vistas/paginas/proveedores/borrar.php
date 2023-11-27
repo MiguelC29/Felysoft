@@ -18,7 +18,7 @@
             <label for="email">Email:</label>
             <input type="email" name="email" class="form-control form-control-lg" value="<?php echo $datos['email']?>" readonly>
         </div>
-        <input type="submit" class="btn btn-success" value="Borrar Proveedor">
+        <input type="submit" class="btn btn-success" value="Borrar Proveedor" onclick='return confirmarDelete()'>
         <a href="<?php echo RUTA_URL;?>proveedores" class="btn btn-primary">Volver</a>
     </form>
 </div>

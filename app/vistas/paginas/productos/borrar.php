@@ -32,7 +32,7 @@
                 <td><img width = "200px" height = "200px" src="data:<?php echo $datos['tipoImg']?>;base64,<?php echo base64_encode($datos['imagen'])?>"></td>
             </div>
         </div>
-        <input type="submit" class="btn btn-success" value="Borrar Producto">
+        <input type="submit" class="btn btn-success" value="Borrar Producto" onclick='return confirmarDelete()'>
         <a href="<?php echo RUTA_URL;?>productos" class="btn btn-primary">Volver</a>
     </form>
 </div>

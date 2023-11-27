@@ -6,7 +6,7 @@
             <label for="nombre">Nombre:</label>
             <input type="text" name="nombre" class="form-control form-control-lg" value="<?php echo $datos['nombre']?>" readonly>
         </div>
-        <input type="submit" class="btn btn-success" value="Borrar Categoria">
+        <input type="submit" class="btn btn-success" value="Borrar Categoria" onclick='return confirmarDelete()'>
         <a href="<?php echo RUTA_URL;?>categorias" class="btn btn-primary">Volver</a>
     </form>
 </div>

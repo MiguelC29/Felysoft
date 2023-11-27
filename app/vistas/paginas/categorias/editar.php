@@ -6,7 +6,7 @@
             <label for="nombre">Nombre: <sup>*</sup></label>
             <input type="text" name="nombre" class="form-control form-control-lg" value="<?php echo $datos['nombre']?>">
         </div>
-        <input type="submit" class="btn btn-success" value="Editar Categoria">
+        <input type="submit" class="btn btn-success" value="Editar Categoria" onclick='return confirmarUpdate()'>
         <a href="<?php echo RUTA_URL;?>categorias" class="btn btn-primary">Volver</a>
     </form>
 </div>

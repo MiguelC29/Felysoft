@@ -8,7 +8,7 @@
         }
 
         public function obtenerProveedores() {
-            $this->db->query('SELECT * FROM proveedores');
+            $this->db->query('SELECT * FROM proveedores ORDER BY nombre');
 
             $resultados = $this->db->registros();
 
@@ -42,7 +42,7 @@
         }
 
         public function obtenerProveedoresExcepto($id) {
-            $this->db->query('SELECT * FROM proveedores WHERE pkIdProveedores != :id');
+            $this->db->query('SELECT * FROM proveedores WHERE pkIdProveedores != :id ORDER BY nombre');
             $this->db->bind(':id', $id);
 
             $resultados = $this->db->registros();

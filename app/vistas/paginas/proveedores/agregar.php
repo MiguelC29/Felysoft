@@ -18,7 +18,7 @@
             <label for="email">Email: <sup>*</sup></label>
             <input type="email" name="email" class="form-control form-control-lg">
         </div>
-        <input type="submit" class="btn btn-success" value="Agregar Proveedor">
+        <input type="submit" class="btn btn-success" value="Agregar Proveedor" onclick='return confirmarInsert()'>
         <a href="<?php echo RUTA_URL;?>proveedores" class="btn btn-primary">Volver</a>
     </form>
 </div>

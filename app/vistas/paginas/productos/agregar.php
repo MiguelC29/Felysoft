@@ -42,7 +42,7 @@
                 <input class="form-control" type="file" id="formFile" name="imagenP">
             </div>
         </div>
-        <input type="submit" class="btn btn-success" value="Agregar Producto">
+        <input type="submit" class="btn btn-success" value="Agregar Producto" onclick='return confirmarInsert()'>
         <a href="<?php echo RUTA_URL;?>productos" class="btn btn-primary">Volver</a>
     </form>
 </div>
