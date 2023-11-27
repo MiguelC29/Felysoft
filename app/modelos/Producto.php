@@ -16,6 +16,17 @@
             return $resultados;
         }
 
+        public function busquedaProductos($busqueda) {
+            // $this->db->query('SELECT * FROM productos');
+            $this->db->query('SELECT pkIdProducto, imagen, tipoImg, productos.nombre as producto, marca, precioVenta, fechaVencimiento, categoria.nombre as categoria, proveedores.nombre as proveedor FROM productos INNER JOIN categoria ON fkIdCategoria = pkIdCategoria INNER JOIN proveedores ON fkIdProveedor = pkIdProveedores WHERE productos.nombre like :inputBuscar');
+
+            $this->db->bind(':inputBuscar', '%' . $busqueda . '%');
+
+            $resultados = $this->db->registros();
+
+            return $resultados;
+        }
+
         public function agregarProducto($datos) {
             $this->db->query('INSERT INTO productos (nombre, marca, precioVenta, fechaVencimiento, fkIdCategoria, fkIdProveedor, imagen, tipoImg) VALUES (:nombre, :marca, :precioVenta, :fechaVencimiento, :fkIdCategoria, :fkIdProveedor, :imagen, :tipoImg)');
 

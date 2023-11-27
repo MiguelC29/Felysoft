@@ -42,6 +42,7 @@
         <div class="form-group">
             <div class="mb-3">
                 <label for="imagenP">Imagen: <sup>*</sup></label>
+                <img width = "200px" height = "200px" src="data:<?php echo $datos['tipoImgP']?>;base64,<?php echo base64_encode($datos['imagenP'])?>">
                 <input class="form-control" type="file" id="formFile" name="imagenP">
             </div>
         </div>

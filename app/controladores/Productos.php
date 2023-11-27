@@ -8,14 +8,29 @@
         }
 
         public function index() {
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $busqueda = trim($_POST['buscar']);
 
-            //Obtener los productos
-            $productos = $this->productosModelo->obtenerProductos();
+                if (empty($busqueda)) {
+                    echo "<script language='JavaScript'>
+                            alert('Ingrese el nombre del producto a buscar');
+                            location.assign('productos');
+                        </script>";
+                } else {
+                    $productosBusqueda = $this->productosModelo->busquedaProductos($busqueda);
 
-            $datos = [
-                'productos' => $productos,
-            ];
-
+                    $datos = [
+                        'productos' => $productosBusqueda,
+                    ];
+                }
+            } else {
+                //Obtener los productos
+                $productos = $this->productosModelo->obtenerProductos();
+                
+                $datos = [
+                    'productos' => $productos,
+                ];
+            }
             $this->vista('paginas/productos/inicio', $datos);
         }
 
@@ -53,12 +68,12 @@
                         'imagen' => $binariosImagen,
                         'tipoImg' => $tipoArchivo,
                     ];
+                }
 
-                    if ($this->productosModelo->agregarProducto($datos)) {
-                        redireccionar('productos');
-                    } else {
-                        die('Algo salió mal');
-                    }
+                if ($this->productosModelo->agregarProducto($datos)) {
+                    redireccionar('productos');
+                } else {
+                    die('Algo salió mal');
                 }
             } else {
                 //Obtener las categorias
@@ -113,12 +128,11 @@
                         'imagen' => $binariosImagen,
                         'tipoImg' => $tipoArchivo
                     ];
-
-                    if ($this->productosModelo->actualizarProducto($datos)) {
-                        redireccionar('productos');
-                    } else {
-                        die('Algo salió mal');
-                    }
+                }
+                if ($this->productosModelo->actualizarProducto($datos)) {
+                    redireccionar('productos');
+                } else {
+                    die('Algo salió mal');
                 }
             } else {
 
@@ -141,8 +155,9 @@
                     'fkIdCategoria' => $productos->fkIdCategoria,
                     'fkIdProveedor' => $productos->fkIdProveedor,
                     'imagen' => $productos->imagen,
-                    'tipoImg' => $productos->tipoImg,
                     'categorias' => $categoriasExp,
+                    'imagenP' => $productos->imagen,
+                    'tipoImgP' => $productos->tipoImg,
                     'proveedores' => $proveedoresExp,
                     'categoria' => $categoria,
                     'proveedor' => $proveedor

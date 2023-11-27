@@ -1,6 +1,10 @@
 <?php require RUTA_APP . '/vistas/inc/header.php';?>
 <a href="productos/agregar" class="btn btn-primary">Insertar</a>
 <a href="<?php echo RUTA_URL?>" class="btn btn-primary">Volver</a>
+<form class="w-100 me-3" role="search" method="post">
+    <input id="buscar" name="buscar" type="search" class="form-control" placeholder="Buscar productos..." aria-label="Search">
+</form>
+<a href="productos" type="button" class="btn btn-primary py-2 px-3 mb-4 mx-2">Mostrar todos los productos</a>
 <table class="table text-center">
     <thead>
         <tr>
