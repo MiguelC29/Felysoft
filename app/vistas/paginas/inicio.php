@@ -6,14 +6,6 @@
 <a href="<?php echo RUTA_URL ?>tiposervicios" class="btn btn-success">SERVICIOS</a>
 <a href="<?php echo RUTA_URL ?>autores" class="btn btn-success">AUTORES</a>
 <a href="<?php echo RUTA_URL ?>generos" class="btn btn-success">GENEROS</a>
-<<<<<<< HEAD
-<?php require RUTA_APP . '/vistas/inc/footer.php'; ?>
-=======
 <a href="<?php echo RUTA_URL ?>pagos" class="btn btn-success">PAGOS</a>
 <a href="<?php echo RUTA_URL ?>gastos" class="btn btn-success">GASTOS</a>
-
-
-
-
 <?php require RUTA_APP . '/vistas/inc/footer.php';?>
->>>>>>> f21aebb159a27cdc5651609f9719ebf9294939a6
