@@ -23,8 +23,8 @@
         </div>
 
 
-        <input type="submit" class="btn btn-success" value="Agregar Pago">
-        <a href="<?php echo RUTA_URL;?>pagos">Volver</a>
+        <input type="submit" class="btn btn-success" value="Agregar Pago" onclick='return confirmarInsert()'>
+        <a href="<?php echo RUTA_URL;?>pagos" class="btn btn-primary">Volver</a>
     </form>
 </div>
 <?php require RUTA_APP . '/vistas/inc/footer.php';?>
