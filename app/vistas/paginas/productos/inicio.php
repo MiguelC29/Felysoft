@@ -20,7 +20,8 @@
         </tr>
     </thead>
     <tbody>
-    <?php foreach($datos['productos'] as $producto) : ?>
+    <?php $contador = 0;
+    foreach($datos['productos'] as $producto) : ?>
         <tr>
             <td><?php echo $producto->pkIdProducto; ?></td>
             <td><img width = "100px" height = "100px" src="data:<?php echo $producto->tipoImg?>;base64,<?php echo base64_encode($producto->imagen)?>"></td>
@@ -35,7 +36,11 @@
                 <a href="<?php echo RUTA_URL; ?>productos/borrar/<?php echo $producto->pkIdProducto; ?>" class="btn btn-danger">Borrar</a>
             </td>
         </tr>
-    <?php endforeach; ?>
+    <?php
+    $contador++;
+    endforeach; ?>
     </tbody>
+    <?php echo "<p class='text-success ms-2'>$contador resultados encontrados</p>"?>
 </table>
+<?php if ($contador == 0){echo "<h2 class='text-center text-primary'>No se encontraron resultados de búsqueda</h2>";}?>
 <?php require RUTA_APP . '/vistas/inc/footer.php';?>

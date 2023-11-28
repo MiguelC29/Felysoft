@@ -30,7 +30,7 @@
         <div class="form-group">
             <label for="idProveedor">Proveedor: <sup>*</sup></label>
             <select class="form-select" aria-label="Default select example" name="idProveedor">
-            <option selected disabled>Seleccione el Proveedor</option>
+            <option value="" selected disabled>Seleccione el Proveedor</option>
             <?php foreach($datos['proveedores'] as $proveedor) : ?>
                 <option value="<?php echo $proveedor->pkIdProveedores; ?>"><?php echo $proveedor->nombre; ?></option>
             <?php endforeach; ?>
