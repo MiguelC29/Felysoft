@@ -1,7 +1,8 @@
-<?php require RUTA_APP . '/vistas/inc/header.php';?>
+<?php require RUTA_APP . '/vistas/inc/header.php'; ?>
 <div class="card card-body bg-light mt-5">
     <h2>Agregar productos</h2>
-    <form action="<?php echo RUTA_URL;?>productos/agregar" method="post" enctype="multipart/form-data">
+    <form id="formsFelysoft" action="<?php echo RUTA_URL; ?>productos/agregar" method="post"
+        enctype="multipart/form-data">
         <div class="form-group">
             <label for="nombre">Nombre: <sup>*</sup></label>
             <input type="text" name="nombre" class="form-control form-control-lg" required>
@@ -21,19 +22,19 @@
         <div class="form-group">
             <label for="idCategoria">Categoria: <sup>*</sup></label>
             <select class="form-select" aria-label="Default select example" name="idCategoria">
-            <option selected disabled>Seleccione la Categoria</option>
-            <?php foreach($datos['categorias'] as $categoria) : ?>
+                <option selected disabled>Seleccione la Categoria</option>
+                <?php foreach ($datos['categorias'] as $categoria) : ?>
                 <option value="<?php echo $categoria->pkIdCategoria; ?>"><?php echo $categoria->nombre; ?></option>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
             </select>
         </div>
         <div class="form-group">
             <label for="idProveedor">Proveedor: <sup>*</sup></label>
             <select class="form-select" aria-label="Default select example" name="idProveedor">
-            <option value="" selected disabled>Seleccione el Proveedor</option>
-            <?php foreach($datos['proveedores'] as $proveedor) : ?>
+                <option value="" selected disabled>Seleccione el Proveedor</option>
+                <?php foreach ($datos['proveedores'] as $proveedor) : ?>
                 <option value="<?php echo $proveedor->pkIdProveedores; ?>"><?php echo $proveedor->nombre; ?></option>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
             </select>
         </div>
         <div class="form-group">
@@ -43,7 +44,7 @@
             </div>
         </div>
         <input type="submit" class="btn btn-success" value="Agregar Producto" onclick='return confirmarInsert()'>
-        <a href="<?php echo RUTA_URL;?>productos" class="btn btn-primary">Volver</a>
+        <a href="<?php echo RUTA_URL; ?>productos" class="btn btn-primary">Volver</a>
     </form>
 </div>
-<?php require RUTA_APP . '/vistas/inc/footer.php';?>
+<?php require RUTA_APP . '/vistas/inc/footer.php'; ?>

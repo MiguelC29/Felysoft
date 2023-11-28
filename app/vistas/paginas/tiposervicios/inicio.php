@@ -13,16 +13,18 @@
     </thead>
     <tbody>
         <?php foreach($datos['tiposervicios'] as $tiposervicio) : ?>
-            <tr>
-                <td><?php echo $tiposervicio->idTipoServicio; ?></td>
-                <td><?php echo $tiposervicio->nombre; ?></td>
-                <td><?php echo $tiposervicio->descripcion; ?></td>
-                <td><?php echo $tiposervicio->precio; ?></td>
-                <td>
-                    <a href="<?php echo RUTA_URL; ?>tiposervicios/editar/<?php echo $tiposervicio->idTipoServicio; ?>" class="btn btn-warning">Editar</a>
-                    <a href="<?php echo RUTA_URL; ?>tiposervicios/borrar/<?php echo $tiposervicio->idTipoServicio; ?>" class="btn btn-danger">Borrar</a>
-                </td>
-            </tr>
+        <tr>
+            <td><?php echo $tiposervicio->idTipoServicio; ?></td>
+            <td><?php echo $tiposervicio->nombre; ?></td>
+            <td><?php echo $tiposervicio->descripcion; ?></td>
+            <td><?php echo $tiposervicio->precio; ?></td>
+            <td>
+                <a href="<?php echo RUTA_URL; ?>tiposervicios/editar/<?php echo $tiposervicio->idTipoServicio; ?>"
+                    class="btn btn-warning">Editar</a>
+                <a href="<?php echo RUTA_URL; ?>tiposervicios/borrar/<?php echo $tiposervicio->idTipoServicio; ?>"
+                    class="btn btn-danger">Borrar</a>
+            </td>
+        </tr>
         <?php endforeach; ?>
     </tbody>
 </table>
