@@ -11,7 +11,7 @@
             <input type="text" id="precio" name="precio" class="form-control form-control-lg" value="<?php echo $datos['precio']?>">
         </div>
         <input type="submit" class="btn btn-success" value="Editar Servicio" onclick="return confirmarUpdate()">
-        <a href="<?php echo RUTA_URL;?>tiposervicios">Volver</a>
+        <a href="<?php echo RUTA_URL;?>tiposervicios" class="btn btn-primary">Volver</a>
     </form>
 </div>
 <?php require RUTA_APP . '/vistas/inc/footer.php';?>

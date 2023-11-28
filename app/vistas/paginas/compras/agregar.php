@@ -12,8 +12,8 @@
             <input type="number" name="total" class="form-control form-control-lg">
         </div>
 
-        <input type="submit" class="btn btn-success" value="Agregar Compra">
-        <a href="<?php echo RUTA_URL;?>compras">Volver</a>
+        <input type="submit" class="btn btn-success" value="Agregar Compra" onclick='return confirmarInsert()'>
+        <a href="<?php echo RUTA_URL;?>compras" class="btn btn-primary">Volver</a>
     </form>
 </div>
 <?php require RUTA_APP . '/vistas/inc/footer.php';?>

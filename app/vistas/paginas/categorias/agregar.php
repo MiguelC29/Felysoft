@@ -4,7 +4,7 @@
     <form action="<?php echo RUTA_URL;?>categorias/agregar" method="post">
         <div class="form-group">
             <label for="nombre">Nombre: <sup>*</sup></label>
-            <input type="text" name="nombre" class="form-control form-control-lg">
+            <input type="text" name="nombre" class="form-control form-control-lg" required>
         </div>
         <input type="submit" class="btn btn-success" value="Agregar Categoria" onclick='return confirmarInsert()'>
         <a href="<?php echo RUTA_URL;?>categorias" class="btn btn-primary">Volver</a>

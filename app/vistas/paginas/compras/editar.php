@@ -14,8 +14,8 @@
             <input type="number" name="total" class="form-control form-control-lg" value="<?php echo $datos['total']?>">
         </div>
 
-        <input type="submit" class="btn btn-success" value="Editar Compra">
-        <a href="<?php echo RUTA_URL;?>compras">Volver</a>
+        <input type="submit" class="btn btn-success" value="Editar Compra" onclick='return confirmarUpdate()'>
+        <a href="<?php echo RUTA_URL;?>compras" class="btn btn-primary">Volver</a>
     </form>
 </div>
 <?php require RUTA_APP . '/vistas/inc/footer.php';?>

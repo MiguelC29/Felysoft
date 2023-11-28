@@ -8,8 +8,8 @@
             <label for="descripcion">Descripcion: <sup>*</sup></label>
             <input type="text" name="descripcion" class="form-control form-control-lg" value="<?php echo $datos['descripcion']?>">
         </div>
-        <input type="submit" class="btn btn-success" value="Editar Genero">
-        <a href="<?php echo RUTA_URL;?>generos">Volver</a>
+        <input type="submit" class="btn btn-success" value="Editar Genero" onclick='return confirmarUpdate()'>
+        <a href="<?php echo RUTA_URL;?>generos" class="btn btn-primary">Volver</a>
     </form>
 </div>
 <?php require RUTA_APP . '/vistas/inc/footer.php';?>
