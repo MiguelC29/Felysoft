@@ -18,7 +18,7 @@
 
         public function busquedaProductos($busqueda) {
             // $this->db->query('SELECT * FROM productos');
-            $this->db->query('SELECT pkIdProducto, imagen, tipoImg, productos.nombre as producto, marca, precioVenta, fechaVencimiento, categoria.nombre as categoria, proveedores.nombre as proveedor FROM productos INNER JOIN categoria ON fkIdCategoria = pkIdCategoria INNER JOIN proveedores ON fkIdProveedor = pkIdProveedores WHERE productos.nombre like :inputBuscar');
+            $this->db->query('SELECT pkIdProducto, imagen, tipoImg, productos.nombre as producto, marca, precioVenta, fechaVencimiento, categoria.nombre as categoria, proveedores.nombre as proveedor FROM productos INNER JOIN categoria ON fkIdCategoria = pkIdCategoria INNER JOIN proveedores ON fkIdProveedor = pkIdProveedores WHERE productos.nombre LIKE :inputBuscar');
 
             $this->db->bind(':inputBuscar', '%' . $busqueda . '%');
 
