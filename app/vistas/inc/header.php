@@ -8,15 +8,48 @@
     <link rel="stylesheet" type="text/css" href="<?php echo RUTA_URL?>/css/estilos.css">
     <script type="text/javascript">
         function confirmarDelete() {
-            return confirm('¿Estas Seguro?, se eliminarán los datos');
+            Swal.fire({
+                title: "¿Estás seguro? Se eliminarán los datos.",
+                showCancelButton: true,
+                confirmButtonText: 'Ok', //Deben usar onclick en los submit, ejemplo: <input type="submit" class="btn btn-success" value="Agregar Servicio" onclick="return confirmarInsert()">
+                cancelButtonText: 'Cancelar',
+                icon: 'warning'
+            }).then((result) => {
+                if (result.value) {
+                    document.getElementById('formsFelysoft').submit(); //Deben usar este ID en sus formularios, ejemplo: <form id="formsFelysoft" action="...
+                }
+            });
+            return false; //Evita que el formulario se envie automaticamente
         }
 
         function confirmarInsert() {
-            return confirm('¿Estas Seguro?, se guardarán los datos ingresados');
+            Swal.fire({
+                title: "¿Estás seguro? Se guardarán los datos ingresados.",
+                showCancelButton: true,
+                confirmButtonText: 'Ok',
+                cancelButtonText: 'Cancelar',
+                icon: 'warning'
+            }).then((result) => {
+                if (result.value) {
+                    document.getElementById('formsFelysoft').submit();
+                }
+            });
+            return false;
         }
 
         function confirmarUpdate() {
-            return confirm('¿Estas Seguro?, se modificarán los datos');
+            Swal.fire({
+                title: "¿Estás seguro? Se actualizarán los datos ingresados.",
+                showCancelButton: true,
+                confirmButtonText: 'Ok',
+                cancelButtonText: 'Cancelar',
+                icon: 'warning'
+            }).then((result) => {
+                if (result.value) {
+                    document.getElementById('formsFelysoft').submit();
+                }
+            });
+            return false;
         }
     </script>
     <title><?php echo NOMBRESITIO;?></title>
