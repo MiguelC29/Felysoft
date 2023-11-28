@@ -18,7 +18,7 @@
             //Buscar en controladores si el archivo(controlador) existe
             //ucword es para poner en mayuscula la primera letra, y le concatenamos la extension .php para no escribirla
 
-            if (file_exists('../app/controladores/' . ucwords($url[0]) . '.php')) {
+            if (isset($url[0]) && file_exists('../app/controladores/' . ucwords($url[0]) . '.php')) {
                 //si existe se setea o configura como controlador por defecto, es decir se cambia el controlador por defecto y se toma el actual
                 $this->controladorActual = ucwords($url[0]);
 
