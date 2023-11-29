@@ -8,4 +8,5 @@
 <a href="<?php echo RUTA_URL ?>generos" class="btn btn-success">GENEROS</a>
 <a href="<?php echo RUTA_URL ?>pagos" class="btn btn-success">PAGOS</a>
 <a href="<?php echo RUTA_URL ?>gastos" class="btn btn-success">GASTOS</a>
+<a href="<?php echo RUTA_URL ?>libros" class="btn btn-success">LIBROS</a>
 <?php require RUTA_APP . '/vistas/inc/footer.php';?>
