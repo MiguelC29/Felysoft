@@ -39,6 +39,15 @@
             return $fila;
         }
 
+        public function obtenerComprasExcepto($id) {
+            $this->db->query('SELECT * FROM compras WHERE pkIdCompra != :id');
+            $this->db->bind(':id', $id);
+
+            $resultados = $this->db->registros();
+
+            return $resultados;
+        }
+
         public function actualizarCompra($datos) {
             $this->db->query('UPDATE compras SET fechaCompra = :fechaCompra, total = :total WHERE pkIdCompra = :id');
 

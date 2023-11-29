@@ -26,8 +26,8 @@ class Gastos extends Controlador
                     'gastos' => $gastosBusqueda,
                 ];
             }
-        } else {
-            //Obtener los productos
+        } else {    
+            //Obtener los gastos
             $gastos = $this->gastosModelo->obtenerGastos();
 
             $datos = [
@@ -37,6 +37,7 @@ class Gastos extends Controlador
         $this->vista('paginas/gastos/inicio', $datos);
     }
 
+    //AGREGAR
     public function agregar()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -47,7 +48,6 @@ class Gastos extends Controlador
                 'fkIdCompra' => trim($_POST['idCompra']),
                 'fkIdPago' => trim($_POST['idPago'])
             ];
-
 
             if ($this->gastosModelo->agregarGasto($datos)) {
                 redireccionar('gastos');
@@ -73,8 +73,9 @@ class Gastos extends Controlador
         }
     }
 
-    public function editar($id)
-    {
+    //EDITAR
+    public function editar($id) {
+
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $datos = [
                 'pkIdGasto' => $id,
@@ -120,14 +121,17 @@ class Gastos extends Controlador
         }
     }
 
+
+
+    //BORRAR
     public function borrar($id) {
 
         //Obtener información de usuario desde el modelo
         $gastos = $this->gastosModelo->obtenerGastoId($id);
         //Obtener las categorias
-        $Compra = $this->comprasModelo->obtenerCompraId($gastos->fkIdCompra);
+        $compra = $this->comprasModelo->obtenerCompraId($gastos->fkIdCompra);
         // //Obtener los proveedores
-        $Pago = $this->pagosModelo->obtenerPagoId($gastos->fkIdPago);
+        $pago = $this->pagosModelo->obtenerPagoId($gastos->fkIdPago);
 
         $datos = [
             'pkIdGasto' => $gastos->pkIdGasto,
@@ -137,8 +141,8 @@ class Gastos extends Controlador
             'fkIdCompra' => $gastos->fkIdCompra,
             'fkIdPago' => $gastos->fkIdPago,
 
-            'nomCompra' => $compra->nombre,
-            'nomPago' => $pago->nombre
+            'nomCompra' => $compra->total,
+            'nomPago' => $pago->metodoPago
         ];
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {

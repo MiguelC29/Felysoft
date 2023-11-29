@@ -8,8 +8,9 @@
         }
 
         public function obtenerGastos() {
-            // $this->db->query('SELECT * FROM gastos');
-            $this->db->query('SELECT pkIdGasto, fecha, monto, gastos.descripcion as descripcion, compras.total as compra, pago.metodoPago as pago FROM gastos LEFT JOIN compras ON fkIdCompra = pkIdCompra INNER JOIN pago ON fkIdPago = pkIdPago ORDER BY pkIdGasto');
+            
+            $this->db->query('SELECT * FROM gastos LEFT JOIN compras ON fkIdCompra = pkIdCompra INNER JOIN pago ON fkIdPago = pkIdPago ORDER BY pkIdGasto');
+            
 
             $resultados = $this->db->registros();
 
@@ -17,8 +18,8 @@
         }
 
         public function busquedaGastos($busqueda) {
-            // $this->db->query('SELECT * FROM gastos');
-            $this->db->query('SELECT pkIdGasto, fecha, monto, gastos.descripcion as descripcion, compras.total as compra, pago.metodoPago as pago FROM gastos LEFT JOIN compras ON fkIdCompra = pkIdCompra INNER JOIN pago ON fkIdPago = pkIdPago WHERE gastos.descripcion like :inputBuscar');
+        
+            $this->db->query('SELECT * FROM gastos LEFT JOIN compras ON fkIdCompra = pkIdCompra INNER JOIN pago ON fkIdPago = pkIdPago WHERE gastos.descripcion like :inputBuscar');
 
             $this->db->bind(':inputBuscar', '%' . $busqueda . '%');
 
@@ -54,7 +55,7 @@
             return $fila;
         }
 
-        public function actualizarProducto($datos) {
+        public function actualizarGasto($datos) {
             $this->db->query('UPDATE gastos SET fecha = :fecha, monto = :monto, descripcion = :descripcion, fkIdCompra = :fkIdCompra, fkIdPago = :fkIdPago WHERE pkIdGasto = :id');
 
             //Vincular los valores

@@ -1,7 +1,7 @@
 <?php require RUTA_APP . '/vistas/inc/header.php';?>
 <div class="card card-body bg-light mt-5">
     <h2>Borrar gasto</h2>
-    <form action="<?php echo RUTA_URL;?>gastos/borrar/<?php echo $datos['pkIdGasto']?>" method="post">
+    <form id="formsFelysoft" action="<?php echo RUTA_URL;?>gastos/borrar/<?php echo $datos['pkIdGasto']?>" method="post">
         <div class="form-group">
             <label for="fecha">Fecha:</label>
             <input type="date" name="fecha" class="form-control form-control-lg" value="<?php echo $datos['fecha']?>" readonly>

@@ -42,6 +42,15 @@
             return $fila;
         }
 
+        public function obtenerPagosExcepto($id) {
+            $this->db->query('SELECT * FROM pago WHERE pkIdPago != :id');
+            $this->db->bind(':id', $id);
+
+            $resultados = $this->db->registros();
+
+            return $resultados;
+        }
+
         public function actualizarPago($datos) {
             $this->db->query('UPDATE pago SET metodoPago = :metodoPago, estado = :estado, fechaPago = :fechaPago, valorPago = :valorPago  WHERE pkIdPago = :id');
 
