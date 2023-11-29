@@ -16,13 +16,13 @@
             <input type="number" name="precioVenta" class="form-control form-control-lg" value="<?php echo $datos['precioVenta'] ?>" required>
         </div>
         <div class="form-group">
-            <label for="fechaVencimiento">Fecha Vencimiento: <sup>*</sup></label>
-            <input type="date" name="fechaVencimiento" class="form-control form-control-lg" value="<?php echo $datos['fechaVencimiento'] ?>" required>
+            <label for="fechaVencimiento">Fecha Vencimiento:</label>
+            <input type="date" name="fechaVencimiento" class="form-control form-control-lg" value="<?php echo $datos['fechaVencimiento'] ?>">
         </div>
         <div class="form-group">
             <label for="nombre">Categoria: <sup>*</sup></label>
             <select class="form-select" aria-label="Default select example" name="idCategoria" required>
-                <option selected disabled>Seleccione la Categoria</option>
+                <option value="" selected disabled>Seleccione la Categoria</option>
                 <option value="<?php echo $datos['categoria']->pkIdCategoria; ?>" selected>
                     <?php echo $datos['categoria']->nombre; ?></option>
                 <?php foreach ($datos['categorias'] as $categoria) : ?>
@@ -33,7 +33,7 @@
         <div class="form-group">
             <label for="idProveedor">Proveedor: <sup>*</sup></label>
             <select class="form-select" aria-label="Default select example" name="idProveedor" required>
-                <option selected disabled>Seleccione el Proveedor</option>
+                <option value="" selected disabled>Seleccione el Proveedor</option>
                 <option value="<?php echo $datos['proveedor']->pkIdProveedores; ?>" selected>
                     <?php echo $datos['proveedor']->nombre; ?></option>
                 <?php foreach ($datos['proveedores'] as $proveedor) : ?>
