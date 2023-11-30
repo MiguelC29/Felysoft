@@ -14,7 +14,46 @@ let table = new DataTable('#TablesFelysoft', {
             "sPrevious": "Anterior"
         },
         "sProcessing": "Procesando..."
-    }, 
+    },
+    // https://datatables.net/extensions/buttons/examples/
     dom: 'Bfrtip',
-    buttons:['searchBuilder', 'pageLength', 'copy', 'print', {extend: 'spacer', style: 'bar', text: 'Exportar:'}, 'excel', 'pdf'],
+    // buttons:['searchBuilder', 'pageLength', 'copy', 'print', {extend: 'spacer', style: 'bar', text: 'Exportar:'}, 'excel', 'pdf'],
+    // buttons: [
+    //     'searchBuilder', 'pageLength', 
+    //     {
+    //         extend: 'collection',
+    //         text: 'Más opciones',
+    //         className: 'custom-html-collection',
+    //         buttons: [
+    //             '<h3>Exportar</h3>',
+    //             'pdf',
+    //             'csv',
+    //             'excel',
+    //             '<h3 class="not-top-heading">Visibilidad Columnas</h3>',
+    //             'columnsToggle'
+    //         ]
+    //     }
+    // ]
+
+    buttons: [
+        'searchBuilder', 'pageLength', 
+        {
+            extend: 'collection',
+            text: 'Más opciones',
+            className: 'custom-html-collection',
+            buttons: [
+                '<h3>Exportar</h3>',
+                'pdf',
+                'csv',
+                'excel',
+                '<h3>Visibilidad</h3>',
+                {
+                    popoverTitle: 'Visibility control',
+                    extend: 'colvis',
+                    text: 'Visibilidad Columnas',
+                    collectionLayout: 'two-column'
+                }
+            ]
+        }
+    ]
 });
