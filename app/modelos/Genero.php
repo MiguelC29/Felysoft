@@ -38,7 +38,14 @@
 
             return $fila;
         }
+        public function obtenerGenerosExcepto($id) {
+            $this->db->query('SELECT * FROM genero WHERE pkIdGenero != :id ORDER BY nombre ');
+            $this->db->bind(':id', $id);
 
+            $resultados = $this->db->registros();
+
+            return $resultados;
+        }
         public function actualizarGenero($datos) {
             $this->db->query('UPDATE genero SET nombre = :nombre , descripcion = :descripcion  WHERE pkIdGenero = :id');
 

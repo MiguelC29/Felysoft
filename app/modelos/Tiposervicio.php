@@ -35,6 +35,15 @@
             return $fila;
         }
 
+        public function obtenerTipoServiciosExcepto($id) {
+            $this->db->query('SELECT * FROM tiposervicio WHERE idTipoServicio != :id');
+            $this->db->bind(':id', $id);
+
+            $resultados = $this->db->registros();
+
+            return $resultados;
+        }
+
         public function actualizarTiposervicio($datos) {
             $this->db->query('UPDATE tiposervicio SET nombre = :nombre, descripcion = :descripcion, precio = :precio WHERE idTipoServicio = :id');
             //Vincular los valores
