@@ -11,29 +11,13 @@ class Gastos extends Controlador
 
     public function index()
     {
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $busqueda = trim($_POST['buscar']);
+        //Obtener los gastos
+        $gastos = $this->gastosModelo->obtenerGastos();
 
-            if (empty($busqueda)) {
-                echo "<script language='JavaScript'>
-                            alert('Ingrese el nombre del gasto a buscar');
-                            location.assign('gastos');
-                        </script>";
-            } else {
-                $gastosBusqueda = $this->gastosModelo->busquedaGastos($busqueda);
+        $datos = [
+            'gastos' => $gastos,
+        ];
 
-                $datos = [
-                    'gastos' => $gastosBusqueda,
-                ];
-            }
-        } else {    
-            //Obtener los gastos
-            $gastos = $this->gastosModelo->obtenerGastos();
-
-            $datos = [
-                'gastos' => $gastos,
-            ];
-        }
         $this->vista('paginas/gastos/inicio', $datos);
     }
 
@@ -74,7 +58,8 @@ class Gastos extends Controlador
     }
 
     //EDITAR
-    public function editar($id) {
+    public function editar($id)
+    {
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $datos = [
@@ -124,7 +109,8 @@ class Gastos extends Controlador
 
 
     //BORRAR
-    public function borrar($id) {
+    public function borrar($id)
+    {
 
         //Obtener información de usuario desde el modelo
         $gastos = $this->gastosModelo->obtenerGastoId($id);

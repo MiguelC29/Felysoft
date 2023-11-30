@@ -17,16 +17,6 @@
             return $resultados;
         }
 
-        public function busquedaGastos($busqueda) {
-        
-            $this->db->query('SELECT * FROM gastos LEFT JOIN compras ON fkIdCompra = pkIdCompra INNER JOIN pago ON fkIdPago = pkIdPago WHERE gastos.descripcion like :inputBuscar');
-
-            $this->db->bind(':inputBuscar', '%' . $busqueda . '%');
-
-            $resultados = $this->db->registros();
-
-            return $resultados;
-        }
 
         public function agregarGasto($datos) {
             $this->db->query('INSERT INTO gastos (fecha, monto, descripcion, fkIdCompra, fkIdPago) VALUES (:fecha, :monto, :descripcion, :fkIdCompra, :fkIdPago)');
