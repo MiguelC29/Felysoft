@@ -4,7 +4,7 @@
     <form id="formsFelysoft" action="<?php echo RUTA_URL;?>gastos/borrar/<?php echo $datos['pkIdGasto']?>" method="post">
         <div class="form-group">
             <label for="fecha">Fecha:</label>
-            <input type="date" name="fecha" class="form-control form-control-lg" value="<?php echo $datos['fecha']?>" readonly>
+            <input type="datetime-local" name="fecha" class="form-control form-control-lg" value="<?php echo $datos['fecha']?>" readonly>
         </div>
         <div class="form-group">
             <label for="monto">Monto:</label>

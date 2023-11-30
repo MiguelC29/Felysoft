@@ -5,7 +5,7 @@
 
         <div class="form-group">
             <label for="fecha">Fecha: <sup>*</sup></label>
-            <input type="date" name="fecha" class="form-control form-control-lg" required>
+            <input type="datetime-local" name="fecha" class="form-control form-control-lg" required>
         </div>
         <div class="form-group">
             <label for="monto">Monto: <sup>*</sup></label>

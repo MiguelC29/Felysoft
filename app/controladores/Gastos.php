@@ -16,8 +16,8 @@ class Gastos extends Controlador
 
             if (empty($busqueda)) {
                 echo "<script language='JavaScript'>
-                            alert('Ingrese el nombre del producto a buscar');
-                            location.assign('productos');
+                            alert('Ingrese el nombre del gasto a buscar');
+                            location.assign('gastos');
                         </script>";
             } else {
                 $gastosBusqueda = $this->gastosModelo->busquedaGastos($busqueda);
