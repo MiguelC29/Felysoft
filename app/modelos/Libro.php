@@ -15,17 +15,6 @@
 
             return $resultados;
         }
-        public function busquedaLibros($busqueda) {
-            // $this->db->query('SELECT * FROM productos');
-            $this->db->query('SELECT pkIdLibro, titulo, editorial, libros.descripcion, anioPublicacion, precioHora, autores.nombre as autor, genero.nombre as genero FROM libros INNER JOIN autores ON fkIdAutor = pkIdAutor INNER JOIN genero ON fkIdGenero = pkIdGenero WHERE titulo LIKE :inputBuscar');
-
-            $this->db->bind(':inputBuscar', '%' . $busqueda . '%');
-
-            $resultados = $this->db->registros();
-
-            return $resultados;
-        }
-
         public function agregarLibro($datos) {
             $this->db->query('INSERT INTO libros (titulo, editorial, descripcion, anioPublicacion, precioHora, fkIdAutor, fkIdGenero) VALUES (:titulo, :editorial, :descripcion, :anioPublicacion, :precioHora, :fkIdAutor, :fkIdGenero)');
 
