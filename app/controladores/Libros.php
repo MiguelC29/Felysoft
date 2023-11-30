@@ -7,29 +7,12 @@
             $this->autoresModelo = $this->modelo('Autor');
         }
         public function index() {
-            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                $busqueda = trim($_POST['buscar']);
-
-                if (empty($busqueda)) {
-                    echo "<script language='JavaScript'>
-                            alert('Ingrese el nombre del Libro a buscar');
-                            location.assign('libros');
-                        </script>";
-                } else {
-                    $librosBusqueda = $this->librosModelo->busquedaLibros($busqueda);
-
-                    $datos = [
-                        'libros' => $librosBusqueda,
-                    ];
-                }
-            } else {
-                //Obtener los libros
-                $libros = $this->librosModelo->obtenerLibros();
-                
-                $datos = [
-                    'libros' => $libros,
-                ];
-            }
+            //Obtener los libros
+            $libros = $this->librosModelo->obtenerLibros();
+            
+            $datos = [
+                'libros' => $libros,
+            ];
             $this->vista('paginas/libros/inicio', $datos);
         }
 
