@@ -41,6 +41,15 @@
             return $fila;
         }
 
+        public function obtenerAutoresExcepto($id) {
+            $this->db->query('SELECT * FROM autores WHERE pkIdAutor != :id ORDER BY nombre');
+            $this->db->bind(':id', $id);
+
+            $resultado = $this->db->registros();
+
+            return $resultado;
+        }
+
         public function actualizarAutor($datos) {
             $this->db->query('UPDATE autores SET nombre = :nombre , nacionalidad = :nacionalidad , fechaNacim = :fechaNacim , biografia = :biografia WHERE pkIdAutor = :id');
 

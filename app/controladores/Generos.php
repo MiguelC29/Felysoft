@@ -14,7 +14,7 @@
                 'generos' => $generos
             ];
 
-            $this->vista('paginas/generos/inicioG', $datos);
+            $this->vista('paginas/generos/inicio', $datos);
         }
 
         public function agregar() {

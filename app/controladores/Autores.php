@@ -14,7 +14,7 @@
                 'autores' => $autores
             ];
 
-            $this->vista('paginas/autores/inicioA', $datos);
+            $this->vista('paginas/autores/inicio', $datos);
         }
 
         public function agregar() {
