@@ -4,6 +4,7 @@
 <a href="<?php echo RUTA_URL ?>productos" class="btn btn-success">PRODUCTOS</a>
 <a href="<?php echo RUTA_URL ?>proveedores" class="btn btn-success">PROVEEDORES</a>
 <a href="<?php echo RUTA_URL ?>tiposervicios" class="btn btn-success">SERVICIOS</a>
+<a href="<?php echo RUTA_URL ?>servicios" class="btn btn-success">SERVICIOS AGENDADOS</a>
 <a href="<?php echo RUTA_URL ?>autores" class="btn btn-success">AUTORES</a>
 <a href="<?php echo RUTA_URL ?>generos" class="btn btn-success">GENEROS</a>
 <a href="<?php echo RUTA_URL ?>pagos" class="btn btn-success">PAGOS</a>
