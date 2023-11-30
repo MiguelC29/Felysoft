@@ -15,18 +15,6 @@ let table = new DataTable('#TablesFelysoft', {
         },
         "sProcessing": "Procesando..."
     }, 
-    // dom: 'Bfrtip',
-    buttons:['searchBuilder', 'pageLength', 'copy', 'print'],
     dom: 'Bfrtip',
-    // buttons: [
-    //     'copy',
-    //         'print',
-    //         {
-    //             extend: 'spacer',
-    //             style: 'bar',
-    //             text: 'Exportar:'
-    //         },
-    //         'excel',
-    //         'pdf'
-    // ],
+    buttons:['searchBuilder', 'pageLength', 'copy', 'print', {extend: 'spacer', style: 'bar', text: 'Exportar:'}, 'excel', 'pdf'],
 });
