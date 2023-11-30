@@ -8,29 +8,13 @@
         }
 
         public function index() {
-            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                $busqueda = trim($_POST['buscar']);
+            //Obtener los productos
+            $productos = $this->productosModelo->obtenerProductos();
+            
+            $datos = [
+                'productos' => $productos,
+            ];
 
-                if (empty($busqueda)) {
-                    echo "<script language='JavaScript'>
-                            alert('Ingrese el nombre del producto a buscar');
-                            location.assign('productos');
-                        </script>";
-                } else {
-                    $productosBusqueda = $this->productosModelo->busquedaProductos($busqueda);
-
-                    $datos = [
-                        'productos' => $productosBusqueda,
-                    ];
-                }
-            } else {
-                //Obtener los productos
-                $productos = $this->productosModelo->obtenerProductos();
-                
-                $datos = [
-                    'productos' => $productos,
-                ];
-            }
             $this->vista('paginas/productos/inicio', $datos);
         }
 
