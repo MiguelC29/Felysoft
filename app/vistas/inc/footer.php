@@ -1,3 +1,4 @@
+</div>
 <!-- ALERTS SWEET -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <!-- JavaScript Bootstrap -->
@@ -19,6 +20,8 @@
 <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.colVis.min.js"></script>
 <!-- JavaScript Propio-->
 <script type="text/javascript" src="<?php echo RUTA_URL ?>/js/main.js"></script>
+<script src="<?php echo RUTA_URL ?>/js/index.js"></script>
+<script src="<?php echo RUTA_URL ?>/js/fecha.js"></script>
 </body>
 
 </html>
