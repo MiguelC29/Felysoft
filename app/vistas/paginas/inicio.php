@@ -10,4 +10,9 @@
 <a href="<?php echo RUTA_URL ?>pagos" class="btn btn-success">PAGOS</a>
 <a href="<?php echo RUTA_URL ?>gastos" class="btn btn-success">GASTOS</a>
 <a href="<?php echo RUTA_URL ?>libros" class="btn btn-success">LIBROS</a>
-<?php require RUTA_APP . '/vistas/inc/footer.php';?>
+<a href="<?php echo RUTA_URL ?>ingresos" class="btn btn-success">INGRESOS</a>
+
+<a href="<?php echo RUTA_URL ?>usuarios" class="btn btn-success">REGISTRO USUARIO</a>
+
+
+<?php require RUTA_APP . '/vistas/inc/footer.php';?>    
