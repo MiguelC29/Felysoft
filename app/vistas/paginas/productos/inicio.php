@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="table-responsive">
-                <table id="TablesFelysoft" class="table table-bordered table-hover text-center" style="width:100%">
+                <table id="TablesFelysoft" class="table table-bordered table-hover text-center table-primary" style="width:100%">
                     <thead>
                         <tr>
                             <th>Id</th>
@@ -31,8 +31,8 @@
                             <td><?php echo $producto->categoria; ?></td>
                             <td><?php echo $producto->proveedor; ?></td>
                             <td>
-                                <a href="<?php echo RUTA_URL; ?>productos/editar/<?php echo $producto->pkIdProducto; ?>" class="btn btn-warning">Editar</a>
-                                <a href="<?php echo RUTA_URL; ?>productos/borrar/<?php echo $producto->pkIdProducto; ?>" class="btn btn-danger">Borrar</a>
+                                <a href="<?php echo RUTA_URL; ?>productos/editar/<?php echo $producto->pkIdProducto; ?>" class="btn btn-success"><i class="bi bi-pencil-square"></i></a>
+                                <a href="<?php echo RUTA_URL; ?>productos/borrar/<?php echo $producto->pkIdProducto; ?>" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
