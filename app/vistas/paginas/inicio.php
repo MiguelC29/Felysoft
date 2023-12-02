@@ -11,7 +11,7 @@
 <a href="<?php echo RUTA_URL ?>gastos" class="btn btn-success">GASTOS</a>
 <a href="<?php echo RUTA_URL ?>libros" class="btn btn-success">LIBROS</a>
 <a href="<?php echo RUTA_URL ?>ingresos" class="btn btn-success">INGRESOS</a>
-
+<a href="<?php echo RUTA_URL ?>ventas" class="btn btn-success">VENTAS</a>
 <a href="<?php echo RUTA_URL ?>usuarios" class="btn btn-success">REGISTRO USUARIO</a>
 
 

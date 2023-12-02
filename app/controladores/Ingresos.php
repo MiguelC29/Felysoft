@@ -4,7 +4,7 @@ class Ingresos extends Controlador
 
     public function __construct()
     {
-        $this->ingresosModelo = $this->modelo('Gasto');
+        $this->ingresosModelo = $this->modelo('Ingreso');
         $this->ventasModelo = $this->modelo('Venta'); //TENER EN CUENTA SI SE DEBE CREAR TODO RESPECTO A VENTAS.
     }
 
@@ -71,8 +71,8 @@ class Ingresos extends Controlador
             //Obtener información de usuario desde el modelo
             $ingresos = $this->ingresosModelo->obtenerIngresoId($id);
 
-            //Obtener las compras
-            $venta = $this->ventasModelo->obtenerIngresoId($ingresos->fkIdVenta);
+            //Obtener las ventas
+            $venta = $this->ventasModelo->obtenerVentaId($ingresos->fkIdVenta);
             $ventasExp = $this->ventasModelo->obtenerVentasExcepto($ingresos->fkIdVenta);
 
             $datos = [

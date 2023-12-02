@@ -27,6 +27,7 @@
                                 <td><?php echo $gasto->descripcion; ?></td>
                                 <td><?php echo $gasto->total; ?></td>
                                 <td><?php echo $gasto->metodoPago; ?></td>
+                            
                                 <td>
                                     <a href="<?php echo RUTA_URL; ?>gastos/editar/<?php echo $gasto->pkIdGasto; ?>" class="btn btn-warning">Editar</a>
                                     <a href="<?php echo RUTA_URL; ?>gastos/borrar/<?php echo $gasto->pkIdGasto; ?>" class="btn btn-danger">Borrar</a>
@@ -40,4 +41,4 @@
     </div>
 </div>
 
-<?php require RUTA_APP . '/vistas/inc/footer.php'; ?>
+<?php require RUTA_APP . '/vistas/inc/footer.php'; ?> 

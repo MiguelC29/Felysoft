@@ -24,8 +24,8 @@
                                 <td><?php echo $ingreso->monto; ?></td>
                                 <td><?php echo $ingreso->subtotal; ?></td>
                                 <td>
-                                    <a href="<?php echo RUTA_URL; ?>ingresos/editar/<?php echo $ingreso->pkIdGasto; ?>" class="btn btn-warning">Editar</a>
-                                    <a href="<?php echo RUTA_URL; ?>ingresos/borrar/<?php echo $ingreso->pkIdGasto; ?>" class="btn btn-danger">Borrar</a>
+                                    <a href="<?php echo RUTA_URL; ?>ingresos/editar/<?php echo $ingreso->pkIdIngreso; ?>" class="btn btn-warning">Editar</a>
+                                    <a href="<?php echo RUTA_URL; ?>ingresos/borrar/<?php echo $ingreso->pkIdIngreso; ?>" class="btn btn-danger">Borrar</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
