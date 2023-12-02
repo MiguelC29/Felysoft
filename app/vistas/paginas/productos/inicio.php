@@ -1,7 +1,8 @@
 <?php require RUTA_APP . '/vistas/inc/header.php';?>
-<a href="productos/agregar" class="btn btn-primary">Insertar</a>
-<a href="<?php echo RUTA_URL?>" class="btn btn-primary">Volver</a>
 <div class="container">
+    <div class="my-2">
+        <a href="productos/agregar"><i class="bi bi-plus-square-fill" style="font-size: 2rem; color: white;"></i></a>
+    </div>
     <div class="row">
         <div class="col-lg-12">
             <div class="table-responsive">
