@@ -7,28 +7,10 @@
         }
 
         public function index() {
-            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                $busqueda = trim($_POST['buscar']);
-
-                if (empty($busqueda)) {
-                    echo "<script language='JavaScript'>
-                            alert('Ingrese el nombre del producto a buscar');
-                            location.assign('productos');
-                        </script>";
-                } else {
-                    $serviciosBusqueda = $this->servicioModelo->busquedaServicios($busqueda);
-
-                    $datos = [
-                        'servicios' => $serviciosBusqueda,
-                    ];
-                }
-            } else {
-                $servicios = $this->servicioModelo->obtenerServicio();
-                
-                $datos = [
-                    'servicios' => $servicios,
-                ];
-            }
+            $servicios = $this->servicioModelo->obtenerServicio();
+            $datos = [
+                'servicios' => $servicios,
+            ];
             $this->vista('paginas/servicios/inicio', $datos);
         }
 

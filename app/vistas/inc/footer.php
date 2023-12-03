@@ -1,4 +1,4 @@
-    </div>
+        </div><!-- Div del container del contenido -->
         <!-- ALERTS SWEET -->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         <!-- JavaScript Bootstrap -->
@@ -26,5 +26,6 @@
         <script src="<?php echo RUTA_URL ?>/js/index.js"></script>
         <script src="<?php echo RUTA_URL ?>/js/fecha.js"></script>
         <script src="<?php echo RUTA_URL ?>/js/sidebar.js"></script>
-    </body>
-</html>
+        </body>
+
+        </html>

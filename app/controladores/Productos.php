@@ -10,9 +10,13 @@
         public function index() {
             //Obtener los productos
             $productos = $this->productosModelo->obtenerProductos();
+
+            // Obtener la cantidad de productos
+            $cantidadProductos = $this->productosModelo->obtenerCantidadProductos();
             
             $datos = [
                 'productos' => $productos,
+                'cantidadProductos' => $cantidadProductos,
             ];
 
             $this->vista('paginas/productos/inicio', $datos);
