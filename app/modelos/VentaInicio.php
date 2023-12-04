@@ -7,7 +7,7 @@
         }
 
         public function obtenerVenta() {
-            $this->db->query('SELECT pkIdVenta, fechaVenta, total FROM ventas;');
+            $this->db->query('SELECT pkIdVenta, fechaVenta, total FROM ventas');
 
             $resultados = $this->db->registros();
             

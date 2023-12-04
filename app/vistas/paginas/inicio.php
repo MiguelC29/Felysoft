@@ -4,7 +4,7 @@
         <div class="col-sm-3">
             <div class="rectangle text-black bg-white border border-primary p-3 text-center d-flex align-items-center justify-content-center">
                 <i class="bi bi-cart3" style="font-size: 3em; margin-right: 0.5em;"></i>
-                <p class="mb-0" style="font-size: 3em; margin-right: 0.5em;"><?php echo $datos['cantidadProductos']; ?></p>
+                <!-- <p class="mb-0" style="font-size: 3em; margin-right: 0.5em;"><?php echo $datos['cantidadProductos']; ?></p> -->
             </div>
         </div>
 
@@ -30,8 +30,7 @@
         </div>
     </div>
 
-    <div class="container">
-    <div class="row">
+    <div class="row mt-5">
         <div class="col-lg-12">
             <div class="table-responsive">
                 <table id="TablesFelysoft" class="table table-bordered table-hover text-center">
@@ -55,7 +54,4 @@
             </div>
         </div>
     </div>
-</div>
-
-
 <?php require RUTA_APP . '/vistas/inc/footer.php';?>

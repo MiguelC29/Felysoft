@@ -8,7 +8,7 @@
         public function index() {
             $ventasinicio = $this->ventainicioModelo->obtenerVenta();
             $datos = ['ventasinicio' => $ventasinicio];
-            $this->vista('paginas/tiposervicios/venta', $datos);
+            $this->vista('paginas\inicio', $datos);
         }
 
     }
