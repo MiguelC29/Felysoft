@@ -129,7 +129,7 @@
                         <ul>
                             <li><a href="<?php echo RUTA_URL ?>libros">Reservas Libros</a></li>
                             <li><a href="<?php echo RUTA_URL ?>servicios">Reservas Servicios</a></li>
-                            <a href="<?php echo RUTA_URL ?>gastos">GASTOS</a>
+                            <li><a href="<?php echo RUTA_URL ?>gastos">Gastos</a></li>
                         </ul>
                     </div>
                 </div>
