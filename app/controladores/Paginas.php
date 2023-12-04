@@ -2,13 +2,12 @@
     class Paginas extends Controlador {
 
         public function __construct() {
-            
+            $this->ventainicioModelo = $this->modelo('VentaInicio');
         }
 
         public function index() {
-            $datos = [
-                'titulo' => 'Bienvenido a FELYSOFT'
-            ];
+            $ventasinicio = $this->ventainicioModelo->obtenerVenta();
+            $datos = ['ventasinicio' => $ventasinicio];
 
             $this->vista('paginas/inicio', $datos);
         }
