@@ -86,8 +86,8 @@
 <body>
     <div class="contenedor add active" id="container">
         <div class="brand">
-            <h3>Web Dev</h3>
-            <a href="#" id="toggle" onclick="toggleNavbar()"><i class="bi bi-list"></i></a>
+            <h3>FELYSOFT</h3>
+            <a href="<?php echo RUTA_APP ?>" id="toggle" onclick="toggleNavbar()"><i class="bi bi-list"></i></a>
         </div>
         <div class="user">
             <img src="https://i.postimg.cc/HLH1VGmw/user.png" alt="">
