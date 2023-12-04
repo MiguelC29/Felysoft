@@ -1,17 +1,21 @@
 <?php require RUTA_APP . '/vistas/inc/header.php';?>
 <div class="card card-body bg-light mt-5">
-
     <h2>Agregar usuarios</h2>
     <form  action="<?php echo RUTA_URL;?>usuarios/agregar" method="post" enctype="multipart/form-data">
 
         <div class="form-group">
-            <label for="pkIdIdentificacion">Número de documento: <sup>*</sup></label>
-            <input type="number" name="pkIdIdentificacion" class="form-control form-control-lg" required>
+            <label for="tipoDocu">Tipo de documento: <sup>*</sup></label>
+            <select class="form-select" aria-label="Default select example" name="tipoDocu" id="tipoDocu" required>
+                <option value="" selected disabled>Seleccione el tipo de documento</option>
+                <option value="C.C">Cédula de ciudadania</option>
+                <option value="T.I">Tarjeta de Identidad</option>
+                <option value="C.E">Cédula de extranjeria</option>
+            </select>
         </div>
 
         <div class="form-group">
-            <label for="tipoDocu">Tipo de documento: <sup>*</sup></label>
-            <input type="text" name="tipoDocu" class="form-control form-control-lg" required>
+            <label for="pkIdIdentificacion">Número de documento: <sup>*</sup></label>
+            <input type="number" name="pkIdIdentificacion" class="form-control form-control-lg" required>
         </div>
 
         <div class="form-group">
@@ -41,7 +45,11 @@
 
         <div class="form-group">
             <label for="genero">Genero: <sup>*</sup></label>
-            <input type="text" name="genero" class="form-control form-control-lg" required>
+            <select class="form-select" aria-label="Default select example" name="genero" id="genero" required>
+                <option value="" selected disabled>Seleccione su género</option>
+                <option value="M">Masculino</option>
+                <option value="F">Femenino</option>
+            </select>
         </div>
 
         <div class="form-group">

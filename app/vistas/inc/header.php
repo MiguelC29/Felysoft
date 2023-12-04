@@ -142,8 +142,8 @@
                     </div>
                 </div>
 
-                <li><a href="#"><i class="bi bi-graph-up-arrow"></i><span>Analíticas</span></a></li>
-                <li><a href="#"><i class="bi bi-people-fill"></i><span>Usuarios</span></a></li>
+                <li><a href="#"><i class="bi bi-graph-up-arrow"></i><span>Dashboard</span></a></li>
+                <li><a href="<?php echo RUTA_URL ?>usuarios"><i class="bi bi-people-fill"></i><span>Usuarios</span></a></li>
                 <li><a href="#"><i class="bi bi-gear-fill"></i><span>Configuración</span></a></li>
             </ul>
         </div>
@@ -161,7 +161,7 @@
                 <img src="https://i.postimg.cc/bvLWrs3P/logo.png" alt="Logo" width="30" height="35" class="d-inline-block">
                 <em class="text-white align-middle"><?php echo NOMBRESITIO; ?></em>
             </a>
-            <div class="datetime text-white" id="datetime"></div>
+            <div class="datetime text-white me-4" id="datetime"></div>
         </div>
     </nav>
 
