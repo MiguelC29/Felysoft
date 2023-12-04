@@ -7,7 +7,7 @@
 
         public function index() {
 
-            //Obtener las categorias
+            //Obtener los pagos
             $pagos = $this->pagosModelo->obtenerPagos();
 
             $datos = [

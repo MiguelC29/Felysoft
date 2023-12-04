@@ -21,18 +21,6 @@
         }
         
 
-        public function busquedaServicios($busqueda){
-            $this->db->query('SELECT pkIdServicio, fechaCreacion, estado, fechaModificacion, precioAdicional, total, nombre AS nombreTipoServicio, descripcion AS descripcionTipoServicio, precio AS precioTipoServicio
-            FROM servicios INNER JOIN tiposervicio ON fkIdTipoSer = idTipoServicio
-            ORDER BY fechaCreacion, nombre, descripcion WHERE servicios.fechaCreacion LIKE :inputBuscar;');
-
-            $this->db->bind(':inputBuscar', '%' . $busqueda . '%');
-
-            $resultados = $this->db->registros();
-
-            return $resultados;
-        }
-
         public function agregarServicio($datos) {
             $this->db->query('INSERT INTO servicios (estado, fechaCreacion, fechaModificacion, precioAdicional, total, fkIdTipoSer) VALUES (:estado, :fechaCreacion, :fechaModificacion, :precioAdicional, :total, :fkIdTipoSer)');
 

@@ -65,10 +65,12 @@
             return $this->stmt->fetchAll(PDO::FETCH_OBJ);
         }
 
-        //Obtener un solo registro de la consulta
-        public function registro() {
-            $this->execute();
-            return $this->stmt->fetch(PDO::FETCH_OBJ);
+        //Obtener un solo registro de la consulta                      
+        public function registro() {                                  
+            $this->execute();                                                                
+            $result = $this->stmt->fetch(PDO::FETCH_OBJ);
+            $this->stmt->closeCursor();
+            return $result;
         }
 
         //Obtener cantidad de filas o cantidad de registros con el metodo rowCount

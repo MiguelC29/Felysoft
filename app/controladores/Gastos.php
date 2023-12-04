@@ -21,7 +21,7 @@ class Gastos extends Controlador
         $this->vista('paginas/gastos/inicio', $datos);
     }
 
-    //AGREGAR
+//AGREGAR
     public function agregar()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -57,7 +57,7 @@ class Gastos extends Controlador
         }
     }
 
-    //EDITAR
+//EDITAR
     public function editar($id)
     {
 
@@ -108,7 +108,7 @@ class Gastos extends Controlador
 
 
 
-    //BORRAR
+//BORRAR
     public function borrar($id)
     {
 

@@ -81,5 +81,11 @@
                 return false;
             }
         }
+
+        public function obtenerCantidadProductos() {
+            $this->db->query('SELECT COUNT(*) as cantidad FROM productos');
+            $resultado = $this->db->registro();
+            return $resultado->cantidad;
+        }
     }
 ?>
