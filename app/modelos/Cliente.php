@@ -39,7 +39,7 @@
         }
 
         public function obtenerClientesExcepto($id) {
-            $this->db->query('SELECT * FROM cliente WHERE pkIdCliente != :id ORDER BY fechaRegistro');
+            $this->db->query('SELECT * FROM cliente WHERE pkIdCliente != :id ORDER BY fkIdIdentificacion');
             $this->db->bind(':id', $id);
 
             $resultado = $this->db->registros();

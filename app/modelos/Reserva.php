@@ -8,7 +8,7 @@
         }
 
         public function obtenerReservas() {
-            $this->db->query('SELECT pkIdReserva, fechaReserva, reserva.descripcion, abono, tiempo, libros.titulo as Libro, cliente.pkIdCliente as Cliente FROM reserva INNER JOIN libros ON fkIdLibro = pkIdlibro INNER JOIN cliente ON fkIdCliente = pkIdCliente ');
+            $this->db->query('SELECT pkIdReserva, fechaReserva, reserva.descripcion, abono, tiempo, libros.titulo as Libro, cliente.fkIdIdentificacion as Cliente FROM reserva INNER JOIN libros ON fkIdLibro = pkIdlibro INNER JOIN cliente ON fkIdCliente = pkIdCliente ');
 
             $resultados = $this->db->registros();
 
@@ -44,7 +44,7 @@
         }
 
         public function obtenerReservasExcepto($id) {
-            $this->db->query('SELECT * FROM reserva WHERE pkIdReserva != :id ORDER BY descripcion');
+            $this->db->query('SELECT * FROM reserva WHERE pkIdReserva != :id');
             $this->db->bind(':id', $id);
 
             $resultado = $this->db->registros();

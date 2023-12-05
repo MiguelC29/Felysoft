@@ -5,7 +5,7 @@
         method="post">
         <div class="form-group">
             <label for="fechaReserva">Fecha de La Reserva:</label>
-            <input type="date" name="fechaReserva" class="form-control form-control-lg" value="<?php echo $datos['fechaReserva'] ?>"
+            <input type="datetime -local" name="fechaReserva" class="form-control form-control-lg" value="<?php echo $datos['fechaReserva'] ?>"
                 readonly>
         </div>
         <div class="form-group">
@@ -24,12 +24,12 @@
                 value="<?php echo $datos['tiempo'] ?>" readonly>
         </div>
         <div class="form-group">
-            <label for="libros">Libro:</label>
-            <input type="text" name="libros" class="form-control form-control-lg"
+            <label for="titulo">Libro:</label>
+            <input type="text" name="libro" class="form-control form-control-lg"
                 value="<?php echo $datos['nomLib'] ?>" readonly>
         </div>
         <div class="form-group">
-            <label for="nombre">Cliente:</label>
+            <label for="fkIdIdentificacion">Cliente:</label>
             <input type="text" name="cliente" class="form-control form-control-lg"
                 value="<?php echo $datos['nomCli'] ?>" readonly>
         </div>

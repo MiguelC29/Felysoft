@@ -45,7 +45,7 @@
         }
 
         public function obtenerLibrosExcepto($id) {
-            $this->db->query('SELECT * FROM libros WHERE pkIdLibro != :id ORDER BY nombre');
+            $this->db->query('SELECT * FROM libros WHERE pkIdLibro != :id ORDER BY titulo');
             $this->db->bind(':id', $id);
 
             $resultado = $this->db->registros();

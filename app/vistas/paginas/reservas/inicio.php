@@ -26,10 +26,10 @@
                             <td><?php echo $reserva->descripcion; ?></td>
                             <td><?php echo $reserva->abono; ?></td>
                             <td><?php echo $reserva->tiempo; ?></td>
-                            <td><?php echo $reserva->libro; ?></td>
-                            <td><?php echo $reserva->clientes; ?></td>
+                            <td><?php echo $reserva->Libro; ?></td>
+                            <td><?php echo $reserva->Cliente; ?></td> 
                             <td>
-                            <a href="<?php echo RUTA_URL; ?>reservas/editar/<?php echo $reserva->pkIdReserva; ?>" class="btn btn-success"><i class="bi bi-pencil-square"></i></a>
+                                <a href="<?php echo RUTA_URL; ?>reservas/editar/<?php echo $reserva->pkIdReserva; ?>" class="btn btn-success"><i class="bi bi-pencil-square"></i></a>
                                 <a href="<?php echo RUTA_URL; ?>reservas/borrar/<?php echo $reserva->pkIdReserva; ?>" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a>
                             </td>
                         </tr>

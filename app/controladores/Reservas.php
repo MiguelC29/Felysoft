@@ -36,9 +36,9 @@
                 }
              }else {
                 //Obtener los libros
-                $libro = $this->librosModelo->obtenerLibros();
+                $libros = $this->librosModelo->obtenerLibros();
                 //Obtener los Clientes
-                $cliente = $this->clientesModelo->obtenerClientes();
+                $clientes = $this->clientesModelo->obtenerClientes();
                 $datos = [
                     'fechaReserva' => '',
                     'descripcion' => '',
@@ -46,8 +46,8 @@
                     'tiempo' => '',
                     'fkIdLibro' => '',
                     'fkIdCliente' => '',
-                    'libros' => $libro,
-                    'clientes' => $cliente
+                    'libros' => $libros,
+                    'clientes' => $clientes
                 ];
 
                 $this->vista('paginas/reservas/agregar', $datos);
@@ -81,7 +81,7 @@
                 $librosExp = $this->librosModelo->obtenerLibrosExcepto($reservas->fkIdLibro);
                 // //Obtener los clientes
                 $cliente = $this->clientesModelo->obtenerClienteId($reservas->fkIdCliente);
-                $clientesExp = $this->clientesModelo->obtenerClienteExcepto($reservas->fkIdCliente);
+                $clientesExp = $this->clientesModelo->obtenerClientesExcepto($reservas->fkIdCliente);
 
                 $datos = [
                     'pkIdReserva' => $reservas->pkIdReserva,
@@ -100,41 +100,40 @@
                 $this->vista('paginas/reservas/editar', $datos);
             }
         }
-
-        public function borrar($id) {
-
-            //Obtener información de usuario desde el modelo
-            $reservas = $this->reservasModelo->obtenerReservaId($id);
-            //Obtener los libros
-            $libro = $this->librosModelo->obtenerLibroId($reservas->fkIdLibro);
-            // //Obtener los Cliente
-            $cliente = $this->clientesModelo->obtenerClienteId($reservas->fkIdCLiente);
-
-            $datos = [
-                'pkIdReserva' => $reservas->pkIdReserva,
-                'fechaReserva' => $reservas->fechaReserva,
-                'descripcion' => $reservas->descripcion,
-                'abono' => $reservas->abono,
-                'tiempo' => $reservas->tiempo,
-                'fkIdLibro' => $reservas->fkIdLibro,
-                'fkIdCliente' => $reservas->fkIdCliente,
-                'nomLib' => $libro->titulo,
-                'nomCli' => $Cliente->fkIdIdentificacion
-            ];
-
-            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            public function borrar($id)
+            {
+                // Obtener información de usuario desde el modelo
+                $reservas = $this->reservasModelo->obtenerReservaId($id);
+                // Obtener los libros
+                $libro = $this->librosModelo->obtenerLibroId($reservas->fkIdLibro);
+                // Obtener los Cliente
+                $cliente = $this->clientesModelo->obtenerClienteId($reservas->fkIdCliente);
+        
                 $datos = [
-                    'pkIdReserva' => $id
+                    'pkIdReserva' => $reservas->pkIdReserva,
+                    'fechaReserva' => $reservas->fechaReserva,
+                    'descripcion' => $reservas->descripcion,
+                    'abono' => $reservas->abono,
+                    'tiempo' => $reservas->tiempo,
+                    'fkIdLibro' => $reservas->fkIdLibro,
+                    'fkIdCliente' => $reservas->fkIdCliente,
+                    'nomLib' => $libro->titulo,
+                    'nomCli' => $cliente->fkIdIdentificacion 
                 ];
-
-                if ($this->reservasModelo->borrarReserva($datos)) {
-                    redireccionar('reservas');
-                } else {
-                    die('Algo salió mal');
+        
+                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                    $datos = [
+                        'pkIdReserva' => $id
+                    ];
+        
+                    if ($this->reservasModelo->borrarReserva($datos)) {
+                        redireccionar('reservas');
+                    } else {
+                        die('Algo salió mal');
+                    }
                 }
+        
+                $this->vista('paginas/reservas/borrar', $datos);
             }
-
-            $this->vista('paginas/reservas/borrar', $datos);
         }
-    }
-    ?>
+?>

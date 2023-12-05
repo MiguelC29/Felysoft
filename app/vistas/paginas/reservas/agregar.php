@@ -5,7 +5,7 @@
         enctype="multipart/form-data">
         <div class="form-group">
             <label for="fechaReserva">Fecha de la Reserva: <sup>*</sup></label>
-            <input type="date" name="fechaReserva" class="form-control form-control-lg" required>
+            <input type="datetima-local" name="fechaReserva" class="form-control form-control-lg" required>
         </div>
         <div class="form-group">
             <label for="descripcion">Descripcion: <sup>*</sup></label>
@@ -33,7 +33,7 @@
             <select class="form-select" aria-label="Default select example" name="idCliente" required>
                 <option value="" selected disabled>Seleccione el Cliente</option>
                 <?php foreach ($datos['clientes'] as $cliente) : ?>
-                <option value="<?php echo $cliente->pkIdCliente; ?>"><?php echo $cliente->pkIdCliente; ?></option>
+                <option value="<?php echo $cliente->pkIdCliente; ?>"><?php echo $cliente->fkIdIdentificacion; ?></option>
                 <?php endforeach; ?>
             </select>
         </div>
