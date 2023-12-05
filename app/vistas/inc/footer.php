@@ -20,11 +20,13 @@
     <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.5.0/js/responsive.bootstrap5.min.js"></script>
     <script src="https://cdn.datatables.net/select/1.7.0/js/dataTables.select.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js'></script><!--login-->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script> -->
     <!-- JavaScript Propio-->
     <script src="<?php echo RUTA_URL ?>/js/main.js"></script>
     <script src="<?php echo RUTA_URL ?>/js/index.js"></script>
     <script src="<?php echo RUTA_URL ?>/js/fecha.js"></script>
     <script src="<?php echo RUTA_URL ?>/js/sidebar.js"></script>
+    <script src="<?php echo RUTA_URL ?>/js/login.js"></script>
     </body>
 </html>

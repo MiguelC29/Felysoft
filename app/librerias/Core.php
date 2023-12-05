@@ -5,7 +5,7 @@
     3- Parámetro
     */
     class Core {
-        protected $controladorActual = 'paginas';
+        protected $controladorActual = 'autenticaciones';
         protected $metodoActual = 'index';
         protected $parametros = [];
 
