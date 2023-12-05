@@ -1,6 +1,6 @@
 <?php require RUTA_APP . '/vistas/inc/header.php'; ?>
     <div class="my-2">
-        <a href="gastos/agregar"><i class="bi bi-plus-square-fill" style="font-size: 2rem; color: white;"></i></a>
+        <a href="pagos/agregar"><i class="bi bi-plus-square-fill" style="font-size: 2rem; color: white;"></i></a>
     </div>
     <div class="row">
         <div class="col-lg-12">

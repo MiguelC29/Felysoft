@@ -1,11 +1,10 @@
 <?php require RUTA_APP . '/vistas/inc/header.php'; ?>
-<a href="ingresos/agregar" class="btn btn-primary">Insertar</a>
-<a href="<?php echo RUTA_URL ?>" class="btn btn-primary">Volver</a>
-<div class="container">
+    <div class="my-2">
+        <a href="ingresos/agregar"><i class="bi bi-plus-square-fill" style="font-size: 2rem; color: white;"></i></a>
+    </div>
     <div class="row">
         <div class="col-lg-12">
             <div class="table-responsive">
-
                 <table id="TablesFelysoft" class="table table-bordered table-hover text-center">
                     <thead>
                         <tr>
@@ -24,8 +23,8 @@
                                 <td><?php echo $ingreso->monto; ?></td>
                                 <td><?php echo $ingreso->subtotal; ?></td>
                                 <td>
-                                    <a href="<?php echo RUTA_URL; ?>ingresos/editar/<?php echo $ingreso->pkIdIngreso; ?>" class="btn btn-warning">Editar</a>
-                                    <a href="<?php echo RUTA_URL; ?>ingresos/borrar/<?php echo $ingreso->pkIdIngreso; ?>" class="btn btn-danger">Borrar</a>
+                                    <a href="<?php echo RUTA_URL; ?>ingresos/editar/<?php echo $ingreso->pkIdIngreso; ?>" class="btn btn-success"><i class="bi bi-pencil-square"></i></a>
+                                    <a href="<?php echo RUTA_URL; ?>ingresos/borrar/<?php echo $ingreso->pkIdIngreso; ?>" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -34,6 +33,5 @@
             </div>
         </div>
     </div>
-</div>
 
 <?php require RUTA_APP . '/vistas/inc/footer.php'; ?>

@@ -1,5 +1,5 @@
 <?php require RUTA_APP . '/vistas/inc/header.php'; ?>
-<div class="card card-body bg-light mt-5">
+<div class="card card-body bg-dark">
     <h2>Agregar productos</h2>
     <form id="formsFelysoft" action="<?php echo RUTA_URL; ?>productos/agregar" method="post"
         enctype="multipart/form-data">
@@ -43,8 +43,8 @@
                 <input class="form-control" type="file" id="formFile" name="imagenP" required>
             </div>
         </div>
-        <input type="submit" class="btn btn-success" value="Agregar Producto" onclick='return confirmarInsert()'>
-        <a href="<?php echo RUTA_URL; ?>productos" class="btn btn-primary">Volver</a>
+        <input type="submit" class="btn btn-outline-success" value="Agregar Producto" onclick='return confirmarInsert()'>
+        <a href="<?php echo RUTA_URL; ?>productos" class="btn btn-outline-primary">Volver</a>
     </form>
 </div>
 <?php require RUTA_APP . '/vistas/inc/footer.php'; ?>
