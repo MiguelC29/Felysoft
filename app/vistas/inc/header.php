@@ -112,7 +112,7 @@
                         </ul>
                     </div>
                 </div>
-                <li><a href="#"><i class="bi bi-cart-fill"></i><span>Venta</span></a></li>
+                <li><a href="<?php echo RUTA_URL ?>ventas"><i class="bi bi-cart-fill"></i><span>Venta</span></a></li>
 
                 <li><a id="comprasProv" data-bs-toggle="collapse" href="#comprasProv"><i class="bi bi-truck"></i><span class="d-inline-flex gap-1">Compras<i class="bi bi-chevron-down"></i></span></a></li>
                 <div class="collapse" id="comprasProv">
@@ -137,7 +137,8 @@
                 <div class="collapse" id="inventarioAll">
                     <div class="card card-body" style="margin: 0px; padding: 0px; width: 150px;">
                         <ul>
-                            <li><a href="">Productos</a></li>
+                            <li><a href="<?php echo RUTA_URL ?>inventarioProductos">Productos</a></li>
+                            <li><a href="<?php echo RUTA_URL ?>inventarioLibros">Libros Digitales</a></li>
                         </ul>
                     </div>
                 </div>
