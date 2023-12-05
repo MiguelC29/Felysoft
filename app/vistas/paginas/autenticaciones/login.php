@@ -33,7 +33,7 @@
             </div>
 
             <div class="botonRegistro">
-                <a href="/login/registro.html"><button id="botonR">Registrame</button></a>
+                <a href="<?php echo RUTA_URL; ?>autenticaciones/registro"><button id="botonR">Registrarse</button></a>
             </div>
         </div>
     </div>

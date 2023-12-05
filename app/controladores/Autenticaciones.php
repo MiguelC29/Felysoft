@@ -4,10 +4,22 @@
 
         public function __construct() {
             $this->autenticacionModelo = $this->modelo('Autenticacion');
+            $this->usuariosModelo = $this->modelo('Usuario');
+            $this->rolesModelo = $this->modelo('Rol');
         }
 
         public function index() {
             $this->vista('paginas/autenticaciones/login');
+        }
+
+        public function registro() {
+            $roles = $this->rolesModelo->obtenerRoles();
+
+            $datos = [
+                'roles' => $roles
+            ];
+
+            $this->vista('paginas/autenticaciones/registro', $datos);
         }
 
         public function iniciarSesion() {
@@ -44,6 +56,37 @@
             redireccionar('autenticaciones/login');
         }
 
-        // Otras funciones necesarias para la autenticación
+        public function registrarUsuario() {
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $datos = [
+                    'pkIdIdentificacion' => trim($_POST['pkIdIdentificacion']),
+                    'tipoDocu' => trim($_POST['tipoDocu']),
+                    'nombres' => trim($_POST['nombres']),
+                    'apellidos' => trim($_POST['apellidos']),
+                    'direccion' => trim($_POST['direccion']),
+                    'telefono' => trim($_POST['telefono']),
+                    'email' => trim($_POST['email']),
+                    'genero' => trim($_POST['genero']),
+                    'usuario' => trim($_POST['usuario']),
+                    'contrasena' => trim($_POST['contrasena']),
+                    'confirmar_contrasena' => trim($_POST['confirmar-contrasena']),
+                    'fkIdRol' => trim($_POST['fkIdRol'])
+                ];
+
+                if ($datos['contrasena'] !== $datos['confirmar_contrasena']) {
+                    echo "<script>alert('Verifica que las contraseñas sean iguales.');</script>";
+                    redireccionar('autenticaciones/registro');
+                }
+
+                if ($this->usuariosModelo->agregarUsuario($datos)) {
+                    redireccionar('autenticaciones/login');
+                } else {
+                    echo "<script>alert('Error al registrar usuario');</script>";
+                    redireccionar('autenticaciones/registro');
+                }
+            } else {
+        
+            }
+        }
     }
 ?>
