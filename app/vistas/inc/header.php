@@ -152,7 +152,7 @@
 
         <div class="nave">
             <ul>
-                <li><a href="#"><i class="bi bi-box-arrow-in-right"></i><span>Log Out</span></a></li>
+                <li><a href="<?php echo RUTA_URL ?>autenticaciones/cerrarSesion"><i class="bi bi-box-arrow-in-right"></i><span>Log Out</span></a></li>
             </ul>
         </div>
     </div>
