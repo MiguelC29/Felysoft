@@ -1,7 +1,7 @@
 <?php require RUTA_APP . '/vistas/inc/header.php';?>
 <div class="card card-body bg-light mt-5">
     <h2>Agregar pagos</h2>
-    <form action="<?php echo RUTA_URL;?>pagos/agregar" method="post">
+    <form id="formsFelysoft" action="<?php echo RUTA_URL;?>pagos/agregar" method="post">
         <div class="form-group">
             <label for="metodoPago">Metodo de pago: <sup>*</sup></label>
             <input type="text" name="metodoPago" class="form-control form-control-lg">

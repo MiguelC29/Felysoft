@@ -5,7 +5,6 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="table-responsive">
-
                 <table id="TablesFelysoft" class="table table-bordered table-hover text-center">
                     <thead>
                         <tr>
@@ -39,5 +38,4 @@
             </div>
         </div>
     </div>
-
 <?php require RUTA_APP . '/vistas/inc/footer.php'; ?> 

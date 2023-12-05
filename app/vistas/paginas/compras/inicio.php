@@ -1,11 +1,11 @@
 <?php require RUTA_APP . '/vistas/inc/header.php'; ?>
-<div class="my-2">
+    <div class="my-2">
         <a href="compras/agregar"><i class="bi bi-plus-square-fill" style="font-size: 2rem; color: white;"></i></a>
     </div>
     <div class="row">
         <div class="col-lg-12">
             <div class="table-responsive">
-                <table id="TablesFelysoft" class="table table-bordered table-hover text-center">
+                <table id="TablesFelysoft" class="table table-bordered table-hover text-center" style="width:100%">
                     <thead>
                         <tr>
                             <th>Id</th>

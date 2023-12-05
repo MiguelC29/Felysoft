@@ -1,7 +1,7 @@
 <?php require RUTA_APP . '/vistas/inc/header.php';?>
 <div class="card card-body bg-light mt-5">
     <h2>Editar pago</h2>
-    <form action="<?php echo RUTA_URL;?>pagos/editar/<?php echo $datos['pkIdPago']?>" method="post">
+    <form id="formsFelysoft" action="<?php echo RUTA_URL;?>pagos/editar/<?php echo $datos['pkIdPago']?>" method="post">
         <div class="form-group">
             <label for="metodoPago">Método de pago: <sup>*</sup></label>
             <input type="text" name="metodoPago" class="form-control form-control-lg" value="<?php echo $datos['metodoPago']?>">

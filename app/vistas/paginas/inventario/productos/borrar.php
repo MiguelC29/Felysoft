@@ -29,8 +29,8 @@
                 value="<?php echo $datos['nomCat'] ?>" readonly>
         </div>
         <div class="form-group">
-            <label for="proveedor">Proveedor:</label>
-            <input type="text" name="proveedor" class="form-control form-control-lg"
+            <label for="nombre">Proveedor:</label>
+            <input type="text" name="categoria" class="form-control form-control-lg"
                 value="<?php echo $datos['nomPro'] ?>" readonly>
         </div>
         <div class="form-group">

@@ -9,7 +9,8 @@
 
         public function obtenerProductos() {
             // $this->db->query('SELECT * FROM productos');
-            $this->db->query('SELECT pkIdProducto, imagen, tipoImg, productos.nombre as producto, marca, precioVenta, fechaVencimiento, categoria.nombre as categoria, proveedores.nombre as proveedor FROM productos INNER JOIN categoria ON fkIdCategoria = pkIdCategoria INNER JOIN proveedores ON fkIdProveedor = pkIdProveedores');
+            //$this->db->query('SELECT pkIdProducto, imagen, tipoImg, productos.nombre as nombre, marca, precioVenta, fechaVencimiento, categoria.nombre as categoria, proveedores.nombre as proveedor FROM productos INNER JOIN categoria ON fkIdCategoria = pkIdCategoria INNER JOIN proveedores ON fkIdProveedor = pkIdProveedores');
+            $this->db->query('call mostrar_productos');
 
             $resultados = $this->db->registros();
 
@@ -17,8 +18,9 @@
         }
 
         public function agregarProducto($datos) {
-            $this->db->query('INSERT INTO productos (nombre, marca, precioVenta, fechaVencimiento, fkIdCategoria, fkIdProveedor, imagen, tipoImg) VALUES (:nombre, :marca, :precioVenta, :fechaVencimiento, :fkIdCategoria, :fkIdProveedor, :imagen, :tipoImg)');
-
+            //$this->db->query('INSERT INTO productos (nombre, marca, precioVenta, fechaVencimiento, fkIdCategoria, fkIdProveedor, imagen, tipoImg) VALUES (:nombre, :marca, :precioVenta, :fechaVencimiento, :fkIdCategoria, :fkIdProveedor, :imagen, :tipoImg)');
+            $this->db->query('CALL agregar_productos(:nombre, :marca, :precioVenta, :fechaVencimiento, :fkIdCategoria, :fkIdProveedor, :imagen, :tipoImg)');
+     
             //Vincular valores
             $this->db->bind(':nombre', $datos['nombre']);
             $this->db->bind(':marca', $datos['marca']);
@@ -38,7 +40,8 @@
         }
 
         public function obtenerProductoId($id) {
-            $this->db->query('SELECT * FROM productos WHERE pkIdProducto = :id');
+            //$this->db->query('SELECT * FROM productos WHERE pkIdProducto = :id');
+            $this->db->query('CALL mostrar_producto_especifico (:id)');
             $this->db->bind(':id', $id);
 
             $fila = $this->db->registro();
@@ -47,7 +50,8 @@
         }
 
         public function actualizarProducto($datos) {
-            $this->db->query('UPDATE productos SET nombre = :nombre, marca = :marca, precioVenta = :precioVenta, fechaVencimiento = :fechaVencimiento, fkIdCategoria = :fkIdCategoria, fkIdProveedor = :fkIdProveedor, imagen = :imagen, tipoImg = :tipoImg WHERE pkIdProducto = :id');
+            //$this->db->query('UPDATE productos SET nombre = :nombre, marca = :marca, precioVenta = :precioVenta, fechaVencimiento = :fechaVencimiento, fkIdCategoria = :fkIdCategoria, fkIdProveedor = :fkIdProveedor, imagen = :imagen, tipoImg = :tipoImg WHERE pkIdProducto = :id');
+            $this->db->query('CALL actualizar_productos (:id, :nombre, :marca, :precioVenta, :fechaVencimiento, :fkIdCategoria, :fkIdProveedor, :imagen, :tipoImg)');
 
             //Vincular los valores
             $this->db->bind(':id', $datos['pkIdProducto']);
@@ -69,7 +73,8 @@
         }
 
         public function borrarProducto($datos) {
-            $this->db->query('DELETE FROM productos WHERE pkIdProducto = :id');
+            //$this->db->query('DELETE FROM productos WHERE pkIdProducto = :id');
+            $this->db->query('CALL borrar_productos (:id)');
 
             //Vincular los valores
             $this->db->bind(':id', $datos['pkIdProducto']);

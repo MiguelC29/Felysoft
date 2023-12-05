@@ -24,12 +24,12 @@
                     <tr>
                         <td><?php echo $producto->pkIdProducto; ?></td>
                         <td><img width = "100px" height = "100px" src="data:<?php echo $producto->tipoImg?>;base64,<?php echo base64_encode($producto->imagen)?>"></td>
-                        <td><?php echo $producto->producto; ?></td>
+                        <td><?php echo $producto->nombre; ?></td>
                         <td><?php echo $producto->marca; ?></td>
                         <td><?php echo $producto->precioVenta; ?></td>
                         <td><?php echo $producto->fechaVencimiento; ?></td>
-                        <td><?php echo $producto->categoria; ?></td>
-                        <td><?php echo $producto->proveedor; ?></td>
+                        <td><?php echo $producto->nombre_categoria; ?></td>
+                        <td><?php echo $producto->nombre_proveedor; ?></td>
                         <td>
                             <a href="<?php echo RUTA_URL; ?>productos/editar/<?php echo $producto->pkIdProducto; ?>" class="btn btn-success"><i class="bi bi-pencil-square"></i></a>
                             <a href="<?php echo RUTA_URL; ?>productos/borrar/<?php echo $producto->pkIdProducto; ?>" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a>
