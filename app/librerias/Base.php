@@ -56,8 +56,11 @@
 
         //Ejecuta la consulta
         public function execute() {
+            $this->stmt->closeCursor();
             return $this->stmt->execute();
         }
+
+       
 
         //Obtener los registros de la consulta
         public function registros() {
@@ -78,4 +81,18 @@
             return $this->stmt->rowCount();
         }
     }
+
+    
+/*Obtener los registros de la consulta
+public function registros() {
+    $this->execute();
+    return $this->stmt->fetchAll(PDO::FETCH_OBJ);
+}*/
+
+
+    /*Obtener un solo registro de la consulta                      
+public function registro() {                                  
+    $this->execute();                                                                
+    return $this->stmt->fetch(PDO::FETCH_OBJ);
+}*/
 ?>
