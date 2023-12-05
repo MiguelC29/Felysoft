@@ -109,6 +109,7 @@
                             <li><a href="<?php echo RUTA_URL ?>libros">Libros</a></li>
                             <li><a href="<?php echo RUTA_URL ?>autores">Autores</a></li>
                             <li><a href="<?php echo RUTA_URL ?>generos">Generos</a></li>
+                            <li><a href="<?php echo RUTA_URL ?>clientes">Clientes</a></li>
                         </ul>
                     </div>
                 </div>
@@ -127,7 +128,7 @@
                 <div class="collapse" id="reservaLibros">
                     <div class="card card-body" style="margin: 0px; padding: 0px; width: 150px;">
                         <ul>
-                            <li><a href="<?php echo RUTA_URL ?>libros">Reservas Libros</a></li>
+                            <li><a href="<?php echo RUTA_URL ?>reservas">Reservas Libros</a></li>
                             <li><a href="<?php echo RUTA_URL ?>servicios">Reservas Servicios</a></li>
                             <li><a href="<?php echo RUTA_URL ?>gastos">Gastos</a></li>
                         </ul>

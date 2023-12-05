@@ -44,6 +44,15 @@
             return $fila;
         }
 
+        public function obtenerLibrosExcepto($id) {
+            $this->db->query('SELECT * FROM libros WHERE pkIdLibro != :id ORDER BY nombre');
+            $this->db->bind(':id', $id);
+
+            $resultado = $this->db->registros();
+
+            return $resultado;
+        }
+
         public function actualizarLibros($datos) {
             $this->db->query('UPDATE libros SET titulo = :titulo, editorial = :editorial, descripcion = :descripcion, anioPublicacion = :anioPublicacion, precioHora = :precioHora, fkIdAutor = :fkIdAutor, fkIdGenero = :fkIdGenero WHERE pkIdLibro = :id');
 
