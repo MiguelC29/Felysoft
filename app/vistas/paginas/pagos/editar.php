@@ -14,7 +14,7 @@
 
         <div class="form-group">
             <label for="fechaPago">Fecha de pago: <sup>*</sup></label>
-            <input type="date-time" name="fechaPago" class="form-control form-control-lg" value="<?php echo $datos['fechaPago']?>">
+            <input type="datetime-local" name="fechaPago" class="form-control form-control-lg" value="<?php echo $datos['fechaPago']?>">
         </div>
 
         <div class="form-group">

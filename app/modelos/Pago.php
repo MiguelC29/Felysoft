@@ -9,6 +9,8 @@
 
         public function obtenerPagos() {
             $this->db->query('SELECT * FROM pago');
+            //$this->db->query('CALL mostrar_pagos');
+
 
             $resultados = $this->db->registros();
 
@@ -16,7 +18,9 @@
         }
 
         public function agregarPago($datos) {
-            $this->db->query('INSERT INTO pago (metodoPago, estado, fechaPago, valorPago) VALUES (:metodoPago, :estado, :fechaPago, :valorPago)');
+            //$this->db->query('INSERT INTO pago (metodoPago, estado, fechaPago, valorPago) VALUES (:metodoPago, :estado, :fechaPago, :valorPago)');
+            $this->db->query('CALL agregar_pagos(:metodoPago, :estado, :fechaPago, :valorPago)');
+            
 
             //Vincular valores
             $this->db->bind(':metodoPago', $datos['metodoPago']);
@@ -34,7 +38,9 @@
         }
 
         public function obtenerPagoId($id) {
-            $this->db->query('SELECT * FROM pago WHERE pkIdPago = :id');
+            //$this->db->query('SELECT * FROM pago WHERE pkIdPago = :id');
+            $this->db->query('CALL mostrar_pago_especifico (:id)');
+            
             $this->db->bind(':id', $id);
 
             $fila = $this->db->registro();
@@ -44,6 +50,8 @@
 
         public function obtenerPagosExcepto($id) {
             $this->db->query('SELECT * FROM pago WHERE pkIdPago != :id');
+            //$this->db->query('CALL mostrar_pagos_excepto (:id)');
+            
             $this->db->bind(':id', $id);
 
             $resultados = $this->db->registros();
@@ -52,7 +60,9 @@
         }
 
         public function actualizarPago($datos) {
-            $this->db->query('UPDATE pago SET metodoPago = :metodoPago, estado = :estado, fechaPago = :fechaPago, valorPago = :valorPago  WHERE pkIdPago = :id');
+            //$this->db->query('UPDATE pago SET metodoPago = :metodoPago, estado = :estado, fechaPago = :fechaPago, valorPago = :valorPago  WHERE pkIdPago = :id');
+            $this->db->query('CALL actualizar_pagos (:id, :metodoPago, :estado, :fechaPago, :valorPago)');
+
 
             //Vincular los valores
             $this->db->bind(':id', $datos['pkIdPago']);
@@ -71,7 +81,9 @@
         }
 
         public function borrarPago($datos) {
-            $this->db->query('DELETE FROM pago WHERE pkIdPago = :id');
+            //$this->db->query('DELETE FROM pago WHERE pkIdPago = :id');
+            $this->db->query('CALL borrar_pagos (:id)');
+
 
             //Vincular los valores
             $this->db->bind(':id', $datos['pkIdPago']);

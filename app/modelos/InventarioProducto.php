@@ -8,7 +8,8 @@
         }
 
         public function obtenerInventarioProductos() {
-            $this->db->query('SELECT pkIdProducto, imagen, tipoImg, nombre, marca, precioVenta, fechaVencimiento, stock FROM inventario INNER JOIN productos ON fkIdProducto = pkIdProducto WHERE tipoInventario="Producto"');
+            //$this->db->query('SELECT pkIdProducto, imagen, tipoImg, nombre, marca, precioVenta, fechaVencimiento, stock FROM inventario INNER JOIN productos ON fkIdProducto = pkIdProducto WHERE tipoInventario="Producto"');
+            $this->db->query('CALL mostrar_inventario_productos');
 
             $resultados = $this->db->registros();
 
@@ -17,7 +18,8 @@
         
         public function actualizarStock($datos) {
             // Obtener el stock actual
-            $this->db->query('SELECT stock FROM inventario WHERE fkIdProducto = :id');
+            //$this->db->query('SELECT stock FROM inventario WHERE fkIdProducto = :id');
+            $this->db->query('CALL actualizar_stock');
             $this->db->bind(':id', $datos['pkIdProducto']);
             $stockActual = $this->db->registro();
         
