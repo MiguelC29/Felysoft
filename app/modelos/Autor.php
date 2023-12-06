@@ -50,7 +50,7 @@
         }
 
         public function actualizarAutor($datos) {
-            $this->db->query('CALL actualizar_categorias (:id, :nombre, :nacionalidad, :fechaNacim, :biografia)');
+            $this->db->query('CALL actualizar_autores (:id, :nombre, :nacionalidad, :fechaNacim, :biografia)');
 
             //Vincular los valores
             $this->db->bind(':id', $datos['pkIdAutor']);
@@ -69,7 +69,7 @@
 
         public function borrarAutor($datos) {
             //$this->db->query('DELETE FROM autores WHERE pkIdAutor = :id');
-            $this->db->query('CALL borrar_categorias (:id)');
+            $this->db->query('CALL borrar_autores (:id)');
 
             //Vincular los valores
             $this->db->bind(':id', $datos['pkIdAutor']);
