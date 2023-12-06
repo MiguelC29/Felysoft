@@ -8,15 +8,14 @@
         }
 
         public function obtenerLibros() {
-            // $this->db->query('SELECT * FROM gastos');
-            $this->db->query('SELECT pkIdLibro, titulo, editorial, libros.descripcion, anioPublicacion, precioHora, autores.nombre as autor, genero.nombre as genero FROM libros INNER JOIN autores ON fkIdAutor = pkIdAutor INNER JOIN genero ON fkIdGenero = pkIdGenero ');
+            $this->db->query('call mostrar_libros');
 
             $resultados = $this->db->registros();
 
             return $resultados;
         }
         public function agregarLibro($datos) {
-            $this->db->query('INSERT INTO libros (titulo, editorial, descripcion, anioPublicacion, precioHora, fkIdAutor, fkIdGenero) VALUES (:titulo, :editorial, :descripcion, :anioPublicacion, :precioHora, :fkIdAutor, :fkIdGenero)');
+            $this->db->query('CALL agregar_libros(:titulo,:editorial, :descripcion, :anioPublicacion, :precioHora, :fkIdAutor,:fkIdGenero)');
 
             //Vincular valores
             $this->db->bind(':titulo', $datos['titulo']);
@@ -36,7 +35,7 @@
         }
 
         public function obtenerLibroId($id) {
-            $this->db->query('SELECT * FROM libros WHERE pkIdLibro = :id');
+            $this->db->query('CALL mostrar_libro_especifico (:id)');
             $this->db->bind(':id', $id);
 
             $fila = $this->db->registro();
@@ -54,7 +53,7 @@
         }
 
         public function actualizarLibros($datos) {
-            $this->db->query('UPDATE libros SET titulo = :titulo, editorial = :editorial, descripcion = :descripcion, anioPublicacion = :anioPublicacion, precioHora = :precioHora, fkIdAutor = :fkIdAutor, fkIdGenero = :fkIdGenero WHERE pkIdLibro = :id');
+            $this->db->query('CALL actualizar_libros (:id, :titulo, :editorial, :descripcion, :anioPublicacion, :precioHora, :fkIdAutor, :fkIdGenero)');
 
             //Vincular los valores
             $this->db->bind(':id', $datos['pkIdLibro']);
@@ -75,7 +74,7 @@
         }
 
         public function borrarLibro($datos) {
-            $this->db->query('DELETE FROM libros WHERE pkIdLibro = :id');
+            $this->db->query('CALL borrar_libros (:id)');
 
             //Vincular los valores
             $this->db->bind(':id', $datos['pkIdLibro']);

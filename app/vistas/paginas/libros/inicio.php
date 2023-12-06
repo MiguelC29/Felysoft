@@ -28,8 +28,8 @@
                             <td><?php echo $libro->descripcion; ?></td>
                             <td><?php echo $libro->anioPublicacion; ?></td>
                             <td><?php echo $libro->precioHora; ?></td>
-                            <td><?php echo $libro->autor; ?></td>
-                            <td><?php echo $libro->genero; ?></td>
+                            <td><?php echo $libro->nombre_autor; ?></td>
+                            <td><?php echo $libro->nombre_genero; ?></td>
                             <td>
                             <a href="<?php echo RUTA_URL; ?>libros/editar/<?php echo $libro->pkIdLibro; ?>" class="btn btn-success"><i class="bi bi-pencil-square"></i></a>
                                 <a href="<?php echo RUTA_URL; ?>libros/borrar/<?php echo $libro->pkIdLibro; ?>" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a>
