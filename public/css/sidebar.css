@@ -198,7 +198,7 @@ body{
     border-bottom: 1px solid #ccc;
 }
 
-.contenedor.active #almacen, .contenedor.active #reservaLibros, .contenedor.active #comprasProv{
+.contenedor.active #almacen, .contenedor.active #reservaLibros, .contenedor.active #comprasProv {
 	padding-left: 110px;
 }
 
@@ -206,7 +206,11 @@ body{
 	padding-left: 113px;
 }
 
-.contenedor.active #almacen span, .contenedor.active #reservaLibros span, .contenedor.active #comprasProv span, .contenedor.active #inventarioAll span{
+.contenedor.active #venta{
+	padding-left: 98px;
+}
+
+.contenedor.active #almacen span, .contenedor.active #reservaLibros span, .contenedor.active #comprasProv span, .contenedor.active #inventarioAll span, .contenedor.active #venta span{
 	margin-left: 73px;
 }
 

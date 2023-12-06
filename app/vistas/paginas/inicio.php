@@ -21,13 +21,6 @@
                 <p class="mb-0" style="font-size: 3em; margin-right: 0.5em;">100.000</p>
             </div>
         </div>
-
-        <div class="col-sm-3">
-            <div class="rectangle bg-white border border-primary p-3 text-center">
-                <h2>55</h2>
-                <i class="bi bi-icono-4 text-warning"></i>
-            </div>
-        </div>
     </div>
 
     <div class="row mt-5">

@@ -113,8 +113,16 @@
                         </ul>
                     </div>
                 </div>
-                <li><a href="<?php echo RUTA_URL ?>ventas"><i class="bi bi-cart-fill"></i><span>Venta</span></a></li>
-
+                <li><a id="venta" data-bs-toggle="collapse" href="#venta"><i class="bi bi-cart-fill"></i><span class="d-inline-flex gap-1">Venta<i class="bi bi-chevron-down"></i></span></a></li>
+                <div class="collapse" id="venta">
+                    <div class="card card-body" style="margin: 0px; padding: 0px; width: 150px;">
+                        <ul>
+                            <li><a href="<?php echo RUTA_URL ?>gastos">Gastos</a></li>
+                            <li><a href="<?php echo RUTA_URL ?>ingresos">Ingresos</a></li>
+                            <li><a href="<?php echo RUTA_URL ?>pagos">Pagos</a></li>
+                        </ul>
+                    </div>
+                </div>
                 <li><a id="comprasProv" data-bs-toggle="collapse" href="#comprasProv"><i class="bi bi-truck"></i><span class="d-inline-flex gap-1">Compras<i class="bi bi-chevron-down"></i></span></a></li>
                 <div class="collapse" id="comprasProv">
                     <div class="card card-body" style="margin: 0px; padding: 0px; width: 150px;">
@@ -130,7 +138,6 @@
                         <ul>
                             <li><a href="<?php echo RUTA_URL ?>reservas">Reservas Libros</a></li>
                             <li><a href="<?php echo RUTA_URL ?>servicios">Reservas Servicios</a></li>
-                            <li><a href="<?php echo RUTA_URL ?>gastos">Gastos</a></li>
                         </ul>
                     </div>
                 </div>

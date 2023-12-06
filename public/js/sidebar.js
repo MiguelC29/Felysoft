@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var reservaLink = document.getElementById('reservaLibros');
     var comprasLink = document.getElementById('comprasProv');
     var inventarioLink = document.getElementById('inventarioAll');
+    var ventaLink = document.getElementById('venta');
 
     function updateLinkState() {
       // Verificar si la barra lateral está activa o no
@@ -19,10 +20,14 @@ document.addEventListener("DOMContentLoaded", function () {
         comprasLink.removeAttribute('data-bs-target');
         inventarioLink.removeAttribute('data-bs-toggle');
         inventarioLink.removeAttribute('data-bs-target');
+        ventaLink.removeAttribute('data-bs-toggle');
+        ventaLink.removeAttribute('data-bs-target');
         almacenLink.style.pointerEvents = 'none';
         reservaLink.style.pointerEvents = 'none';
         comprasLink.style.pointerEvents = 'none';
         inventarioLink.style.pointerEvents = 'none';
+        ventaLink.style.pointerEvents = 'none';
+        
       } else {
         almacenLink.setAttribute('data-bs-toggle', 'collapse');
         almacenLink.setAttribute('data-bs-target', '#almacen');
@@ -32,10 +37,13 @@ document.addEventListener("DOMContentLoaded", function () {
         comprasLink.setAttribute('data-bs-target', '#comprasProv');
         inventarioLink.setAttribute('data-bs-toggle', 'collapse');
         inventarioLink.setAttribute('data-bs-target', '#inventarioAll');
+        ventaLink.setAttribute('data-bs-toggle', 'collapse');
+        ventaLink.setAttribute('data-bs-target', '#venta');
         almacenLink.style.pointerEvents = 'auto';
         reservaLink.style.pointerEvents = 'auto';
         comprasLink.style.pointerEvents = 'auto';
         inventarioLink.style.pointerEvents = 'auto';
+        ventaLink.style.pointerEvents = 'auto';
       }
     }
 
