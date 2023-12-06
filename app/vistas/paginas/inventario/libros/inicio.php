@@ -29,7 +29,7 @@
                             <td><?php echo $libro->genero; ?></td>
                             <td><?php echo $libro->estado; ?></td>
                             <td>
-                            <a data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?php echo $libro->pkIdLibro; ?>" class="editar-estado"><i class="bi bi-plus-circle-fill" style="font-size: 2rem;"></i></a>
+                            <a data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?php echo $libro->pkIdLibro; ?>" class="editar-estado btn btn-success"><i class="bi bi-pencil-square"></i></a>
                                 <!-- <a href="<?php echo RUTA_URL; ?>inventarioLibros/editar/<?php echo $libro->pkIdLibro; ?>" class="btn btn-success"><i class="bi bi-pencil-square"></i></a>
                                 <a href="<?php echo RUTA_URL; ?>inventarioLibros/borrar/<?php echo $libro->pkIdLibro; ?>" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a> -->
                             </td>
@@ -41,7 +41,7 @@
         </div>
     </div>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Estado Libro</h1>

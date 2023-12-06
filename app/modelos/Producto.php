@@ -50,10 +50,18 @@
         }
 
         public function actualizarProducto($datos) {
-            $this->db->query('UPDATE productos SET nombre = :nombre, marca = :marca, precioVenta = :precioVenta, fechaVencimiento = :fechaVencimiento, fkIdCategoria = :fkIdCategoria, fkIdProveedor = :fkIdProveedor, imagen = :imagen, tipoImg = :tipoImg WHERE pkIdProducto = :id');
-            //$this->db->query('CALL actualizar_productos (:id, :nombre, :marca, :precioVenta, :fechaVencimiento, :fkIdCategoria, :fkIdProveedor, :imagen, :tipoImg)');
-
-            //Vincular los valores
+            $query = 'UPDATE productos SET nombre = :nombre, marca = :marca, precioVenta = :precioVenta, fechaVencimiento = :fechaVencimiento, fkIdCategoria = :fkIdCategoria, fkIdProveedor = :fkIdProveedor';
+        
+            // Verificar si se ha proporcionado una nueva imagen
+            if (isset($datos['imagen']) && !empty($datos['imagen'])) {
+                $query .= ', imagen = :imagen, tipoImg = :tipoImg';
+            }
+        
+            $query .= ' WHERE pkIdProducto = :id';
+        
+            $this->db->query($query);
+        
+            // Vincular los valores
             $this->db->bind(':id', $datos['pkIdProducto']);
             $this->db->bind(':nombre', $datos['nombre']);
             $this->db->bind(':marca', $datos['marca']);
@@ -61,16 +69,20 @@
             $this->db->bind(':fechaVencimiento', $datos['fechaVencimiento']);
             $this->db->bind(':fkIdCategoria', $datos['fkIdCategoria']);
             $this->db->bind(':fkIdProveedor', $datos['fkIdProveedor']);
-            $this->db->bind(':imagen', $datos['imagen']);
-            $this->db->bind(':tipoImg', $datos['tipoImg']);
-
-            //Ejecutar
+        
+            // Vincular la imagen solo si se proporciona una nueva imagen
+            if (isset($datos['imagen']) && !empty($datos['imagen'])) {
+                $this->db->bind(':imagen', $datos['imagen']);
+                $this->db->bind(':tipoImg', $datos['tipoImg']);
+            }
+        
+            // Ejecutar
             if ($this->db->execute()) {
                 return true;
             } else {
                 return false;
             }            
-        }
+        }        
 
         public function borrarProducto($datos) {
             //$this->db->query('DELETE FROM productos WHERE pkIdProducto = :id');

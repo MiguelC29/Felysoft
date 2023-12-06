@@ -87,36 +87,34 @@
 
         public function editar($id) {
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                if (isset($_FILES['imagenP']['name'])) {
-                    //retener la info de la img
-                    $tipoArchivo = $_FILES['imagenP']['type']; //obtener tipo del archivo
-                    $nombreArchivo = $_FILES['imagenP']['name']; //obtener nombre del archivo
-                    $tamanoArchivo = $_FILES['imagenP']['size']; //obtener tamaño del archivo
-                    $permitido = array("image/png","image/jpg","image/jpeg"); //tipos de datos permitidos
-                    if (in_array($tipoArchivo, $permitido) == false) {
+                $datos = [
+                    'pkIdProducto' => $id,
+                    'nombre' => trim($_POST['nombre']),
+                    'marca' => trim($_POST['marca']),
+                    'precioVenta' => trim($_POST['precioVenta']),
+                    'fechaVencimiento' => trim($_POST['fechaVencimiento']),
+                    'fkIdCategoria' => trim($_POST['idCategoria']),
+                    'fkIdProveedor' => trim($_POST['idProveedor']),
+                ];
+        
+                // Verificar si se ha subido una nueva imagen
+                if (isset($_FILES['imagenP']['name']) && !empty($_FILES['imagenP']['name'])) {
+                    $tipoArchivo = $_FILES['imagenP']['type'];
+                    $nombreArchivo = $_FILES['imagenP']['name'];
+                    $tamanoArchivo = $_FILES['imagenP']['size'];
+                    $permitido = array("image/png","image/jpg","image/jpeg");
+        
+                    if (!in_array($tipoArchivo, $permitido)) {
                         die("<script>alert('Archivo no permitido.'); location.href='';</script>");
                     }
         
-                    //fopen abrimos un archivo o leemos un archivo
-                    //tmp_name es el nombre temporal de donde se almacenan temporalmente las img que subimos
-                    // 'r' -> modo de fopen, modo de abrir el archivo modo r(read) de lectura
                     $imagenSubida = fopen($_FILES['imagenP']['tmp_name'], 'r');
-                    //Extraer los binarios de la img
                     $binariosImagen = fread($imagenSubida, $tamanoArchivo);
-                    // $binariosImagen = mysqli_escape_string($conectar, $binariosImagen);
-
-                    $datos = [
-                        'pkIdProducto' => $id,
-                        'nombre' => trim($_POST['nombre']),
-                        'marca' => trim($_POST['marca']),
-                        'precioVenta' => trim($_POST['precioVenta']),
-                        'fechaVencimiento' => trim($_POST['fechaVencimiento']),
-                        'fkIdCategoria' => trim($_POST['idCategoria']),
-                        'fkIdProveedor' => trim($_POST['idProveedor']),
-                        'imagen' => $binariosImagen,
-                        'tipoImg' => $tipoArchivo
-                    ];
+                    
+                    $datos['imagen'] = $binariosImagen;
+                    $datos['tipoImg'] = $tipoArchivo;
                 }
+        
                 if ($this->productosModelo->actualizarProducto($datos)) {
                     redireccionar('productos');
                 } else {
