@@ -1,7 +1,5 @@
 -- MOSTRAR Autores
     DROP procedure IF EXISTS `mostrar_autores`;
-    USE `db_felysoft`;
-    DROP procedure IF EXISTS `mostrar_autores`;
 
     DELIMITER $$
     USE `db_felysoft`$$
