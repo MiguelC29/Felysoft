@@ -16,13 +16,13 @@
         }
 
         public function agregarAutor($datos) {
-            $this->db->query('CALL agregar_categorias(:nombre, :nacionalidad, :fechaNacim, :biografia');
+            $this->db->query('CALL agregar_autores(:nombre, :nacionalidad, :fechaNacim, :biografia)');
             //Vincular valores
             $this->db->bind(':nombre', $datos['nombre']);
             $this->db->bind(':nacionalidad', $datos['nacionalidad']); 
             $this->db->bind(':fechaNacim', $datos['fechaNacim']);
             $this->db->bind(':biografia', $datos['biografia']);
-
+        
             //Ejecutar
             if ($this->db->execute()) {
                 return true;
