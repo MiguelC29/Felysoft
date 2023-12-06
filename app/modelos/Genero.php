@@ -8,7 +8,7 @@
         }
 
         public function obtenerGeneros() {
-            $this->db->query('SELECT * FROM genero');
+            $this->db->query('call mostrar_generos');
 
             $resultados = $this->db->registros();
 
@@ -16,7 +16,7 @@
         }
 
         public function agregarGenero($datos) {
-            $this->db->query('INSERT INTO genero (nombre, descripcion) VALUES (:nombre, :descripcion)');
+            $this->db->query('CALL agregar_genero(:nombre, :descripcion)');
 
             //Vincular valores
             $this->db->bind(':nombre', $datos['nombre']);
@@ -31,7 +31,7 @@
         }
 
         public function obtenerGeneroId($id) {
-            $this->db->query('SELECT * FROM genero WHERE pkIdGenero = :id');
+            $this->db->query('CALL mostrar_genero_especifico (:id)');
             $this->db->bind(':id', $id);
 
             $fila = $this->db->registro();
@@ -47,7 +47,7 @@
             return $resultados;
         }
         public function actualizarGenero($datos) {
-            $this->db->query('UPDATE genero SET nombre = :nombre , descripcion = :descripcion  WHERE pkIdGenero = :id');
+            $this->db->query('CALL actualizar_generos (:id, :nombre, :descripcion)');
 
             //Vincular los valores
             $this->db->bind(':id', $datos['pkIdGenero']);
@@ -62,7 +62,7 @@
         }
 
         public function borrarGenero($datos) {
-            $this->db->query('DELETE FROM genero WHERE pkIdGenero = :id');
+            $this->db->query('CALL borrar_generos (:id)');
 
             //Vincular los valores
             $this->db->bind(':id', $datos['pkIdGenero']);

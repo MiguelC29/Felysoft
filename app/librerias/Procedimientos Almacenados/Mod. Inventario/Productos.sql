@@ -6,7 +6,7 @@
 
     DELIMITER $$
     USE `db_felysoft`$$
-    CREATE DEFINER=`root`@`localhost` PROCEDURE `mostrar_productoss`()
+    CREATE DEFINER=`root`@`localhost` PROCEDURE `mostrar_productos`()
     BEGIN
         SELECT  productos.pkIdProducto,
                 productos.nombre,
