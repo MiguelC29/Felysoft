@@ -1,16 +1,19 @@
 <?php require RUTA_APP . '/vistas/inc/header.php'; ?>
-<div class="card card-body bg-light mt-5">
-    <h2>Borrar Agendamiento de Servicio</h2>
-    <p>¿Estás seguro de que deseas borrar este agendamiento?</p>
+<div class="contenedor-form">
     <form id="formsFelysoft" action="<?php echo RUTA_URL; ?>servicios/borrar/<?php echo $datos['pkIdServicio']; ?>" method="post">
+        <h2 class="titulo-form">BORRAR AGENDAMIENTO DE SERVICIO</h2>
         <div class="form-group">
-            <label for="estado">Estado: <?php echo $datos['estado']; ?></label>
+            <label for="estado">Estado:</label>
+            <input type="text" name="estado" class="form-control form-control-lg" value="<?php echo $datos['estado']; ?>" readonly>
         </div>
         <div class="form-group">
-            <label for="fechaModificacion">Última fecha de modificación: <?php echo $datos['fechaModificacion']; ?></label>
+            <label for="fechaModificacion">Última fecha de modificación:</label>
+            <input type="datetime" name="fechaModificacion" class="form-control form-control-lg" value="<?php echo $datos['fechaModificacion']; ?>" readonly>
         </div>
-        <input type="submit" class="btn btn-danger" value="Confirmar" onclick='return confirmarDelete()'>
-        <a href="<?php echo RUTA_URL; ?>servicios" class="btn btn-primary">Cancelar</a>
+        <div class="text-center">
+            <input type="submit" class="btn btn-success" value="Borrar" onclick='return confirmarDelete()'>
+            <a href="<?php echo RUTA_URL; ?>servicios" class="btn btn-primary">Cancelar</a>
+        </div>
     </form>
 </div>
 <?php require RUTA_APP . '/vistas/inc/footer.php'; ?>

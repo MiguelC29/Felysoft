@@ -55,7 +55,7 @@ DELIMITER ;
 
         DELIMITER $$
         USE `db_felysoft`$$
-        CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizar_libros`(IN `id` INT(11), IN `tituloU` VARCHAR(45), IN `editorialU` VARCHAR(45), IN `descripcionU` DECIMAL(10,0), IN `anioPublicacionU` DATE,`precioHoraU` DECIMAL(10,0), IN `fkIdAutor` INT(11), IN `fkIdGenero` INT(11))
+        CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizar_libros`(IN `id` INT(11), IN `tituloU` VARCHAR(320), IN `editorialU` VARCHAR(320), IN `descripcionU` VARCHAR(320), IN `anioPublicacionU` SMALLINT(6),`precioHoraU` DECIMAL(10,0), IN `fkIdAutor` INT(11), IN `fkIdGenero` INT(11))
         BEGIN
         UPDATE libros SET 
                             titulo = tituloU,
@@ -69,6 +69,7 @@ DELIMITER ;
         END$$
 
         DELIMITER ;
+
         --BORRAR LIBROS
         DROP procedure IF EXISTS `borrar_libros`;
 

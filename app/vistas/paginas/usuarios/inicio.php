@@ -4,9 +4,8 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
-            <div class="table">
-
-                <table class="table table-bordered table-hover text-center">
+            <div class="table-responsive">
+                <table id="TablesFelysoft" class="table table-bordered table-hover text-center" style="width:100%">
                     <thead>
                         <tr>
                             <th>Tipo Documento</th>

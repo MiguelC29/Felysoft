@@ -1,23 +1,46 @@
 <?php require RUTA_APP . '/vistas/inc/header.php'; ?>
-<div class="card card-body bg-light mt-5">
-    <h2>Editar producto</h2>
-
-    <form id="formsFelysoft" action="<?php echo RUTA_URL; ?>productos/editar/<?php echo $datos['pkIdProducto'] ?>" method="post" enctype="multipart/form-data">
+<div class="contenedor-form">
+    <form class="needs-validation" id="formsFelysoft" action="<?php echo RUTA_URL; ?>productos/editar/<?php echo $datos['pkIdProducto'] ?>" method="post" enctype="multipart/form-data" novalidate>
+        <h2 class="titulo-form">EDITAR PRODUCTO</h2>
         <div class="form-group">
             <label for="nombre">Nombre: <sup>*</sup></label>
             <input type="text" name="nombre" class="form-control form-control-lg" value="<?php echo $datos['nombre'] ?>" required>
+            <div class="valid-feedback">
+                Campo completado!
+            </div>
+            <div class="invalid-feedback">
+                Por favor, complete el campo!
+            </div>
         </div>
         <div class="form-group">
             <label for="marca">Marca: <sup>*</sup></label>
             <input type="text" name="marca" class="form-control form-control-lg" value="<?php echo $datos['marca'] ?>" required>
+            <div class="valid-feedback">
+                Campo completado!
+            </div>
+            <div class="invalid-feedback">
+                Por favor, complete el campo!
+            </div>
         </div>
         <div class="form-group">
             <label for="precioVenta">Precio Venta: <sup>*</sup></label>
             <input type="number" name="precioVenta" class="form-control form-control-lg" value="<?php echo $datos['precioVenta'] ?>" required>
+            <div class="valid-feedback">
+                Campo completado!
+            </div>
+            <div class="invalid-feedback">
+                Por favor, complete el campo!
+            </div>
         </div>
         <div class="form-group">
             <label for="fechaVencimiento">Fecha Vencimiento:</label>
             <input type="date" name="fechaVencimiento" class="form-control form-control-lg" value="<?php echo $datos['fechaVencimiento'] ?>">
+            <div class="valid-feedback">
+                Campo completado!
+            </div>
+            <div class="invalid-feedback">
+                Por favor, complete el campo!
+            </div>
         </div>
         <div class="form-group">
             <label for="nombre">Categoria: <sup>*</sup></label>
@@ -29,6 +52,12 @@
                     <option value="<?php echo $categoria->pkIdCategoria; ?>"><?php echo $categoria->nombre; ?></option>
                 <?php endforeach; ?>
             </select>
+            <div class="valid-feedback">
+                Campo completado!
+            </div>
+            <div class="invalid-feedback">
+                Por favor, complete el campo!
+            </div>
         </div>
         <div class="form-group">
             <label for="idProveedor">Proveedor: <sup>*</sup></label>
@@ -40,6 +69,12 @@
                     <option value="<?php echo $proveedor->pkIdProveedores; ?>"><?php echo $proveedor->nombre; ?></option>
                 <?php endforeach; ?>
             </select>
+            <div class="valid-feedback">
+                Campo completado!
+            </div>
+            <div class="invalid-feedback">
+                Por favor, complete el campo!
+            </div>
         </div>
         <div class="form-group">
             <div class="mb-3">
@@ -47,9 +82,17 @@
                 <img width="200px" height="200px" src="data:<?php echo $datos['tipoImgP'] ?>;base64,<?php echo base64_encode($datos['imagenP']) ?>">
                 <input class="form-control" type="file" id="formFile" name="imagenP">
             </div>
+            <div class="valid-feedback">
+                Campo completado!
+            </div>
+            <div class="invalid-feedback">
+                Por favor, complete el campo!
+            </div>
         </div>
-        <input type="submit" class="btn btn-success" value="Editar Producto" onclick='return confirmarUpdate()'>
-        <a href="<?php echo RUTA_URL; ?>productos" class="btn btn-primary">Volver</a>
+        <div class="text-center">
+            <input type="submit" class="btn btn-success" value="Editar">
+            <a href="<?php echo RUTA_URL; ?>productos" class="btn btn-primary">Volver</a>
+        </div>
     </form>
 </div>
 <?php require RUTA_APP . '/vistas/inc/footer.php'; ?>

@@ -1,15 +1,26 @@
 <?php require RUTA_APP . '/vistas/inc/header.php';?>
-<div class="card card-body bg-light mt-5">
-    <h2>Agregar ingresos</h2>
-    <form id="formsFelysoft" action="<?php echo RUTA_URL;?>ingresos/agregar" method="post" enctype="multipart/form-data">
-
+<div class="contenedor-form">
+    <form class="needs-validation" id="formsFelysoft" action="<?php echo RUTA_URL;?>ingresos/agregar" method="post" novalidate>
+        <h2 class="titulo-form">AGREGAR INGRESOS</h2>
         <div class="form-group">
             <label for="fecha">Fecha: <sup>*</sup></label>
             <input type="datetime-local" name="fecha" class="form-control form-control-lg" required>
+            <div class="valid-feedback">
+                Campo completado!
+            </div>
+            <div class="invalid-feedback">
+                Por favor, complete el campo!
+            </div>
         </div>
         <div class="form-group">
             <label for="monto">Monto: <sup>*</sup></label>
             <input type="number" name="monto" class="form-control form-control-lg" required>
+            <div class="valid-feedback">
+                Campo completado!
+            </div>
+            <div class="invalid-feedback">
+                Por favor, complete el campo!
+            </div>
         </div>
 
         <div class="form-group">
@@ -20,10 +31,17 @@
                 <option value="<?php echo $venta->pkIdVenta; ?>"><?php echo $venta->subtotal; ?></option>
             <?php endforeach; ?>
             </select>
+            <div class="valid-feedback">
+                Campo completado!
+            </div>
+            <div class="invalid-feedback">
+                Por favor, complete el campo!
+            </div>
         </div>
-
-        <input type="submit" class="btn btn-success" value="Agregar Ingreso" onclick='return confirmarInsert()'>
-        <a href="<?php echo RUTA_URL;?>ingresos" class="btn btn-primary">Volver</a>
+        <div class="text-center">
+            <input type="submit" class="btn btn-success" value="Agregar">
+            <a href="<?php echo RUTA_URL;?>ingresos" class="btn btn-primary">Volver</a>
+        </div>
     </form>
 </div>
 <?php require RUTA_APP . '/vistas/inc/footer.php';?>

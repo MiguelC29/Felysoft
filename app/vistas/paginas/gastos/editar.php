@@ -1,21 +1,38 @@
 <?php require RUTA_APP . '/vistas/inc/header.php';?>
-<div class="card card-body bg-light mt-5">
-    <h2>Editar gasto</h2>   
-
-    <form id="formsFelysoft" action="<?php echo RUTA_URL;?>gastos/editar/<?php echo $datos['pkIdGasto']?>" method="post" >
+<div class="contenedor-form">
+    <form class="needs-validation" id="formsFelysoft" action="<?php echo RUTA_URL;?>gastos/editar/<?php echo $datos['pkIdGasto']?>" method="post" novalidate>
+        <h2 class="titulo-form">EDITAR GASTO</h2>
         <div class="form-group">
             <label for="fecha">Fecha: <sup>*</sup></label>
             <input type="datetime-local" name="fecha" class="form-control form-control-lg" value="<?php echo $datos['fecha']?>" required>
+            <div class="valid-feedback">
+                Campo completado!
+            </div>
+            <div class="invalid-feedback">
+                Por favor, complete el campo!
+            </div>
         </div>
 
         <div class="form-group">
             <label for="monto">Monto: <sup>*</sup></label>
             <input type="number" name="monto" class="form-control form-control-lg" value="<?php echo $datos['monto']?>" required>
+            <div class="valid-feedback">
+                Campo completado!
+            </div>
+            <div class="invalid-feedback">
+                Por favor, complete el campo!
+            </div>
         </div>
         
         <div class="form-group">
             <label for="descripcion">Descripción: <sup>*</sup></label>
             <input type="text" name="descripcion" class="form-control form-control-lg" value="<?php echo $datos['descripcion']?>" required>
+            <div class="valid-feedback">
+                Campo completado!
+            </div>
+            <div class="invalid-feedback">
+                Por favor, complete el campo!
+            </div>
         </div>
   
         <div class="form-group">
@@ -28,6 +45,12 @@
                 <option value="<?php echo $compra->pkIdCompra; ?>"><?php echo $compra->total; ?></option>
             <?php endforeach; ?>
             </select>
+            <div class="valid-feedback">
+                Campo completado!
+            </div>
+            <div class="invalid-feedback">
+                Por favor, complete el campo!
+            </div>
         </div>
 
         <div class="form-group">
@@ -39,10 +62,17 @@
                 <option value="<?php echo $pago->pkIdPago; ?>"><?php echo $pago->metodoPago; ?></option>
             <?php endforeach; ?>
             </select>
+            <div class="valid-feedback">
+                Campo completado!
+            </div>
+            <div class="invalid-feedback">
+                Por favor, complete el campo!
+            </div>
         </div>
-   
-        <input type="submit" class="btn btn-success" value="Editar Gasto" onclick='return confirmarUpdate()'>
-        <a href="<?php echo RUTA_URL;?>gastos" class="btn btn-primary">Volver</a>
+        <div class="text-center">
+            <input type="submit" class="btn btn-success" value="Editar">
+            <a href="<?php echo RUTA_URL;?>gastos" class="btn btn-primary">Volver</a>
+        </div>
     </form>
 </div>
 <?php require RUTA_APP . '/vistas/inc/footer.php';?>
