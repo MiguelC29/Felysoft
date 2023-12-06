@@ -11,7 +11,7 @@
         public function obtenerGastos() {
             
             //$this->db->query('SELECT * FROM gastos LEFT JOIN compras ON fkIdCompra = pkIdCompra INNER JOIN pago ON fkIdPago = pkIdPago ORDER BY pkIdGasto');
-            $this->db->query('call mostrar_gastos');
+            $this->db->query('CALL mostrar_gastos');
 
 
             $resultados = $this->db->registros();
@@ -76,7 +76,7 @@ public function obtenerGastoId($id) {
 //ELIMINAR GASTOS
         public function borrarGasto($datos) {
             //$this->db->query('DELETE FROM gastos WHERE pkIdGasto = :id');
-            $this->db->query('CALL borrar_gastos (:id)');
+            $this->db->query('s');
 
             //Vincular los valores
             $this->db->bind(':id', $datos['pkIdGasto']);

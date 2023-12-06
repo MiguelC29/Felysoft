@@ -21,7 +21,7 @@
                                 <td><?php echo $ingreso->pkIdIngreso; ?></td>
                                 <td><?php echo $ingreso->fecha; ?></td>
                                 <td><?php echo $ingreso->monto; ?></td>
-                                <td><?php echo $ingreso->subtotal; ?></td>
+                                <td><?php echo $ingreso->subtotal; ?></td> 
                                 <td>
                                     <a href="<?php echo RUTA_URL; ?>ingresos/editar/<?php echo $ingreso->pkIdIngreso; ?>" class="btn btn-success"><i class="bi bi-pencil-square"></i></a>
                                     <a href="<?php echo RUTA_URL; ?>ingresos/borrar/<?php echo $ingreso->pkIdIngreso; ?>" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a>

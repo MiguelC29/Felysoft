@@ -44,7 +44,7 @@
         IN id INT(11)
     )
     BEGIN
-        SELECT * FROM proveedores WHERE pkIdProveedor = id;
+        SELECT * FROM proveedores WHERE pkIdProveedores = id;
     END$$
 
     DELIMITER ;

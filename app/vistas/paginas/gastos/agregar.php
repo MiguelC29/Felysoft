@@ -25,15 +25,30 @@
             <?php endforeach; ?>
             </select>
         </div>
+
         <div class="form-group">
             <label for="idPago">Pago (Método): <sup>*</sup></label>
             <select class="form-select" aria-label="Default select example" name="idPago" required>
-            <option value= "" selected disabled>Seleccione el método de pago</option>
-            <?php foreach($datos['pagos'] as $pago) : ?>
-                <option value="<?php echo $pago->pkIdPago; ?>"><?php echo $pago->metodoPago; ?></option>
-            <?php endforeach; ?>
+                <option value="" selected disabled>Seleccione el método de pago</option>
+                <?php foreach ($datos['pagos'] as $pago) : ?>
+                    <option value="<?php echo $pago->pkIdPago; ?>"><?php echo $pago->metodoPago; ?></option>
+                <?php endforeach; ?>
             </select>
-        </div>
+        </div> 
+        
+        <!-- <div class="opciones">
+        <label for="idPago">Pago (Método): <sup>*</sup></label>
+        <select class="form-select" aria-label="Default select example" name="idPago" required>
+            <option value= "" selected disabled>Seleccione el método de pago</option>
+                <option value="opcion1">Efectivo</option>
+                <option value="opcion2">Transferencia</option>
+            </select>
+        </div> -->
+
+
+
+    
+
 
         <input type="submit" class="btn btn-success" value="Agregar Gasto" onclick='return confirmarInsert()'>
         <a href="<?php echo RUTA_URL;?>gastos" class="btn btn-primary">Volver</a>
