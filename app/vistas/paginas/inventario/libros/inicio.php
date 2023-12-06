@@ -45,7 +45,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Estado Libro</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <a type="btn" class="btn-close" href="<?php echo RUTA_URL ?>inventarioLibros" aria-label="Close"></a>
             </div>
             <div class="modal-body">
             <form id="formsFelysoft" action="" method="POST">
@@ -58,7 +58,7 @@
                     </select>
                 </div>
                 <div class="text-center">
-                    <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Cerrar</button>
+                    <a type="btn" class="btn btn-secondary me-2" href="<?php echo RUTA_URL ?>inventarioLibros">Cerrar</a>
                     <button type="submit" class="btn btn-primary" onclick='return confirmarUpdate()'>Guardar</button>
                 </div>
             </form>

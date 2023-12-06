@@ -5,20 +5,21 @@
             <div class="rectangle text-black bg-white border border-primary p-3 text-center d-flex align-items-center justify-content-center">
                 <i class="bi bi-cart3" style="font-size: 3em; margin-right: 0.5em;"></i>
                 <!-- <p class="mb-0" style="font-size: 3em; margin-right: 0.5em;"><?php echo $datos['cantidadProductos']; ?></p> -->
+                <p class="mb-0" style="font-size: 3em; margin-right: 0.5em;">24</p>
             </div>
         </div>
 
         <div div class="col-sm-3">
             <div class="rectangle text-black bg-white border border-primary p-3 text-center d-flex align-items-center justify-content-center">
                 <i class="bi bi-currency-dollar" style="font-size: 3em; margin-right: 0.5em;"></i>
-                <p class="mb-0" style="font-size: 3em; margin-right: 0.5em;">55</p>
+                <p class="mb-0" style="font-size: 3em; margin-right: 0.5em;">3</p>
             </div>
         </div>
 
         <div div class="col-sm-3">
             <div class="rectangle text-black bg-white border border-primary p-3 text-center d-flex align-items-center justify-content-center">
                 <i class="bi bi-cash-coin" style="font-size: 3em; margin-right: 0.5em;"></i>
-                <p class="mb-0" style="font-size: 3em; margin-right: 0.5em;">100.000</p>
+                <p class="mb-0" style="font-size: 3em; margin-right: 0.5em;">14.500</p>
             </div>
         </div>
     </div>
