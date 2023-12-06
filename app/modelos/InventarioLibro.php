@@ -8,11 +8,44 @@
         }
 
         public function obtenerInventarioLibros() {
-            $this->db->query('SELECT pkIdLibro, titulo, editorial, precioHora, autores.nombre as autor, genero.nombre as genero, stock FROM inventario INNER JOIN libros ON fkIdLibro = pkIdLibro INNER JOIN autores ON fkIdAutor = pkIdAutor INNER JOIN genero ON fkIdGenero = pkIdGenero WHERE tipoInventario="Libro Digital"');
+            $this->db->query('SELECT pkIdLibro, titulo, editorial, precioHora, autores.nombre as autor, genero.nombre as genero, estado FROM inventario INNER JOIN libros ON fkIdLibro = pkIdLibro INNER JOIN autores ON fkIdAutor = pkIdAutor INNER JOIN genero ON fkIdGenero = pkIdGenero WHERE tipoInventario="Libro Digital"');
 
             $resultados = $this->db->registros();
 
             return $resultados;
+        }
+
+        public function actualizarEstado($datos) {
+            // Obtener el stock actual
+            $this->db->query('SELECT estado FROM inventario WHERE fkIdLibro = :id');
+            // $this->db->query('CALL consultar_stock(:id)');
+            $this->db->bind(':id', $datos['pkIdLibro']);
+            $estadoActual = $this->db->registro();
+        
+            // Verificar si se encontró un registro
+            if ($estadoActual) {
+                // Obtener el valor del estado actual
+                $valorEstadoActual = $estadoActual->estado;
+        
+                // Sumar el stock entrante al stock actual
+                $nuevoEstado = $datos['estadoEntrante'];
+        
+                // Actualizar el stock en la base de datos
+                $this->db->query('UPDATE inventario SET estado = :nuevoEstado WHERE fkIdLibro = :id');
+                // $this->db->query('CALL actualizar_stock(:id, :nuevoStock)');
+                $this->db->bind(':id', $datos['pkIdLibro']);
+                $this->db->bind(':nuevoEstado', $nuevoEstado);
+        
+                // Ejecutar la actualización
+                if ($this->db->execute()) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                // Manejar el caso en el que no se encuentra el registro
+                return false;
+            }
         }
 
         // public function agregarProducto($datos) {

@@ -4,7 +4,11 @@
         <h2 class="titulo-form">AGREGAR PAGOS</h2>
         <div class="form-group">
             <label for="metodoPago">Metodo de pago: <sup>*</sup></label>
-            <input type="text" name="metodoPago" class="form-control form-control-lg" required>
+            <select class="form-select" aria-label="Default select example" id="metodoPago" name="metodoPago" required>
+                <option value="" selected disabled>Seleccione el método de pago</option>
+                <option value="Efectivo">Efectivo</option>
+                <option value="Transferencia">Transferencia</option>
+            </select>
             <div class="valid-feedback">
                 Campo completado!
             </div>
@@ -15,7 +19,11 @@
 
         <div class="form-group">
             <label for="estado">Estado: <sup>*</sup></label>
-            <input type="text" name="estado" class="form-control form-control-lg" required>
+            <select class="form-select" aria-label="Default select example" id="estado" name="estado" required>
+                <option value="" selected disabled>Seleccione el estado</option>
+                <option value="Pagado">Pagado</option>
+                <option value="Pendiente">Pendiente</option>
+            </select>
             <div class="valid-feedback">
                 Campo completado!
             </div>

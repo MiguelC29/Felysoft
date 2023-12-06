@@ -16,6 +16,22 @@
             $this->vista('paginas/inventario/libros/inicio', $datos);
         }
 
+        public function agregarEstado($id) {
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+                $datos = [
+                    'pkIdLibro' => $id,
+                    'estadoEntrante' => trim($_POST['estadoEntrante'])
+                ];
+
+                if ($this->inventarioLibrosModelo->actualizarEstado($datos)) {
+                    redireccionar('inventarioLibros');
+                } else {
+                    die('Algo salió mal');
+                }
+            }
+        }
+
         // public function agregar() {
         //     // $_FILES LA VARIABLE SUPERGLOBAL, DONDE SE ALMACENAN LAS IMAGENES
         //     //validar si se envio una foto, si tiene un name es porque si se mando

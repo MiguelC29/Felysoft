@@ -28,7 +28,8 @@
     <script src="<?php echo RUTA_URL ?>/js/validacion.js"></script>
     <script src="<?php echo RUTA_URL ?>/js/fecha.js"></script>
     <script src="<?php echo RUTA_URL ?>/js/sidebar.js"></script>
-    <script src="<?php echo RUTA_URL ?>/js/modal.js"></script>
+    <script src="<?php echo RUTA_URL ?>/js/modalP.js"></script>
+    <script src="<?php echo RUTA_URL ?>/js/modalL.js"></script>
     <script src="<?php echo RUTA_URL ?>/js/login.js"></script>
     </body>
 </html>

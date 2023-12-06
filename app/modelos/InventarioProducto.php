@@ -18,8 +18,8 @@
         
         public function actualizarStock($datos) {
             // Obtener el stock actual
-            //$this->db->query('SELECT stock FROM inventario WHERE fkIdProducto = :id');
-            $this->db->query('CALL actualizar_stock');
+            // $this->db->query('SELECT stock FROM inventario WHERE fkIdProducto = :id');
+            $this->db->query('CALL consultar_stock(:id)');
             $this->db->bind(':id', $datos['pkIdProducto']);
             $stockActual = $this->db->registro();
         
@@ -32,7 +32,8 @@
                 $nuevoStock = $valorStockActual + $datos['stockEntrante'];
         
                 // Actualizar el stock en la base de datos
-                $this->db->query('UPDATE inventario SET stock = :nuevoStock WHERE fkIdProducto = :id');
+                // $this->db->query('UPDATE inventario SET stock = :nuevoStock WHERE fkIdProducto = :id');
+                $this->db->query('CALL actualizar_stock(:id, :nuevoStock)');
                 $this->db->bind(':id', $datos['pkIdProducto']);
                 $this->db->bind(':nuevoStock', $nuevoStock);
         

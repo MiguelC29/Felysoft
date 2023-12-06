@@ -8,7 +8,7 @@
         }
 
         public function obtenerPagos() {
-            $this->db->query('SELECT * FROM pago');
+            $this->db->query('SELECT * FROM pago ORDER BY pkIdPago DESC');
             //$this->db->query('CALL mostrar_pagos');
 
 
