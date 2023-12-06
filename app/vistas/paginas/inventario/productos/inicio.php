@@ -1,7 +1,7 @@
 <?php require RUTA_APP . '/vistas/inc/header.php';?>
-    <div class="my-2">
+    <!-- <div class="my-2">
         <a href="inventarioProductos/agregar"><i class="bi bi-plus-square-fill" style="font-size: 2rem; color: white;"></i></a>
-    </div>
+    </div> -->
     <div class="row">
         <div class="col-lg-12">
             <div class="table-responsive">
@@ -30,8 +30,8 @@
                             <td><?php echo $producto->stock; ?></td>
                             <td>
                                 <a data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?php echo $producto->pkIdProducto; ?>" class="editar-stock"><i class="bi bi-plus-circle-fill" style="font-size: 2rem;"></i></a>
-                                <a href="<?php echo RUTA_URL; ?>inventarioProductos/editar/<?php echo $producto->pkIdProducto; ?>" class="btn btn-success"><i class="bi bi-pencil-square"></i></a>
-                                <a href="<?php echo RUTA_URL; ?>inventarioProductos/borrar/<?php echo $producto->pkIdProducto; ?>" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a>
+                                <!-- <a href="<?php echo RUTA_URL; ?>inventarioProductos/editar/<?php echo $producto->pkIdProducto; ?>" class="btn btn-success"><i class="bi bi-pencil-square"></i></a>
+                                <a href="<?php echo RUTA_URL; ?>inventarioProductos/borrar/<?php echo $producto->pkIdProducto; ?>" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a> -->
                             </td>
                         </tr>
                     <?php endforeach; ?>

@@ -1,7 +1,7 @@
 <?php require RUTA_APP . '/vistas/inc/header.php';?>
-<div class="card card-body bg-light mt-5">
-    <h2>Borrar gasto</h2>
+<div class="contenedor-form">
     <form id="formsFelysoft" action="<?php echo RUTA_URL;?>gastos/borrar/<?php echo $datos['pkIdGasto']?>" method="post">
+        <h2 class="titulo-form">BORRAR GASTO</h2>
         <div class="form-group">
             <label for="fecha">Fecha:</label>
             <input type="datetime-local" name="fecha" class="form-control form-control-lg" value="<?php echo $datos['fecha']?>" readonly>
@@ -24,8 +24,10 @@
             <input type="text" name="pago" class="form-control form-control-lg" value="<?php echo $datos['nomPago']?>" readonly>
         </div>
       
-        <input type="submit" class="btn btn-success" value="Borrar Gasto" onclick='return confirmarDelete()'>
-        <a href="<?php echo RUTA_URL;?>gastos" class="btn btn-primary">Volver</a>
+        <div class="text-center">
+            <input type="submit" class="btn btn-success" value="Borrar" onclick='return confirmarDelete()'>
+            <a href="<?php echo RUTA_URL;?>gastos" class="btn btn-primary">Volver</a>
+        </div>
     </form>
 </div>
 <?php require RUTA_APP . '/vistas/inc/footer.php';?>

@@ -108,7 +108,7 @@
                             <li><a href="<?php echo RUTA_URL ?>categorias">Categorías</a></li>
                             <li><a href="<?php echo RUTA_URL ?>libros">Libros</a></li>
                             <li><a href="<?php echo RUTA_URL ?>autores">Autores</a></li>
-                            <li><a href="<?php echo RUTA_URL ?>generos">Generos</a></li>
+                            <li><a href="<?php echo RUTA_URL ?>generos">Géneros</a></li>
                             <li><a href="<?php echo RUTA_URL ?>clientes">Clientes</a></li>
                         </ul>
                     </div>
