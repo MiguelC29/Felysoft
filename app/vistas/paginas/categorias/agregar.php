@@ -1,12 +1,18 @@
 <?php require RUTA_APP . '/vistas/inc/header.php'; ?>
-<div class="card card-body bg-light mt-5">
-    <h2>Agregar categorias</h2>
-    <form id="formsFelysoft" action="<?php echo RUTA_URL; ?>categorias/agregar" method="post">
+<div class="contenedor-form">
+    <form class="needs-validation" id="formsFelysoft" action="<?php echo RUTA_URL; ?>categorias/agregar" method="post" novalidate>
+    <h2 class="text-center pt-2">AGREGAR CATEGORIAS</h2>
         <div class="form-group">
-            <label for="nombre">Nombre: <sup>*</sup></label>
+            <label for="nombre" class="form-label">Nombre: <sup>*</sup></label>
             <input type="text" name="nombre" class="form-control form-control-lg" required>
+            <div class="valid-feedback">
+                Campo completado!
+            </div>
+            <div class="invalid-feedback">
+                Por favor, complete el campo!
+            </div>
         </div>
-        <input type="submit" class="btn btn-success" value="Agregar Categoria" onclick='return confirmarInsert()'>
+        <button class="btn btn-success" type="submit">Agregar Categoria</button>
         <a href="<?php echo RUTA_URL; ?>categorias" class="btn btn-primary">Volver</a>
     </form>
 </div>

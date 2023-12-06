@@ -21,3 +21,90 @@ div.dt-button-collection h3 {
 div.dt-button-collection h3.not-top-heading {
     margin-top: 10px;
 }
+
+/* Estilos para DataTables */
+table.dataTable thead th {
+    background-color: #1f355e;
+    color: #c0c9d5;
+    text-align: center;
+}
+
+.contenedor-form {
+    background-color: #1f5e24;
+    font-weight: bold;
+    color: white;
+    margin-top: 20px;
+    width: 100%;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 20px;
+}
+
+.titulo-form {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.contenedor-form .form-control{
+    color:black;
+}
+
+.contenedor-form label {
+    margin-top: 10px;
+}
+
+.contenedor-form form input, form select, form textarea {
+    border: 1px solid #345b99;
+    color: #c0c9d5;
+}
+
+.contenedor-form .btn-success {
+    background-color: #0d1f3c;
+    color: #ffffff;
+    margin: 10px;
+}
+
+.contenedor-form .btn-primary {
+    background-color: #4285f4;
+    color: #ffffff;
+}
+
+.contenedor-form .btn-primary:hover {
+    background-color: #e40d0d;
+    color: #ffffff;
+}
+
+.contenedor-form .btn-success:hover {
+    background-color: #9de60d;
+    color: #ffffff;
+}
+
+/* Cambiar el color del texto en DataTables a blanco */
+table.dataTable thead .dataTables_filter label input,
+table.dataTable_paginate .paginate_button,
+.dataTables_info, .dataTables_filter label {
+    color: #ffffff;
+}
+
+/* Estilos predeterminados para los botones dentro de dt-buttons */
+.dt-buttons button.dt-button {
+    color: #ffffff;
+    background-color: #00ff62;
+    border-color: #00ff62;
+}
+
+/* Estilos para el estado hover */
+div.dt-buttons button.dt-button.custom-html-collection:hover,
+div.dt-buttons button.dt-button.buttons-collection.buttons-page-length:hover {
+    color: #ffffff; /* Nuevo color del texto en hover */
+    background-color: #007bff; /* Nuevo color de fondo del botón en hover */
+    border-color: #007bff; /* Nuevo color del borde del botón en hover (opcional) */
+}
+
+div.dt-buttons button.dt-button:first-child:hover{
+    color: #ffffff; /* Nuevo color del texto en hover */
+    background-color: #007bff; /* Nuevo color de fondo del botón en hover */
+    border-color: #007bff; /* Nuevo color del borde del botón en hover (opcional) */
+}
