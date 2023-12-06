@@ -8,7 +8,7 @@
                 <table id="TablesFelysoft" class="table table-bordered table-hover text-center">
                     <thead>
                         <tr>
-                            <th>ID de Servicio</th>
+                            <th>No. de Servicio</th>
                             <th>Estado</th>
                             <th>Fecha de Creación</th>
                             <th>Fecha de Modificación</th>
