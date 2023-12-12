@@ -20,66 +20,6 @@
     <!-- CSS Propio -->
     <link rel="stylesheet" type="text/css" href="<?php echo RUTA_URL ?>/css/estilos.css">
     <link rel="stylesheet" type="text/css" href="<?php echo RUTA_URL ?>/css/sidebar.css">
-    <script type="text/javascript">
-    function confirmarDelete() {
-        Swal.fire({
-            title: "¿Estás seguro? Se eliminarán los datos.",
-            showCancelButton: true,
-            confirmButtonText: 'Ok', //Deben usar onclick en los submit, ejemplo: <input type="submit" class="btn btn-success" value="Agregar Servicio" onclick="return confirmarInsert()">
-            cancelButtonText: 'Cancelar',
-            icon: 'warning'
-        }).then((result) => {
-            if (result.value) {
-                document.getElementById('formsFelysoft')
-                    .submit(); //Deben usar este ID en sus formularios, ejemplo: <form id="formsFelysoft" action="...
-            }
-        });
-        return false; //Evita que el formulario se envie automaticamente
-    }
-
-    function confirmarInsert() {
-        var formulario = document.getElementById('formsFelysoft');
-
-        if (formulario.checkValidity()) { //checkValidity valida que el formulario cumpla primero con los required
-            Swal.fire({
-                title: "¿Estás seguro? Se guardarán los datos ingresados.",
-                showCancelButton: true,
-                confirmButtonText: 'Ok',
-                cancelButtonText: 'Cancelar',
-                icon: 'warning'
-            }).then((result) => {
-                if (result.value) {
-                    formulario.submit();
-                }
-            });
-        } else {
-            formulario.reportValidity(); //reportValidity muestra la validacion de los required en los input
-        }
-        return false;
-    }
-
-
-    function confirmarUpdate() {
-        var formulario = document.getElementById('formsFelysoft');
-
-        if (formulario.checkValidity()) {
-            Swal.fire({
-                title: "¿Estás seguro? Se actualizarán los datos ingresados.",
-                showCancelButton: true,
-                confirmButtonText: 'Ok',
-                cancelButtonText: 'Cancelar',
-                icon: 'warning'
-            }).then((result) => {
-                if (result.value) {
-                    document.getElementById('formsFelysoft').submit();
-                }
-            });
-        } else {
-            formulario.reportValidity();
-        }
-        return false;
-    }
-    </script>
     <title><?php echo NOMBRESITIO; ?></title>
 </head>
 

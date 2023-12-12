@@ -4,8 +4,7 @@
     <div class="page">
         <div class="container">
             <div class="left">
-                <img id="logoL" src="https://i.postimg.cc/bvLWrs3P/logo.png" alt="registro form" class="h-100 w-75"
-                    style="border-radius: 1rem 0 0 1rem; margin: -30px 40px;" />
+                <img id="logoL" src="https://i.postimg.cc/bvLWrs3P/logo.png" alt="registro form" class="h-100 w-75" style="border-radius: 1rem 0 0 1rem; margin: -30px 40px;" />
             </div>
             <div class="right">
                 <h5 class="text-center">REGISTRO DE USUARIO</h5>

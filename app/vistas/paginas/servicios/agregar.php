@@ -1,6 +1,6 @@
 <?php require RUTA_APP . '/vistas/inc/header.php'; ?>
 <div class="contenedor-form">
-    <form class="needs-validation" id="formsFelysoft" action="<?php echo RUTA_URL; ?>servicios/agregar" method="post" novalidate>
+    <form id="formsFelysoft" action="<?php echo RUTA_URL; ?>servicios/agregar" method="post" novalidate>
         <h2 class="titulo-form">AGENDAR SERVICIO</h2>
         <div class="form-group">
             <label for="idTipoServicio">Tipo de Servicio: <sup>*</sup></label>
@@ -75,7 +75,7 @@
             </div>
         </div>
         <div class="text-center">
-            <input type="submit" class="btn btn-success" value="Agregar">
+            <input type="submit" class="btn btn-success" value="Agregar" onclick="confirmarInsert()">
             <a href="<?php echo RUTA_URL; ?>servicios" class="btn btn-primary">Volver</a>
         </div>
     </form>

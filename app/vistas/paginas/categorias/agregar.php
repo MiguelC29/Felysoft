@@ -1,6 +1,6 @@
 <?php require RUTA_APP . '/vistas/inc/header.php'; ?>
 <div class="contenedor-form">
-    <form class="needs-validation" id="formsFelysoft" action="<?php echo RUTA_URL; ?>categorias/agregar" method="post" novalidate>
+    <form id="formsFelysoft" action="<?php echo RUTA_URL; ?>categorias/agregar" method="post" novalidate>
         <h2 class="titulo-form">AGREGAR CATEGORIAS</h2>
         <div class="form-group">
             <label for="nombre" class="form-label">Nombre: <sup>*</sup></label>
@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="text-center">
-            <input class="btn btn-success" type="submit" value="Agregar">
+            <input class="btn btn-success" type="submit" value="Agregar" onclick="confirmarInsert()">
             <a href="<?php echo RUTA_URL; ?>categorias" class="btn btn-primary">Volver</a>
         </div>
     </form>

@@ -49,20 +49,14 @@
                 <a type="btn" class="btn-close" href="<?php echo RUTA_URL ?>inventarioProductos" aria-label="Close"></a>
             </div>
             <div class="modal-body">
-            <form class="needs-validation" id="formsFelysoft" action="" method="POST" novalidate>
+            <form id="formsFelysoft" action="<?php?>" method="POST">
                 <div class="mb-3">
                     <label for="stockEntrante" class="col-form-label">Stock:</label>
-                    <input type="number" class="form-control" id="stockEntrante" name="stockEntrante">
-                    <div class="valid-feedback">
-                        Campo completado!
-                    </div>
-                    <div class="invalid-feedback">
-                        Por favor, complete el campo!
-                    </div>
+                    <input type="number" class="form-control" id="stockEntrante" name="stockEntrante" required>
                 </div>
                 <div class="text-center">
                     <a type="btn" class="btn btn-secondary me-2" href="<?php echo RUTA_URL ?>inventarioProductos">Cerrar</a>
-                    <button type="submit" class="btn btn-primary"'>Guardar</button>
+                    <input type="submit" class="btn btn-primary" value="Agregar">
                 </div>
             </form>
             </div>

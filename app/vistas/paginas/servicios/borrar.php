@@ -11,7 +11,7 @@
             <input type="datetime" name="fechaModificacion" class="form-control form-control-lg" value="<?php echo $datos['fechaModificacion']; ?>" readonly>
         </div>
         <div class="text-center">
-            <input type="submit" class="btn btn-success" value="Borrar" onclick='return confirmarDelete()'>
+            <input type="submit" class="btn btn-success" value="Borrar" onclick="confirmarDelete()">
             <a href="<?php echo RUTA_URL; ?>servicios" class="btn btn-primary">Cancelar</a>
         </div>
     </form>

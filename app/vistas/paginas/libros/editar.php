@@ -1,6 +1,6 @@
 <?php require RUTA_APP . '/vistas/inc/header.php'; ?>
 <div class="contenedor-form">
-    <form class="needs-validation" id="formsFelysoft" action="<?php echo RUTA_URL; ?>libros/editar/<?php echo $datos['pkIdLibro'] ?>" method="post" novalidate>
+    <form id="formsFelysoft" action="<?php echo RUTA_URL; ?>libros/editar/<?php echo $datos['pkIdLibro'] ?>" method="post" novalidate>
         <h2 class="titulo-form">EDITAR LIBRO</h2>
         <div class="form-group">
             <label for="titulo">Titulo: <sup>*</sup></label>
@@ -87,7 +87,7 @@
             </div>
         </div>
         <div class="text-center">
-            <input type="submit" class="btn btn-success" value="Editar">
+            <input type="submit" class="btn btn-success" value="Editar" onclick="confirmarUpdate()">
             <a href="<?php echo RUTA_URL; ?>libros" class="btn btn-primary">Volver</a>
         </div>
     </form>
