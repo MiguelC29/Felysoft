@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+//Verifica si el usuario está autenticado antes de mostrar la página
+if (!isset($_SESSION['usuario_id'])) {
+    redireccionar('');
+    exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 

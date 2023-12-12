@@ -23,37 +23,59 @@
         }
 
         public function iniciarSesion() {
+            session_start();
+
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $usuario = $_POST['usuario'];
                 $contrasena = $_POST['contrasena'];
 
-                // Llamada al método obtenerUsuarioPorCredenciales()
+                //Llamada al método obtenerUsuarioPorCredenciales()
                 $usuario = $this->autenticacionModelo->obtenerUsuarioPorCredenciales($usuario, $contrasena);
 
                 if ($usuario) {
                     // Iniciar sesión
                     $_SESSION['usuario_id'] = $usuario->pkIdIdentificacion;
                     $_SESSION['usuario_nombre'] = $usuario->usuario;
-                    
-                    // Redireccionar al panel de control u otra página después del inicio de sesión
-                    redireccionar('paginas');
+                
+                    // Verificar el rol y redirigir en consecuencia
+                    switch ($usuario->fkIdRol) {
+                        case 1:
+                            redireccionar('paginas');
+                            break;
+                        case 2:
+                            redireccionar('productos');
+                            break;
+                        default:
+                            redireccionar('');
+                            break;
+                    }
+                
                     exit();
                 } else {
                     echo "<script>alert('Usuario no encontrado');</script>";
-                    redireccionar('autenticaciones/login');
+                    redireccionar('');
+                    exit();
                 }
             } else {
-                // Si no es una solicitud POST, manejar de acuerdo a tus necesidades
-                //redireccionar('paginas/autenticaciones/login');
+                redireccionar('');
             }
         }
 
         public function cerrarSesion() {
-            // Destruir la sesión y redirigir al inicio
-            session_start();
+            // Iniciar sesión si aún no está iniciada
+            if (session_status() == PHP_SESSION_NONE) {
+                session_start();
+            }
+        
+            // Eliminar todas las variables de sesión
             session_unset();
+        
+            // Destruir la sesión
             session_destroy();
-            redireccionar('autenticaciones/login');
+        
+            // Redirigir al inicio
+            redireccionar('');
+            exit();
         }
 
         public function registrarUsuario() {
@@ -85,7 +107,7 @@
                     redireccionar('autenticaciones/registro');
                 }
             } else {
-        
+                redireccionar('autenticaciones/registro');
             }
         }
     }
