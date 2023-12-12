@@ -33,6 +33,16 @@
             </div>
         </div>
         <div class="form-group">
+            <label for="stockI">Stock Inicial: <sup>*</sup></label>
+            <input type="number" name="stockI" class="form-control form-control-lg" required>
+            <div class="valid-feedback">
+                Campo completado!
+            </div>
+            <div class="invalid-feedback">
+                Por favor, complete el campo!
+            </div>
+        </div>
+        <div class="form-group">
             <label for="fechaVencimiento">Fecha Vencimiento:</label>
             <input type="date" name="fechaVencimiento" class="form-control form-control-lg">
             <div class="valid-feedback">

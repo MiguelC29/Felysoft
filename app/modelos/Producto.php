@@ -19,7 +19,9 @@
 
         public function agregarProducto($datos) {
             //$this->db->query('INSERT INTO productos (nombre, marca, precioVenta, fechaVencimiento, fkIdCategoria, fkIdProveedor, imagen, tipoImg) VALUES (:nombre, :marca, :precioVenta, :fechaVencimiento, :fkIdCategoria, :fkIdProveedor, :imagen, :tipoImg)');
-            $this->db->query('CALL agregar_productos(:nombre, :marca, :precioVenta, :fechaVencimiento, :fkIdCategoria, :fkIdProveedor, :imagen, :tipoImg)');
+            //$this->db->query('CALL agregar_productos(:nombre, :marca, :precioVenta, :fechaVencimiento, :fkIdCategoria, :fkIdProveedor, :imagen, :tipoImg)');
+            $this->db->query('CALL insertar_pro_inve(:imagen, :nombre, :marca, :precioVenta, :fechaVencimiento, :fkIdCategoria, :fkIdProveedor, :stockI, :tipoImg)');
+
      
             //Vincular valores
             $this->db->bind(':nombre', $datos['nombre']);
@@ -29,6 +31,7 @@
             $this->db->bind(':fkIdCategoria', $datos['fkIdCategoria']);
             $this->db->bind(':fkIdProveedor', $datos['fkIdProveedor']);
             $this->db->bind(':imagen', $datos['imagen']);
+            $this->db->bind(':stockI', $datos['stockI']);
             $this->db->bind(':tipoImg', $datos['tipoImg']);
 
             //Ejecutar

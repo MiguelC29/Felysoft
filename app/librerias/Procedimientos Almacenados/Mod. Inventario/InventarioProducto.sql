@@ -47,3 +47,32 @@ UPDATE inventario SET stock = stockU WHERE fkIdProducto = id;
 END$$
 
 DELIMITER ;
+
+
+-- AGREGAR PRODUCTO Y A SU VEZ EN EL INVENTARIO
+DROP procedure IF EXISTS `db_felysoft`.`insertar_pAro_inve`;
+;
+
+DELIMITER $$
+USE `db_felysoft`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insertar_pro_inve`(
+in imagen blob,
+in nomProduc varchar(45),
+in marca varchar(45),
+in precioVenta DECIMAL(10,0),
+in fechaVenci date,
+in idcategoria int,
+in idproveedor int,
+in stock int,
+in tipoImg varchar(45)
+)
+begin
+insert into productos  (imagen, nombre, marca, precioVenta, fechaVencimiento, fkIdCategoria, fkIdProveedor, tipoImg )
+values(imagen,nomProduc,marca,precioVenta,fechaVenci,idcategoria,idproveedor, tipoImg);
+
+insert into inventario (stock, tipoInventario, fkIdProducto )
+values(stock,"Producto",(select max(pkIdProducto) from productos));
+end$$
+
+DELIMITER ;
+;
