@@ -4,14 +4,12 @@
     <div class="page">
         <div class="container">
             <div class="left">
-                <img id="logoL" src="https://i.postimg.cc/bvLWrs3P/logo.png" alt="login form" class="h-100 w-75"
-                    style="border-radius: 1rem 0 0 1rem; margin: -30px 40px;" />
+                <img id="logoL" src="https://i.postimg.cc/bvLWrs3P/logo.png" alt="login form" class="h-100 w-75" style="border-radius: 1rem 0 0 1rem; margin: -30px 40px;" />
             </div>
             <div class="right">
                 <svg viewBox="0 0 320 300">
                     <defs>
-                        <linearGradient inkscape:collect="always" id="linearGradient" x1="13" y1="193.49992" x2="307"
-                            y2="193.49992" gradientUnits="userSpaceOnUse">
+                        <linearGradient inkscape:collect="always" id="linearGradient" x1="13" y1="193.49992" x2="307" y2="193.49992" gradientUnits="userSpaceOnUse">
                             <stop style="stop-color:#5765ce;" offset="0" id="stop876" />
                             <stop style="stop-color: white;" offset="1" id="stop878" />
                         </linearGradient>

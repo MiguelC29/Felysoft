@@ -15,7 +15,7 @@
             <input type="text" id="precio" name="precio" class="form-control form-control-lg" value="<?php echo $datos['precio'] ?>" readonly>
         </div>
         <div class="text-center">
-            <input type="submit" class="btn btn-success" value="Borrar Servicio" onclick="return confirmarDelete()">
+            <input type="submit" class="btn btn-success" value="Borrar Servicio" onclick="confirmarDelete()">
             <a href="<?php echo RUTA_URL; ?>tiposervicios" class="btn btn-primary">Volver</a>
         </div>
     </form>

@@ -59,7 +59,7 @@
                 </div>
                 <div class="text-center">
                     <a type="btn" class="btn btn-secondary me-2" href="<?php echo RUTA_URL ?>inventarioLibros">Cerrar</a>
-                    <button type="submit" class="btn btn-primary" onclick='return confirmarUpdate()'>Guardar</button>
+                    <input type="submit" class="btn btn-primary" value="Guardar">
                 </div>
             </form>
             </div>

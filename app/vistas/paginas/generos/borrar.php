@@ -11,7 +11,7 @@
             <input type="text" name="descripcion" class="form-control form-control-lg" value="<?php echo $datos['descripcion'] ?>" readonly>
         </div>
         <div class="text-center">
-            <input type="submit" class="btn btn-success" value="Borrar" onclick='return confirmarDelete()'>
+            <input type="submit" class="btn btn-success" value="Borrar" onclick="confirmarDelete()">
             <a href="<?php echo RUTA_URL; ?>generos" class="btn btn-primary">Volver</a>
         </div>
     </form>
