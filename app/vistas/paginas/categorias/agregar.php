@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="text-center">
-            <input class="btn btn-success" type="submit" value="Agregar">
+            <input class="btn btn-success" type="submit" value="Guardar">
             <a href="<?php echo RUTA_URL; ?>categorias" class="btn btn-primary">Volver</a>
         </div>
     </form>
