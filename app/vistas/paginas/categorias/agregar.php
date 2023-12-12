@@ -13,11 +13,7 @@
             </div>
         </div>
         <div class="text-center">
-<<<<<<< HEAD
-            <input class="btn btn-success" type="submit" value="Guardar">
-=======
-            <input class="btn btn-success" type="submit" value="Agregar" onclick="confirmarInsert()">
->>>>>>> f4be392e6beea88fae5d5b47bc2dcd8f1ff220ae
+            <input class="btn btn-success" type="submit" value="Guardar" onclick="confirmarInsert()">
             <a href="<?php echo RUTA_URL; ?>categorias" class="btn btn-primary">Volver</a>
         </div>
     </form>
