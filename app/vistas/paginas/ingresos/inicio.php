@@ -1,4 +1,5 @@
 <?php require RUTA_APP . '/vistas/inc/header.php'; ?>
+<h1 class="text-white text-center mt-2">LISTADO DE INGRESOS</h1>
     <div class="my-2">
         <a href="ingresos/agregar"><i class="bi bi-plus-square-fill" style="font-size: 2rem; color: white;"></i></a>
     </div>
