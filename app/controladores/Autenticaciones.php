@@ -43,7 +43,7 @@
                             redireccionar('paginas');
                             break;
                         case 2:
-                            redireccionar('productos');
+                            redireccionar('carritos');
                             break;
                         default:
                             redireccionar('');

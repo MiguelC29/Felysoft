@@ -70,6 +70,7 @@ if (!isset($_SESSION['usuario_id'])) {
                 <div class="collapse" id="venta">
                     <div class="card card-body" style="margin: 0px; padding: 0px; width: 150px;">
                         <ul>
+                            <li><a href="<?php echo RUTA_URL ?>carritos">Carrito de Compras</a></li>
                             <li><a href="<?php echo RUTA_URL ?>gastos">Gastos</a></li>
                             <li><a href="<?php echo RUTA_URL ?>ingresos">Ingresos</a></li>
                             <li><a href="<?php echo RUTA_URL ?>pagos">Pagos</a></li>
