@@ -1,8 +1,19 @@
 <?php
     class Carritos extends Controlador {
 
+        public function __construct() {
+            $this->productosModelo = $this->modelo('Producto');
+        }
+
         public function index() {
-            $this->vista('paginas/carrito/inicio');
+            //Obtener los productos
+            $productos = $this->productosModelo->obtenerProductos();
+
+            $datos = [
+                'productos' => $productos
+            ];
+
+            $this->vista('paginas/carrito/inicio', $datos);
         }
 
         public function cart() {

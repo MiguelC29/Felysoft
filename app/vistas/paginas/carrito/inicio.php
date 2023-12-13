@@ -75,45 +75,21 @@
     <!-- ARTICULOS -->
     <div>
         <div class="row" style="justify-content: center;">
+            <?php foreach($datos['productos'] as $producto) : ?>
             <div class="card m-4 bg-white" style="width: 18rem;">
                 <form id="formulario" name="formulario" action="<?php echo RUTA_URL; ?>carritos/cart" method="post">
-                    <input name="precio" type="hidden" id="precio" value="1200"/>
-                    <input name="titulo" type="hidden" id="titulo" value="Galletas Festival"/>
+                    <input name="precio" type="hidden" id="precio" value="<?php echo $producto->precioVenta; ?>"/>
+                    <input name="titulo" type="hidden" id="titulo" value="<?php echo $producto->nombre; ?>"/>
                     <input name="cantidad" type="hidden" id="cantidad" value="1" class="pl-2"/>
-                    <img src="https://lh3.googleusercontent.com/2hsM4qq4bgdfCwpcumWaPARp47ecGTWSqGhngf1H7REEdC3voluzxNmEwu7Id_WENcaET3wRXRM6CF_mRRZJrbRZCzDtccLl0wn4uxazAHcF8YI" alt="..." class="card-img-top" width = "400px" height = "300px">
+                    <img class="card-img-top" width = "400px" height = "300px" src="data:<?php echo $producto->tipoImg?>;base64,<?php echo base64_encode($producto->imagen)?>">
                     <div class="card-body">
-                        <h5 class="card-title">Galletas Festival</h5>
-                        <p class="card-text">Festival - Precio $1.200</p>
+                        <h5 class="card-title"><?php echo $producto->nombre; ?></h5>
+                        <p class="card-text"><?php echo $producto->marca; ?> - Precio $<?php echo $producto->precioVenta; ?></p>
                         <button class="btn btn-primary" type="submit"><i class="fas fa-shopping-cart"></i> Añadir al carrito</button>
                     </div>
                 </form>
             </div>
-            <div class="card m-4 bg-white" style="width: 18rem;">
-                <form id="formulario" name="formulario" action="<?php echo RUTA_URL; ?>carritos/cart" method="post">
-                    <input name="precio" type="hidden" id="precio" value="2000"/>
-                    <input name="titulo" type="hidden" id="titulo" value="Papas Ricas de Limon"/>
-                    <input name="cantidad" type="hidden" id="cantidad" value="1" class="pl-2"/>
-                    <img src="https://www.superricas.com/sites/default/files/2019-04/papas-limon.png" alt="..." class="card-img-top" width = "400px" height = "300px">
-                    <div class="card-body">
-                        <h5 class="card-title">Papas Ricas de Limon</h5>
-                        <p class="card-text">Papas Ricas - Precio $2.000</p>
-                        <button class="btn btn-primary" type="submit"><i class="fas fa-shopping-cart"></i> Añadir al carrito</button>
-                    </div>
-                </form>
-            </div>
-            <div class="card m-4 bg-white" style="width: 18rem;">
-                <form id="formulario" name="formulario" action="<?php echo RUTA_URL; ?>carritos/cart" method="post">
-                    <input name="precio" type="hidden" id="precio" value="2600"/>
-                    <input name="titulo" type="hidden" id="titulo" value="Coca-Cola sin Azucar	"/>
-                    <input name="cantidad" type="hidden" id="cantidad" value="1" class="pl-2"/>
-                    <img src="https://copservir.vtexassets.com/arquivos/ids/769475/GASEOSA-COCA-SINAZUCAR_F.png?v=637950298429530000" alt="..." class="card-img-top" width = "400px" height = "300px">
-                    <div class="card-body">
-                        <h5 class="card-title">Coca-Cola sin Azucar	</h5>
-                        <p class="card-text">Coca-Cola - Precio $2600</p>
-                        <button class="btn btn-primary" type="submit"><i class="fas fa-shopping-cart"></i> Añadir al carrito</button>
-                    </div>
-                </form>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </div>
