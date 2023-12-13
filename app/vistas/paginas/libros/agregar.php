@@ -34,7 +34,7 @@
         </div>
         <div class="form-group">
             <label for="anioPublicacion">Año de Publicacion: <sup>*</sup></label>
-            <input type="number" name="anioPublicacion" class="form-control form-control-lg" required>
+            <input type="date" name="anioPublicacion" class="form-control form-control-lg" required>
             <div class="valid-feedback">
                 Campo completado!
             </div>
@@ -45,6 +45,26 @@
         <div class="form-group">
             <label for="precioHora">Precio Por Hora: <sup>*</sup></label>
             <input type="number" name="precioHora" class="form-control form-control-lg" required>
+            <div class="valid-feedback">
+                Campo completado!
+            </div>
+            <div class="invalid-feedback">
+                Por favor, complete el campo!
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="stockI">Stock Inicial: <sup>*</sup></label>
+            <input type="number" name="stockI" class="form-control form-control-lg" required>
+            <div class="valid-feedback">
+                Campo completado!
+            </div>
+            <div class="invalid-feedback">
+                Por favor, complete el campo!
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="estadoI">Estado Inicial: <sup>*</sup></label>
+            <input type="text" name="estadoI" class="form-control form-control-lg" required>
             <div class="valid-feedback">
                 Campo completado!
             </div>
