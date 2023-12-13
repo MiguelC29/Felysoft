@@ -1,20 +1,33 @@
 -- INVENTARIO -- (REVISAR BIEN ESTAA PARTE)
 
 --MOSTRAR INVENTARIO
-DROP procedure IF EXISTS `mostrar_inventario_Productos`;
+DROP procedure IF EXISTS `consultarTipoInv`;
 
 DELIMITER $$
 USE `db_felysoft`$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `mostrar_inventario_Productos`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `consultarTipoInv`(in tipoInv VARCHAR(30))
 BEGIN
+IF tipoInv = "Producto" THEN
     SELECT pkIdProducto, imagen, tipoImg, nombre, marca, precioVenta, fechaVencimiento, stock 
     FROM inventario 
-    INNER JOIN productos ON fkIdProducto = pkIdProducto 
-    WHERE tipoInventario= "Producto";
+    INNER JOIN productos ON fkIdProducto = pkIdProducto;
+END IF;
+IF tipoInv = "Libro Digital" THEN
+    SELECT  pkIdLibro,
+            titulo,
+            editorial,
+            precioHora,
+            a.nombre AS autor,
+            g.nombre AS genero,
+            estado
+    FROM inventario
+    INNER JOIN libros ON fkIdLibro = pkIdLibro
+    INNER JOIN autores a ON libros.fkIdAutor = a.pkIdAutor
+    INNER JOIN genero g ON libros.fkIdGenero = g.pkIdGenero;
+    END IF;
 END$$
 
 DELIMITER ;
-
 
 
 --CONSULTAR STOCK
@@ -48,6 +61,18 @@ END$$
 
 DELIMITER ;
 
+--CONSULTAR ESTADO
+DROP procedure IF EXISTS `consultar_estado`;
+
+DELIMITER $$
+USE `db_felysoft`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `consultar_estado`(IN `id` INT(11))
+BEGIN
+SELECT estado FROM inventario 
+WHERE fkIdLibro = id;
+END$$
+
+DELIMITER ;
 
 -- AGREGAR PRODUCTO Y A SU VEZ EN EL INVENTARIO
 DROP procedure IF EXISTS `db_felysoft`.`insertar_pAro_inve`;

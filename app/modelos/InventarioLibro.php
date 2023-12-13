@@ -8,7 +8,9 @@
         }
 
         public function obtenerInventarioLibros() {
-            $this->db->query('SELECT pkIdLibro, titulo, editorial, precioHora, autores.nombre as autor, genero.nombre as genero, estado FROM inventario INNER JOIN libros ON fkIdLibro = pkIdLibro INNER JOIN autores ON fkIdAutor = pkIdAutor INNER JOIN genero ON fkIdGenero = pkIdGenero WHERE tipoInventario="Libro Digital"');
+            // $this->db->query('SELECT pkIdLibro, titulo, editorial, precioHora, autores.nombre as autor, genero.nombre as genero, estado FROM inventario INNER JOIN libros ON fkIdLibro = pkIdLibro INNER JOIN autores ON fkIdAutor = pkIdAutor INNER JOIN genero ON fkIdGenero = pkIdGenero WHERE tipoInventario="Libro Digital"');
+
+            $this->db->query('CALL consultarTipoInv("Libro Digital")');
 
             $resultados = $this->db->registros();
 
@@ -16,9 +18,9 @@
         }
 
         public function actualizarEstado($datos) {
-            // Obtener el stock actual
-            $this->db->query('SELECT estado FROM inventario WHERE fkIdLibro = :id');
-            // $this->db->query('CALL consultar_stock(:id)');
+            // Obtener el estado actual
+            // $this->db->query('SELECT estado FROM inventario WHERE fkIdLibro = :id');
+            $this->db->query('CALL consultar_estado(:id)');
             $this->db->bind(':id', $datos['pkIdLibro']);
             $estadoActual = $this->db->registro();
         
