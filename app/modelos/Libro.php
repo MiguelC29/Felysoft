@@ -15,7 +15,7 @@
             return $resultados;
         }
         public function agregarLibro($datos) {
-            $this->db->query('CALL agregar_libros(:titulo,:editorial, :descripcion, :anioPublicacion, :precioHora, :fkIdAutor,:fkIdGenero)');
+            $this->db->query('CALL insertar_libro_inve(:titulo,:editorial, :descripcion, :anioPublicacion, :precioHora, :fkIdAutor,:fkIdGenero, :stockI, :estadoI)');
 
             //Vincular valores
             $this->db->bind(':titulo', $datos['titulo']);
@@ -25,6 +25,8 @@
             $this->db->bind(':precioHora', $datos['precioHora']);
             $this->db->bind(':fkIdAutor', $datos['fkIdAutor']);
             $this->db->bind(':fkIdGenero', $datos['fkIdGenero']);
+            $this->db->bind(':stockI', $datos['stockI']);
+            $this->db->bind(':estadoI', $datos['estadoI']);
 
             //Ejecutar
             if ($this->db->execute()) {

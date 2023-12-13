@@ -27,6 +27,8 @@
                         'precioHora' => trim($_POST['precioHora']),
                         'fkIdAutor' => trim($_POST['idAutor']),
                         'fkIdGenero' => trim($_POST['idGenero']),
+                        'stockI' => trim($_POST['stockI']),
+                        'estadoI' => trim($_POST['estadoI']),
                     ];
 
                 if ($this->librosModelo->agregarLibro($datos)) {
@@ -48,7 +50,9 @@
                     'fkIdAutor' => '',
                     'fkIdGenero' => '',
                     'autores' => $autores,
-                    'generos' => $generos
+                    'generos' => $generos,
+                    'stockI' => '',
+                    'estadoI' => ''
                 ];
 
                 $this->vista('paginas/libros/agregar', $datos);
