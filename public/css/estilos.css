@@ -111,3 +111,10 @@ div.dt-buttons button.dt-button:first-child:hover{
     background-color: #0f2250; /* Nuevo color de fondo del botón en hover */
     box-shadow: 1px 0.5px 1px 0.5px #f5f5f5;
 }
+
+#numCart {
+	position: relative;
+	top: 6px;
+	font-size: 30px;
+	color: #ffffff;
+}
