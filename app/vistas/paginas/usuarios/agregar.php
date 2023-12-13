@@ -1,6 +1,6 @@
 <?php require RUTA_APP . '/vistas/inc/header.php';?>
 <div class="contenedor-form">
-    <form action="<?php echo RUTA_URL;?>usuarios/agregar" method="post" novalidate>
+    <form id="formsFelysoft" action="<?php echo RUTA_URL;?>usuarios/agregar" method="post" novalidate>
         <h2 class="titulo-form">AGREGAR USUARIOS</h2>
         <div class="form-group">
             <label for="tipoDocu">Tipo de documento: <sup>*</sup></label>
