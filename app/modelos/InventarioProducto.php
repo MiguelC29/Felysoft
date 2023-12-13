@@ -9,8 +9,8 @@
 
         public function obtenerInventarioProductos() {
             //$this->db->query('SELECT pkIdProducto, imagen, tipoImg, nombre, marca, precioVenta, fechaVencimiento, stock FROM inventario INNER JOIN productos ON fkIdProducto = pkIdProducto WHERE tipoInventario="Producto"');
-            $this->db->query('CALL mostrar_inventario_productos');
-
+            // $this->db->query('CALL mostrar_inventario_productos');
+            $this->db->query('CALL consultarTipoInv("Producto")');
             $resultados = $this->db->registros();
 
             return $resultados;
