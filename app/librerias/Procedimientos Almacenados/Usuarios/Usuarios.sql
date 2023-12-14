@@ -96,6 +96,7 @@ fkIdRol	int(11)
 )
 BEGIN
 UPDATE usuarios	SET 
+pkIdIdentificacion = id,
 tipoDocu = tipoDocu,
 nombres =  nombres,
 apellidos = apellidos,
