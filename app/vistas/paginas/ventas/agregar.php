@@ -1,5 +1,8 @@
 <?php require RUTA_APP . '/vistas/inc/header.php';?>
-<div class="contenedor-form">    
+<?php require RUTA_APP . '/vistas/inc/sidebar.php'; ?>
+<?php require RUTA_APP . '/vistas/inc/navbar.php'; ?>
+
+<div class="contenedor-form">
     <form id="formsFelysoft" action="<?php echo RUTA_URL;?>ventas/agregar" method="post" novalidate>
         <h2 class="titulo-form">AGREGAR VENTAS</h2>
         <div class="form-group">

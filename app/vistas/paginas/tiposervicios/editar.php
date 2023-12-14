@@ -1,4 +1,7 @@
 <?php require RUTA_APP . '/vistas/inc/header.php'; ?>
+<?php require RUTA_APP . '/vistas/inc/sidebar.php'; ?>
+<?php require RUTA_APP . '/vistas/inc/navbar.php'; ?>
+
 <div class="contenedor-form">
     <form id="formsFelysoft" action="<?php echo RUTA_URL; ?>tiposervicios/editar/<?php echo $datos['idTipoServicio'] ?>" method="post" novalidate>
         <h2 class="titulo-form">EDITAR SERVICIO</h2>

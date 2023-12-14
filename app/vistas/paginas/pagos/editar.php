@@ -1,4 +1,7 @@
 <?php require RUTA_APP . '/vistas/inc/header.php';?>
+<?php require RUTA_APP . '/vistas/inc/sidebar.php'; ?>
+<?php require RUTA_APP . '/vistas/inc/navbar.php'; ?>
+
 <div class="contenedor-form">
     <form id="formsFelysoft" action="<?php echo RUTA_URL;?>pagos/editar/<?php echo $datos['pkIdPago']?>" method="post" novalidate>
         <h2 class="titulo-form">EDITAR PAGO</h2>

@@ -1,4 +1,7 @@
 <?php require RUTA_APP . '/vistas/inc/header.php';?>
+<?php require RUTA_APP . '/vistas/inc/sidebar.php'; ?>
+<?php require RUTA_APP . '/vistas/inc/navbar.php'; ?>
+
 <h1 class="text-white text-center mt-2">LISTADO DE AUTORES</h1>
     <div class="my-2">
         <a href="autores/agregar"><i class="bi bi-plus-square-fill" style="font-size: 2rem; color: white;"></i></a>

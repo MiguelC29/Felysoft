@@ -1,4 +1,7 @@
 <?php require RUTA_APP . '/vistas/inc/header.php'; ?>
+<?php require RUTA_APP . '/vistas/inc/sidebar.php'; ?>
+<?php require RUTA_APP . '/vistas/inc/navbar.php'; ?>
+
 <?php
 $carrito_mio = isset($_SESSION['carrito']) ? $_SESSION['carrito'] : array();
 $_SESSION['carrito'] = $carrito_mio;

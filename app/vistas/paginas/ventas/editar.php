@@ -1,4 +1,7 @@
 <?php require RUTA_APP . '/vistas/inc/header.php';?>
+<?php require RUTA_APP . '/vistas/inc/sidebar.php'; ?>
+<?php require RUTA_APP . '/vistas/inc/navbar.php'; ?>
+
 <div class="contenedor-form">
     <form id="formsFelysoft" action="<?php echo RUTA_URL;?>ventas/editar/<?php echo $datos['pkIdVenta']?>" method="post" novalidate>
         <h2 class="titulo-form">EDITAR VENTA</h2>
@@ -38,7 +41,7 @@
         <div class="form-group">
             <label for="idPago">Pago (Método): <sup>*</sup></label>
             <select class="form-select" aria-label="Default select example" name="idPago">
-            <option value = "" selected disabled>Seleccione el Método de pago</option>            
+            <option value = "" selected disabled>Seleccione el Método de pago</option>
             <option value="<?php echo $datos['pago']->pkIdPago; ?>" selected>
             <?php echo $datos['pago']->metodoPago; ?></option>
             <?php foreach($datos['pagos'] as $pago) : ?>
@@ -54,11 +57,7 @@
         </div>
 
         <div class="text-center">
-<<<<<<< HEAD
-            <input type="submit" class="btn btn-success" value="Guardar">
-=======
             <input type="submit" class="btn btn-success" value="Editar" onclick="confirmarUpdate()">
->>>>>>> f4be392e6beea88fae5d5b47bc2dcd8f1ff220ae
             <a href="<?php echo RUTA_URL;?>ventas" class="btn btn-primary">Volver</a>
         </div>
     </form>
