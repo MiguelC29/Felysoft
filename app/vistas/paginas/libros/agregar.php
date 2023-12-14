@@ -53,26 +53,6 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="stockI">Stock Inicial: <sup>*</sup></label>
-            <input type="number" name="stockI" class="form-control form-control-lg" required>
-            <div class="valid-feedback">
-                Campo completado!
-            </div>
-            <div class="invalid-feedback">
-                Por favor, complete el campo!
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="estadoI">Estado Inicial: <sup>*</sup></label>
-            <input type="text" name="estadoI" class="form-control form-control-lg" required>
-            <div class="valid-feedback">
-                Campo completado!
-            </div>
-            <div class="invalid-feedback">
-                Por favor, complete el campo!
-            </div>
-        </div>
-        <div class="form-group">
             <label for="idAutor">Autor: <sup>*</sup></label>
             <select class="form-select" aria-label="Default select example" name="idAutor" required>
                 <option value="" selected disabled>Seleccione El Autor</option>
