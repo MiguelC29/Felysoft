@@ -8,9 +8,9 @@
         }
 
         public function obtenerUsuarios() {
-            
-            $this->db->query('SELECT * FROM usuarios INNER JOIN rol ON fkIdRol = pkIdRol');
-            
+            // $this->db->query('SELECT * FROM usuarios INNER JOIN rol ON fkIdRol = pkIdRol');
+            $this->db->query('CALL mostrar_usuarios');
+
             $resultados = $this->db->registros();
 
             return $resultados;
@@ -18,7 +18,8 @@
 
 
         public function agregarUsuario($datos) {
-            $this->db->query('INSERT INTO usuarios (pkIdIdentificacion, tipoDocu, nombres, apellidos, direccion, telefono, email, genero, usuario, contrasena, fkIdRol) VALUES (:pkIdIdentificacion, :tipoDocu, :nombres, :apellidos, :direccion, :telefono, :email, :genero,  :usuario, :contrasena, :fkIdRol)');
+            //$this->db->query('INSERT INTO usuarios (pkIdIdentificacion, tipoDocu, nombres, apellidos, direccion, telefono, email, genero, usuario, contrasena, fkIdRol) VALUES (:pkIdIdentificacion, :tipoDocu, :nombres, :apellidos, :direccion, :telefono, :email, :genero,  :usuario, :contrasena, :fkIdRol)');
+            $this->db->query('CALL agregar_usuarios(:pkIdIdentificacion, :tipoDocu, :nombres, :apellidos, :direccion, :telefono, :email, :genero, :usuario, :contrasena, :fkIdRol)');
 
             //Vincular valores
             $this->db->bind(':pkIdIdentificacion', $datos['pkIdIdentificacion']);
@@ -42,7 +43,10 @@
         }
 
         public function obtenerUsuarioId($id) {
-            $this->db->query('SELECT * FROM usuarios WHERE pkIdIdentificacion = :id');
+            // $this->db->query('SELECT * FROM usuarios WHERE pkIdIdentificacion = :id');
+            $this->db->query('CALL mostrar_usuario_especifico (:id)');
+
+
             $this->db->bind(':id', $id);
 
             $fila = $this->db->registro();
@@ -51,7 +55,9 @@
         }
 
         public function actualizarUsuario($datos) {
-            $this->db->query('UPDATE usuarios SET pkIdIdentificacion = :pkIdIdentificacion, tipoDocu = :tipoDocu, nombres = :nombres, apellidos = :apellidos, direccion = :direccion, telefono = :telefono, email = :email, genero = :genero, usuario = :usuario, contrasena = :contrasena, fkIdRol = :fkIdRol, WHERE pkIdUsuario = :id');
+            //$this->db->query('UPDATE usuarios SET pkIdIdentificacion = :pkIdIdentificacion, tipoDocu = :tipoDocu, nombres = :nombres, apellidos = :apellidos, direccion = :direccion, telefono = :telefono, email = :email, genero = :genero, usuario = :usuario, contrasena = :contrasena, fkIdRol = :fkIdRol, WHERE pkIdUsuario = :id');
+            $this->db->query('CALL actualizar_usuarios(:pkIdIdentificacion, :tipoDocu, :nombres, :apellidos, :direccion, :telefono, :email, :genero, :usuario, :contrasena, :fkIdRol)');
+
 
             //Vincular los valores
             $this->db->bind(':pkIdIdentificacion', $datos['pkIdIdentificacion']);
@@ -75,7 +81,9 @@
         }
 
         public function borrarUsuario($datos) {
-            $this->db->query('DELETE FROM usuarios WHERE pkIdIdentificacion = :id');
+            // $this->db->query('DELETE FROM usuarios WHERE pkIdIdentificacion = :id');
+            $this->db->query('CALL borrar_usuarios (:id)');
+
 
             //Vincular los valores
             $this->db->bind(':id', $datos['pkIdIdentificacion']);

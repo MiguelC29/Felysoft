@@ -76,7 +76,7 @@ public function obtenerGastoId($id) {
 //ELIMINAR GASTOS
         public function borrarGasto($datos) {
             //$this->db->query('DELETE FROM gastos WHERE pkIdGasto = :id');
-            $this->db->query('s');
+            $this->db->query('CALL borrar_gastos (:id)');
 
             //Vincular los valores
             $this->db->bind(':id', $datos['pkIdGasto']);
