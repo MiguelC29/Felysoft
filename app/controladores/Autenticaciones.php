@@ -14,7 +14,6 @@
 
         public function registro() {
             $roles = $this->rolesModelo->obtenerRoles();
-
             $datos = [
                 'roles' => $roles
             ];
@@ -36,6 +35,7 @@
                     // Iniciar sesión
                     $_SESSION['usuario_id'] = $usuario->pkIdIdentificacion;
                     $_SESSION['usuario_nombre'] = $usuario->usuario;
+                    $_SESSION['rolUser'] = $usuario->rolUser;
                 
                     // Verificar el rol y redirigir en consecuencia
                     switch ($usuario->fkIdRol) {
