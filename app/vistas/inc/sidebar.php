@@ -6,8 +6,8 @@
     <div class="user">
         <img src="https://i.postimg.cc/HLH1VGmw/user.png" alt="">
         <div class="name">
-            <h5>GAES 3</h5>
-            <span>Desarrolladores</span>
+            <h5><?php echo $_SESSION['usuario_nombre']; ?></h5>
+            <span><?php echo $_SESSION['rolUser']; ?></span>
         </div>
     </div>
     <div class="nave">
