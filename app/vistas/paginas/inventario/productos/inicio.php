@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="table-responsive my-4">
-                <table id="TablesFelysoft" class="table table-bordered table-hover text-center" style="width:100%">
+                <table id="TablesFelysoft" class="table table-bordered table-hover text-center align-middle" style="width:100%">
                     <thead>
                         <tr>
                             <th>IdProducto</th>
@@ -29,7 +29,18 @@
                             <td><?php echo $producto->marca; ?></td>
                             <td><?php echo $producto->precioVenta; ?></td>
                             <td><?php echo $producto->fechaVencimiento; ?></td>
-                            <td><?php echo $producto->stock; ?></td>
+                            <?php
+                                if ($producto->stock < 5) {?>
+                                    <td style="background-color: #F96565;"><?php echo $producto->stock; ?></td>
+                                <?php
+                                } elseif ($producto->stock >= 5 && $producto->stock <= 15) {?>
+                                    <td style="background-color: #FFFA99;"><?php echo $producto->stock; ?></td>
+                                <?php
+                                } else {?>
+                                    <td style="background-color: #9CEFAC;"><p><?php echo $producto->stock; ?></p></td>
+                                <?php
+                                }
+                            ?>
                             <td>
                                 <a data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?php echo $producto->pkIdProducto; ?>" class="editar-stock"><i class="bi bi-plus-circle-fill" style="font-size: 2rem;"></i></a>
                                 <!-- <a href="<?php echo RUTA_URL; ?>inventarioProductos/editar/<?php echo $producto->pkIdProducto; ?>" class="btn btn-success"><i class="bi bi-pencil-square"></i></a>
@@ -54,7 +65,7 @@
             <form id="formsFelysoft" action="<?php?>" method="POST">
                 <div class="mb-3">
                     <label for="stockEntrante" class="col-form-label">Stock:</label>
-                    <input type="number" class="form-control" id="stockEntrante" name="stockEntrante" required>
+                    <input type="number" class="form-control" id="stockEntrante" name="stockEntrante" id="stockEntrante" required min="1" max="100">
                 </div>
                 <div class="text-center">
                     <a type="btn" class="btn btn-secondary me-2" href="<?php echo RUTA_URL ?>inventarioProductos">Cerrar</a>
