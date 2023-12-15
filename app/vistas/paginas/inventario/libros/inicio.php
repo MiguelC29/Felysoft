@@ -1,10 +1,7 @@
-<?php require RUTA_APP . '/vistas/inc/header.php';?>
-
+<?php session_start();?>
 <?php if($_SESSION['rolU'] == 1) {?>
+<?php require RUTA_APP . '/vistas/inc/header.php';?>
 <h1 class="text-white text-center mt-2">LISTADO DE LIBROS EN INVENTARIO</h1>
-    <!-- <div class="my-2">
-        <a href="inventarioLibros/agregar"><i class="bi bi-plus-square-fill" style="font-size: 2rem; color: white;"></i></a>
-    </div> -->
     <div class="row">
         <div class="col-lg-12">
             <div class="table-responsive my-4">

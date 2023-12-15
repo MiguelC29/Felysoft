@@ -176,8 +176,7 @@ if (!isset($_SESSION['usuario_id'])) {
                 if($_SESSION['rolU'] == 1 || $_SESSION['rolU'] == 2) {?>
                     <div class="nave">
                         <ul>
-                            <li><a href="<?php echo RUTA_URL ?>autenticaciones/cerrarSesion"><i
-                                        class="bi bi-box-arrow-in-right"></i><span>Log Out</span></a></li>
+                            <li><a href="<?php echo RUTA_URL ?>autenticaciones/cerrarSesion"><i class="bi bi-box-arrow-in-right"></i><span>Log Out</span></a></li>
                         </ul>
                     </div>
                 <?php } ?>
