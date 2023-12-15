@@ -36,6 +36,7 @@
                     $_SESSION['usuario_id'] = $usuario->pkIdIdentificacion;
                     $_SESSION['usuario_nombre'] = $usuario->usuario;
                     $_SESSION['rolUser'] = $usuario->rolUser;
+                    $_SESSION['rolU'] = $usuario->fkIdRol;
                 
                     // Verificar el rol y redirigir en consecuencia
                     switch ($usuario->fkIdRol) {

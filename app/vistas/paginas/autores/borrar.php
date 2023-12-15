@@ -1,6 +1,4 @@
 <?php require RUTA_APP . '/vistas/inc/header.php'; ?>
-<?php require RUTA_APP . '/vistas/inc/sidebar.php'; ?>
-<?php require RUTA_APP . '/vistas/inc/navbar.php'; ?>
 
 <div class="contenedor-form">
     <form id="formsFelysoft" action="<?php echo RUTA_URL; ?>autores/borrar/<?php echo $datos['pkIdAutor'] ?>" method="post">

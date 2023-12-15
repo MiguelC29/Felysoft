@@ -1,6 +1,4 @@
 <?php require RUTA_APP . '/vistas/inc/header.php';?>
-<?php require RUTA_APP . '/vistas/inc/sidebar.php'; ?>
-<?php require RUTA_APP . '/vistas/inc/navbar.php'; ?>
 
 <h1 class="text-white text-center mt-2">LISTADO DE GÉNEROS</h1>
 

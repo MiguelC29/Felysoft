@@ -1,6 +1,4 @@
 <?php require RUTA_APP . '/vistas/inc/header.php'; ?>
-<?php require RUTA_APP . '/vistas/inc/sidebar.php'; ?>
-<?php require RUTA_APP . '/vistas/inc/navbar.php'; ?>
 
     <div class="row pt-5">
         <div class="col-sm-3">
