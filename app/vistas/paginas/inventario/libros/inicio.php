@@ -31,7 +31,15 @@
                             <td><?php echo $libro->precioHora; ?></td>
                             <td><?php echo $libro->autor; ?></td>
                             <td><?php echo $libro->genero; ?></td>
-                            <td><?php echo $libro->estado; ?></td>
+                            <?php
+                                if ($libro->estado == 'Disponible') {?>
+                                    <td style="background-color: #9CEFAC;"><?php echo $libro->estado; ?></td>
+                                <?php
+                                } else {?>
+                                    <td style="background-color: #F96565;"><p><?php echo $libro->estado; ?></p></td>
+                                <?php
+                                }
+                            ?>
                             <td>
                             <a data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?php echo $libro->pkIdLibro; ?>" class="editar-estado btn btn-success"><i class="bi bi-pencil-square"></i></a>
                                 <!-- <a href="<?php echo RUTA_URL; ?>inventarioLibros/editar/<?php echo $libro->pkIdLibro; ?>" class="btn btn-success"><i class="bi bi-pencil-square"></i></a>

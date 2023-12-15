@@ -11,13 +11,18 @@
                 <hr>
                 <form id="register-form" action="<?php echo RUTA_URL; ?>autenticaciones/registrarUsuario" method="POST">
                     <label for="pkIdIdentificacion">Número de Identificación</label>
-                    <input type="number" id="pkIdIdentificacion" name="pkIdIdentificacion" required>
-
-                    <label for="tipoDocu">Tipo de Documento</label>
-                    <input type="text" id="tipoDocu" name="tipoDocu" required>
+                    <input type="number" name="pkIdIdentificacion" autofocus required>
+                    
+                    <label for="tipoDocu">Tipo de documento</label>
+                    <select aria-label="Default select example" name="tipoDocu" id="tipoDocu" required>
+                        <option value="" selected disabled>Seleccione el tipo de documento</option>
+                        <option value="C.C">Cédula de ciudadania</option>
+                        <option value="T.I">Tarjeta de Identidad</option>
+                        <option value="C.E">Cédula de extranjeria</option>
+                    </select>
 
                     <label for="nombres">Nombres</label>
-                    <input type="text" id="nombres" name="nombres" autofocus required>
+                    <input type="text" id="nombres" name="nombres" required>
 
                     <label for="apellidos">Apellidos</label>
                     <input type="text" id="apellidos" name="apellidos" required>
@@ -32,7 +37,11 @@
                     <input type="email" id="email" name="email" required>
 
                     <label for="genero">Género</label>
-                    <input type="text" id="genero" name="genero" required>
+                    <select aria-label="Default select example" name="genero" id="genero" required>
+                        <option value="" selected disabled>Seleccione su género</option>
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                    </select>
 
                     <label for="usuario">Usuario</label>
                     <input type="text" id="usuario" name="usuario" required>
