@@ -1,5 +1,6 @@
 <?php require RUTA_APP . '/vistas/inc/header.php';?>
 
+<?php if($_SESSION['rolU'] == 1) {?>
 <h1 class="text-white text-center mt-2">LISTADO DE LIBROS EN INVENTARIO</h1>
     <!-- <div class="my-2">
         <a href="inventarioLibros/agregar"><i class="bi bi-plus-square-fill" style="font-size: 2rem; color: white;"></i></a>
@@ -76,4 +77,9 @@
         </div>
     </div>
 </div>
+<?php
+} else {
+    require RUTA_APP . '/vistas/inc/noAcceso.php';
+}
+?>
 <?php require RUTA_APP . '/vistas/inc/footer.php';?>
