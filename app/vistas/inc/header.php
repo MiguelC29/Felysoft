@@ -33,7 +33,7 @@ if (!isset($_SESSION['usuario_id'])) {
     <!-- CSS Propio -->
     <link rel="stylesheet" type="text/css" href="<?php echo RUTA_URL ?>/css/estilos.css">
     <link rel="stylesheet" type="text/css" href="<?php echo RUTA_URL ?>/css/sidebar.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo RUTA_URL ?>/css/style404.css">
+    
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <title><?php echo NOMBRESITIO; ?></title>

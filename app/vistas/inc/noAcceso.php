@@ -1,3 +1,8 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="<?php echo RUTA_URL ?>/css/style404.css">
+  </head>
   <section class="container-fluid bg-white">
     <div class="row">
       <div class="col-md-9">
