@@ -30,6 +30,7 @@
     <script src="<?php echo RUTA_URL ?>/js/sidebar.js"></script>
     <script src="<?php echo RUTA_URL ?>/js/modalP.js"></script>
     <script src="<?php echo RUTA_URL ?>/js/modalL.js"></script>
+    <script src="<?php echo RUTA_URL ?>/js/imagen.js"></script>
     <script src="<?php echo RUTA_URL ?>/js/login.js"></script>
     </body>
 </html>

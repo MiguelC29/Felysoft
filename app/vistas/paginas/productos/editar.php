@@ -5,7 +5,7 @@
         <h2 class="titulo-form">EDITAR PRODUCTO</h2>
         <div class="form-group">
             <label for="nombre">Nombre: <sup>*</sup></label>
-            <input type="text" name="nombre" class="form-control form-control-lg" value="<?php echo $datos['nombre'] ?>" required>
+            <input type="text" name="nombre" id="nombre" class="form-control form-control-lg" value="<?php echo $datos['nombre'] ?>" required>
             <div class="valid-feedback">
                 Campo completado!
             </div>
@@ -15,7 +15,7 @@
         </div>
         <div class="form-group">
             <label for="marca">Marca: <sup>*</sup></label>
-            <input type="text" name="marca" class="form-control form-control-lg" value="<?php echo $datos['marca'] ?>" required>
+            <input type="text" name="marca" id="marca" class="form-control form-control-lg" value="<?php echo $datos['marca'] ?>" required>
             <div class="valid-feedback">
                 Campo completado!
             </div>
@@ -25,7 +25,7 @@
         </div>
         <div class="form-group">
             <label for="precioVenta">Precio Venta: <sup>*</sup></label>
-            <input type="number" name="precioVenta" class="form-control form-control-lg" value="<?php echo $datos['precioVenta'] ?>" required>
+            <input type="number" name="precioVenta" id="precioVenta" class="form-control form-control-lg" value="<?php echo $datos['precioVenta'] ?>" required>
             <div class="valid-feedback">
                 Campo completado!
             </div>
@@ -35,7 +35,7 @@
         </div>
         <div class="form-group">
             <label for="fechaVencimiento">Fecha Vencimiento:</label>
-            <input type="date" name="fechaVencimiento" class="form-control form-control-lg" value="<?php echo $datos['fechaVencimiento'] ?>">
+            <input type="date" name="fechaVencimiento" id="fechaVencimiento" class="form-control form-control-lg" value="<?php echo $datos['fechaVencimiento'] ?>">
             <div class="valid-feedback">
                 Campo completado!
             </div>
@@ -44,8 +44,8 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="nombre">Categoria: <sup>*</sup></label>
-            <select class="form-select" aria-label="Default select example" name="idCategoria" required>
+            <label for="idCategoria">Categoria: <sup>*</sup></label>
+            <select class="form-select" aria-label="Default select example" name="idCategoria" id="idCategoria" required>
                 <option value="" selected disabled>Seleccione la Categoria</option>
                 <option value="<?php echo $datos['categoria']->pkIdCategoria; ?>" selected>
                     <?php echo $datos['categoria']->nombre; ?></option>
@@ -79,9 +79,11 @@
         </div>
         <div class="form-group">
             <div class="mb-3">
-                <label for="imagenP">Imagen: <sup>*</sup></label>
+                <label>Imagen:</label>
+                <input class="form-control" type="file" id="imagenP" name="imagenP">
+                <label for="imagenP" id="imagenP-preview">
                 <img width="200px" height="200px" src="data:<?php echo $datos['tipoImgP'] ?>;base64,<?php echo base64_encode($datos['imagenP']) ?>">
-                <input class="form-control" type="file" id="formFile" name="imagenP">
+                </label>
             </div>
             <div class="valid-feedback">
                 Campo completado!
