@@ -45,11 +45,7 @@
 </div>
 <?php
 } else {?>
-<style>
-    .ppal {
-        display: none;
-    }
-</style>
+<style>.ppal {display: none;}</style>
 <?php
     require RUTA_APP . '/vistas/inc/noAcceso.php';
 }

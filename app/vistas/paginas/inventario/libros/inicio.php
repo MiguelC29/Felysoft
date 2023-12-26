@@ -1,6 +1,5 @@
-<?php session_start();?>
-<?php if($_SESSION['rolU'] == 1) {?>
 <?php require RUTA_APP . '/vistas/inc/header.php';?>
+<?php if($_SESSION['rolU'] == 1) {?>
 <h1 class="text-white text-center mt-2">LISTADO DE LIBROS EN INVENTARIO</h1>
     <div class="row">
         <div class="col-lg-12">
@@ -38,8 +37,6 @@
                             ?>
                             <td>
                             <a data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?php echo $libro->pkIdLibro; ?>" class="editar-estado btn btn-success"><i class="bi bi-pencil-square"></i></a>
-                                <!-- <a href="<?php echo RUTA_URL; ?>inventarioLibros/editar/<?php echo $libro->pkIdLibro; ?>" class="btn btn-success"><i class="bi bi-pencil-square"></i></a>
-                                <a href="<?php echo RUTA_URL; ?>inventarioLibros/borrar/<?php echo $libro->pkIdLibro; ?>" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a> -->
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -75,7 +72,9 @@
     </div>
 </div>
 <?php
-} else {
+} else {?>
+<style>.ppal {display: none;}</style>
+<?php
     require RUTA_APP . '/vistas/inc/noAcceso.php';
 }
 ?>
