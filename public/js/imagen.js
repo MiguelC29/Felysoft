@@ -8,5 +8,3 @@ function previewBeforeUpload(id) {
         document.querySelector("#"+id+"-preview img").src = url;
     });
 }
-
-previewBeforeUpload("imagenP");

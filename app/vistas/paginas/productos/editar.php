@@ -80,7 +80,7 @@
         <div class="form-group">
             <div class="mb-3">
                 <label>Imagen:</label>
-                <input class="form-control" type="file" id="imagenP" name="imagenP">
+                <input class="form-control" type="file" id="imagenP" name="imagenP" onclick='previewBeforeUpload("imagenP");'>
                 <label for="imagenP" id="imagenP-preview">
                 <img width="200px" height="200px" src="data:<?php echo $datos['tipoImgP'] ?>;base64,<?php echo base64_encode($datos['imagenP']) ?>">
                 </label>

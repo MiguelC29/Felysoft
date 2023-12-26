@@ -133,7 +133,7 @@
         <div class="form-group">
             <div class="mb-3">
                 <label>Foto de Perfil:</label>
-                <input class="form-control" type="file" id="imagenU" name="imagenU">
+                <input class="form-control" type="file" id="imagenU" name="imagenU" onclick='previewBeforeUpload("imagenU");'>
                 <label for="imagenU" id="imagenU-preview">
                     <?php if ($datos['imagenU'] == null) { ?>
                         <img width="200px" height="200px" src="https://i.postimg.cc/HLH1VGmw/user.png" alt="">
