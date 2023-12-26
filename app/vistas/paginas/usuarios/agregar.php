@@ -1,7 +1,7 @@
 <?php require RUTA_APP . '/vistas/inc/header.php';?>
 
 <div class="contenedor-form">
-    <form id="formsFelysoft" action="<?php echo RUTA_URL;?>usuarios/agregar" method="post" novalidate>
+    <form id="formsFelysoft" action="<?php echo RUTA_URL;?>usuarios/agregar" method="post" enctype="multipart/form-data" novalidate>
         <h2 class="titulo-form">AGREGAR USUARIOS</h2>
         <div class="form-group">
             <label for="tipoDocu">Tipo de documento: <sup>*</sup></label>
@@ -123,9 +123,22 @@
         </div>
 
         <div class="form-group">
-            <label for="idRol">Rol (Nombre): <sup>*</sup></label>
+            <div class="mb-3">
+                <label for="imagenU">Foto de perfil:</label>
+                <input class="form-control" type="file" id="imagenU" name="imagenU">
+                <div class="valid-feedback">
+                    Campo completado!
+                </div>
+                <div class="invalid-feedback">
+                    Por favor, complete el campo!
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="idRol">Rol: <sup>*</sup></label>
             <select class="form-select" aria-label="Default select example" name="idRol" required>
-            <option value= "" selected disabled>Seleccione el nombre del rol</option>
+            <option value= "" selected disabled>Seleccione el rol</option>
             <?php foreach($datos['roles'] as $rol) : ?>
                 <option value="<?php echo $rol->pkIdRol; ?>"><?php echo $rol->nombre; ?></option>
             <?php endforeach; ?>

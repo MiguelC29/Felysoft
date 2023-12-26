@@ -45,8 +45,7 @@ if (!isset($_SESSION['usuario_id'])) {
         <nav class="navbar">
             <div class="container-fluid">
                 <a class="navbar-brand" href="<?php echo RUTA_URL ?>paginas">
-                    <img src="https://i.postimg.cc/bvLWrs3P/logo.png" alt="Logo" width="30" height="35"
-                        class="d-inline-block">
+                    <img src="https://i.postimg.cc/bvLWrs3P/logo.png" alt="Logo" width="30" height="35" class="d-inline-block">
                     <em class="text-white align-middle"><?php echo NOMBRESITIO; ?></em>
                 </a>
                 <div class="datetime text-white me-4" id="datetime"></div>
@@ -59,7 +58,14 @@ if (!isset($_SESSION['usuario_id'])) {
                 <a href="<?php echo RUTA_APP ?>" id="toggle" onclick="toggleNavbar()"><i class="bi bi-list"></i></a>
             </div>
             <div class="user">
-                <img src="https://i.postimg.cc/HLH1VGmw/user.png" alt="">
+                <?php if ($_SESSION['tipoFoto'] == null && $_SESSION['fotoPerfil'] == null) {?>
+                    <img src="https://i.postimg.cc/HLH1VGmw/user.png" alt="">
+                <?php
+                } else {?>
+                <img src="data:<?php echo $_SESSION['tipoFoto'] ?>;base64,<?php echo base64_encode($_SESSION['fotoPerfil']) ?>">
+                <?php
+                }
+                ?>
                 <div class="name">
                     <h5><?php echo $_SESSION['usuario_nombre']; ?></h5>
                     <span><?php echo $_SESSION['rolUser']; ?></span>
@@ -68,15 +74,12 @@ if (!isset($_SESSION['usuario_id'])) {
             <div class="nave">
                 <ul>
                     <?php if($_SESSION['rolU'] == 1 || $_SESSION['rolU'] == 2){?>
-                    <li><a href="<?php echo RUTA_URL ?>paginas"><i
-                                class="bi bi-house-fill"></i><span>Inicio</span></a></li>
+                    <li><a href="<?php echo RUTA_URL ?>paginas"><i class="bi bi-house-fill"></i><span>Inicio</span></a></li>
                     <?php } ?>
 
                     <?php
                         if ($_SESSION['rolU'] == 1) {?>
-                    <li><a id="almacen" data-bs-toggle="collapse" href="#almacen"><i id="dashboardIcon"
-                                class="bi bi-archive-fill"></i><span class="d-inline-flex gap-1">Almacen<i
-                                    class="bi bi-chevron-down"></i></span></a></li>
+                    <li><a id="almacen" data-bs-toggle="collapse" href="#almacen"><i id="dashboardIcon" class="bi bi-archive-fill"></i><span class="d-inline-flex gap-1">Almacen<i class="bi bi-chevron-down"></i></span></a></li>
                     <div class="collapse" id="almacen">
                         <div class="card card-body" style="margin: 0px; padding: 0px; width: 150px;">
                             <ul>
@@ -92,11 +95,9 @@ if (!isset($_SESSION['usuario_id'])) {
                     </div>
                     <?php } ?>
 
-
                     <?php
                         if($_SESSION['rolU'] == 1 || $_SESSION['rolU'] == 2) {?>
-                    <li><a id="venta" data-bs-toggle="collapse" href="#venta"><i class="bi bi-cart-fill"></i><span
-                                class="d-inline-flex gap-1">Venta<i class="bi bi-chevron-down"></i></span></a></li>
+                    <li><a id="venta" data-bs-toggle="collapse" href="#venta"><i class="bi bi-cart-fill"></i><span class="d-inline-flex gap-1">Venta<i class="bi bi-chevron-down"></i></span></a></li>
                     <div class="collapse" id="venta">
                         <div class="card card-body" style="margin: 0px; padding: 0px; width: 150px;">
                             <ul>
@@ -111,9 +112,7 @@ if (!isset($_SESSION['usuario_id'])) {
 
                     <?php
                         if($_SESSION['rolU'] == 1) {?>
-                    <li><a id="comprasProv" data-bs-toggle="collapse" href="#comprasProv"><i
-                                class="bi bi-truck"></i><span class="d-inline-flex gap-1">Compras<i
-                                    class="bi bi-chevron-down"></i></span></a></li>
+                    <li><a id="comprasProv" data-bs-toggle="collapse" href="#comprasProv"><i class="bi bi-truck"></i><span class="d-inline-flex gap-1">Compras<i class="bi bi-chevron-down"></i></span></a></li>
                     <div class="collapse" id="comprasProv">
                         <div class="card card-body" style="margin: 0px; padding: 0px; width: 150px;">
                             <ul>
@@ -126,9 +125,7 @@ if (!isset($_SESSION['usuario_id'])) {
 
                     <?php
                         if($_SESSION['rolU'] == 1 || $_SESSION['rolU'] == 2) {?>
-                    <li><a id="reservaLibros" data-bs-toggle="collapse" href="#reservaLibros"><i
-                                class="bi bi-calendar2-check-fill"></i><span class="d-inline-flex gap-1">Reservas<i
-                                    class="bi bi-chevron-down"></i></span></a></li>
+                    <li><a id="reservaLibros" data-bs-toggle="collapse" href="#reservaLibros"><i class="bi bi-calendar2-check-fill"></i><span class="d-inline-flex gap-1">Reservas<i class="bi bi-chevron-down"></i></span></a></li>
                     <div class="collapse" id="reservaLibros">
                         <div class="card card-body" style="margin: 0px; padding: 0px; width: 150px;">
                             <ul>
@@ -141,9 +138,7 @@ if (!isset($_SESSION['usuario_id'])) {
 
                     <?php
                         if($_SESSION['rolU'] == 1) {?>
-                    <li><a id="inventarioAll" data-bs-toggle="collapse" href="#inventarioAll"><i
-                                class="bi bi-box-fill"></i><span class="d-inline-flex gap-1">Inventario<i
-                                    class="bi bi-chevron-down"></i></span></a></li>
+                    <li><a id="inventarioAll" data-bs-toggle="collapse" href="#inventarioAll"><i class="bi bi-box-fill"></i><span class="d-inline-flex gap-1">Inventario<i class="bi bi-chevron-down"></i></span></a></li>
                     <div class="collapse" id="inventarioAll">
                         <div class="card card-body" style="margin: 0px; padding: 0px; width: 150px;">
                             <ul>

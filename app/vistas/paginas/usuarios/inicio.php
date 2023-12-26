@@ -14,13 +14,12 @@
                             <th>Identificación</th>
                             <th>Nombres</th>
                             <th>Apellidos</th>
+                            <th>Foto Perfil</th>
                             <th>Dirección</th>
                             <th>Teléfono</th>
                             <th>Email</th>
                             <th>Género</th>
-                            <!-- <th>Usuario</th>
-                            <th>Contraseña</th>
-                            <th>Rol (Nombre)</th> -->
+                            <!-- <th>Rol</th> -->
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -31,6 +30,15 @@
                                 <td><?php echo $usuario->pkIdIdentificacion; ?></td>
                                 <td><?php echo $usuario->nombres; ?></td>
                                 <td><?php echo $usuario->apellidos; ?></td>
+                                <?php if ($usuario->imagen == null) { ?>
+                                <td><img width = "100px" height = "100px" src="https://i.postimg.cc/HLH1VGmw/user.png" alt=""></td>
+                                <?php
+                                    } else {
+                                ?>
+                                    <td><img width = "100px" height = "100px" src="data:<?php echo $usuario->tipoImg?>;base64,<?php echo base64_encode($usuario->imagen)?>"></td>
+                                <?php
+                                    }
+                                ?>
                                 <td><?php echo $usuario->direccion; ?></td>
                                 <td><?php echo $usuario->telefono; ?></td>
                                 <td><?php echo $usuario->email; ?></td>

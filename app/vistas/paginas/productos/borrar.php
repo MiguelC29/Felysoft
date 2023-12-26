@@ -28,7 +28,7 @@
             <input type="text" name="proveedor" class="form-control form-control-lg" value="<?php echo $datos['nomPro'] ?>" readonly>
         </div>
         <div class="form-group">
-            <div class="mb-3">
+            <div class="mb-3 mt-2">
                 <label for="nombre">Imagen:</label>
                 <td><img width="200px" height="200px" src="data:<?php echo $datos['tipoImg'] ?>;base64,<?php echo base64_encode($datos['imagen']) ?>">
                 </td>

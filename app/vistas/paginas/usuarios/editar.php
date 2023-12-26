@@ -1,6 +1,6 @@
 <?php require RUTA_APP . '/vistas/inc/header.php';?>
 <div class="contenedor-form">
-    <form id="formsFelysoft" action="<?php echo RUTA_URL;?>usuarios/editar/<?php echo $datos['pkIdIdentificacion']?>" method="post" novalidate>
+    <form id="formsFelysoft" action="<?php echo RUTA_URL;?>usuarios/editar/<?php echo $datos['pkIdIdentificacion']?>" method="post" enctype="multipart/form-data" novalidate>
         <h2 class="titulo-form">EDITAR USUARIO</h2>
         <div class="form-group">
             <label for="tipoDocu">Tipo de documento: <sup>*</sup></label>
@@ -14,14 +14,14 @@
         </div>
 
         <div class="form-group">
-            <label for="pkIdIdentificacion">Número de documento: <sup>*</sup></label>
-            <input type="number" name="pkIdIdentificacion" class="form-control form-control-lg" value="<?php echo $datos['pkIdIdentificacion']?>" required>
-            <div class="valid-feedback">
+            <label for="pkIdIdentificacion">Número de documento:</label>
+            <input type="number" name="pkIdIdentificacion" class="form-control form-control-lg" value="<?php echo $datos['pkIdIdentificacion']?>" disabled>
+            <!-- <div class="valid-feedback">
                 Campo completado!
             </div>
             <div class="invalid-feedback">
                 Por favor, complete el campo!
-            </div>
+            </div> -->
         </div>
         
         <div class="form-group">
@@ -113,7 +113,7 @@
         </div>
   
         <div class="form-group">
-            <label for="idRol">Rol (Nombre): <sup>*</sup></label>
+            <label for="idRol">Rol: <sup>*</sup></label>
             <select class="form-select" aria-label="Default select example" name="idRol">
             <option value = "" selected disabled>Seleccione el Rol</option>
             <option value="<?php echo $datos['rol']->pkIdRol; ?>" selected>
@@ -130,6 +130,29 @@
             </div>
         </div>
 
+        <div class="form-group">
+            <div class="mb-3">
+                <label>Foto de Perfil:</label>
+                <input class="form-control" type="file" id="imagenU" name="imagenU">
+                <label for="imagenU" id="imagenU-preview">
+                    <?php if ($datos['imagenU'] == null) { ?>
+                        <img width="200px" height="200px" src="https://i.postimg.cc/HLH1VGmw/user.png" alt="">
+                    <?php
+                        } else {
+                    ?>
+                        <img width="200px" height="200px" src="data:<?php echo $datos['tipoImgU'] ?>;base64,<?php echo base64_encode($datos['imagenU']) ?>">
+                    <?php
+                        }
+                    ?>
+                </label>
+            </div>
+            <div class="valid-feedback">
+                Campo completado!
+            </div>
+            <div class="invalid-feedback">
+                Por favor, complete el campo!
+            </div>
+        </div>
         <div class="text-center">
             <input type="submit" class="btn btn-success" value="Guardar" onclick="confirmarUpdate()">
             <a href="<?php echo RUTA_URL;?>usuarios" class="btn btn-primary">Volver</a>

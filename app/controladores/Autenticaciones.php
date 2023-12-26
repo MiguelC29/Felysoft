@@ -37,6 +37,8 @@
                     $_SESSION['usuario_nombre'] = $usuario->usuario;
                     $_SESSION['rolUser'] = $usuario->rolUser;
                     $_SESSION['rolU'] = $usuario->fkIdRol;
+                    $_SESSION['fotoPerfil'] = $usuario->imagen;
+                    $_SESSION['tipoFoto'] = $usuario->tipoImg;
                 
                     // Verificar el rol y redirigir en consecuencia
                     switch ($usuario->fkIdRol) {

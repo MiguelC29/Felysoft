@@ -16,12 +16,26 @@
             return $resultados;
         }
 
-
         public function agregarUsuario($datos) {
-            //$this->db->query('INSERT INTO usuarios (pkIdIdentificacion, tipoDocu, nombres, apellidos, direccion, telefono, email, genero, usuario, contrasena, fkIdRol) VALUES (:pkIdIdentificacion, :tipoDocu, :nombres, :apellidos, :direccion, :telefono, :email, :genero,  :usuario, :contrasena, :fkIdRol)');
-            $this->db->query('CALL agregar_usuarios(:pkIdIdentificacion, :tipoDocu, :nombres, :apellidos, :direccion, :telefono, :email, :genero, :usuario, :contrasena, :fkIdRol)');
-
-            //Vincular valores
+            $query = 'INSERT INTO usuarios (pkIdIdentificacion, tipoDocu, nombres, apellidos, direccion, telefono, email, genero, usuario, contrasena, fkIdRol';
+        
+            // Verificar si se ha proporcionado una imagen
+            if (isset($datos['imagen']) && !empty($datos['imagen'])) {
+                $query .= ', imagen, tipoImg';
+            }
+        
+            $query .= ') VALUES (:pkIdIdentificacion, :tipoDocu, :nombres, :apellidos, :direccion, :telefono, :email, :genero,  :usuario, :contrasena, :fkIdRol';
+        
+            // Vincular la imagen solo si se proporciona una imagen
+            if (isset($datos['imagen']) && !empty($datos['imagen'])) {
+                $query .= ', :imagen, :tipoImg';
+            }
+        
+            $query .= ')';
+        
+            $this->db->query($query);
+        
+            // Vincular valores
             $this->db->bind(':pkIdIdentificacion', $datos['pkIdIdentificacion']);
             $this->db->bind(':tipoDocu', $datos['tipoDocu']);
             $this->db->bind(':nombres', $datos['nombres']);
@@ -32,9 +46,16 @@
             $this->db->bind(':genero', $datos['genero']);
             $this->db->bind(':usuario', $datos['usuario']);
             $this->db->bind(':contrasena', $datos['contrasena']);
+        
+            // Vincular la imagen solo si se proporciona una imagen
+            if (isset($datos['imagen']) && !empty($datos['imagen'])) {
+                $this->db->bind(':imagen', $datos['imagen']);
+                $this->db->bind(':tipoImg', $datos['tipoImg']);
+            }
+        
             $this->db->bind(':fkIdRol', $datos['fkIdRol']);
-
-            //Ejecutar
+        
+            // Ejecutar
             if ($this->db->execute()) {
                 return true;
             } else {
@@ -46,7 +67,6 @@
             // $this->db->query('SELECT * FROM usuarios WHERE pkIdIdentificacion = :id');
             $this->db->query('CALL mostrar_usuario_especifico (:id)');
 
-
             $this->db->bind(':id', $id);
 
             $fila = $this->db->registro();
@@ -55,9 +75,17 @@
         }
 
         public function actualizarUsuario($datos) {
-            //$this->db->query('UPDATE usuarios SET pkIdIdentificacion = :pkIdIdentificacion, tipoDocu = :tipoDocu, nombres = :nombres, apellidos = :apellidos, direccion = :direccion, telefono = :telefono, email = :email, genero = :genero, usuario = :usuario, contrasena = :contrasena, fkIdRol = :fkIdRol, WHERE pkIdUsuario = :id');
-            $this->db->query('CALL actualizar_usuarios(:pkIdIdentificacion, :tipoDocu, :nombres, :apellidos, :direccion, :telefono, :email, :genero, :usuario, :contrasena, :fkIdRol)');
+            $query = 'UPDATE usuarios SET tipoDocu = :tipoDocu, nombres = :nombres, apellidos = :apellidos, direccion = :direccion, telefono = :telefono, email = :email, genero = :genero, usuario = :usuario, contrasena = :contrasena, fkIdRol = :fkIdRol';
+            // $this->db->query('CALL actualizar_usuarios(:pkIdIdentificacion, :tipoDocu, :nombres, :apellidos, :direccion, :telefono, :email, :genero, :usuario, :contrasena, :fkIdRol)');
 
+            // Verificar si se ha proporcionado una nueva imagen
+            if (isset($datos['imagen']) && !empty($datos['imagen'])) {
+                $query .= ', imagen = :imagen, tipoImg = :tipoImg';
+            }
+
+            $query .= ' WHERE pkIdIdentificacion = :pkIdIdentificacion';
+
+            $this->db->query($query);
 
             //Vincular los valores
             $this->db->bind(':pkIdIdentificacion', $datos['pkIdIdentificacion']);
@@ -71,6 +99,12 @@
             $this->db->bind(':usuario', $datos['usuario']);
             $this->db->bind(':contrasena', $datos['contrasena']);
             $this->db->bind(':fkIdRol', $datos['fkIdRol']);
+
+            // Vincular la imagen solo si se proporciona una nueva imagen
+            if (isset($datos['imagen']) && !empty($datos['imagen'])) {
+                $this->db->bind(':imagen', $datos['imagen']);
+                $this->db->bind(':tipoImg', $datos['tipoImg']);
+            }
 
             //Ejecutar
             if ($this->db->execute()) {
